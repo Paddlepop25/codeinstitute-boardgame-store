@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from accounts.views import index as accounts_index, logout
+from accounts.views import index as accounts_index, logout, login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,6 +23,6 @@ urlpatterns = [
     path('catalogue/', include('catalogue.urls')),
     path('user/', accounts_index, name='user_index'),
     path('user/logout', logout, name='logout'),
-    # path('user/login', login, name='login')
+    path('user/login', login, name='login')
 
 ]

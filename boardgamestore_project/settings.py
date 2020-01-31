@@ -147,3 +147,5 @@ AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
 
 )
+
+MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
