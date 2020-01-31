@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pyuploadcare.dj',
+    'accounts',
     'home',
     'catalogue',
     'crispy_forms',
@@ -139,3 +140,10 @@ UPLOADCARE = {
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+AUTH_USER_MODEL = 'accounts.MyUser' 
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by custom User model, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+
+)

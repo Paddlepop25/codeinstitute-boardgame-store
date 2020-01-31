@@ -15,9 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from accounts.views import index as accounts_index, logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
-    path('catalogue/', include('catalogue.urls'))
+    path('catalogue/', include('catalogue.urls')),
+    path('user/', accounts_index, name='user_index'),
+    path('user/logout', logout, name='logout'),
+    # path('user/login', login, name='login')
+
 ]
