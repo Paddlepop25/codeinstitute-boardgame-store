@@ -10,5 +10,6 @@
     {{ form|crispy }}
     <input type='submit' value='Update Game' />
 </form>
+    <a href="{% url 'confirm_delete' game_id=game.id %}">Delete</a> 
 
 {%endblock%}

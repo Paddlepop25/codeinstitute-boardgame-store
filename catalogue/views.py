@@ -24,8 +24,10 @@ def create_game(request):
     })    
 
 def update_game(request, game_id):
+    # all_games = Game.objects.all()
     game_being_updated = get_object_or_404(Game, pk=game_id)
-
+    game_being_deleted = get_object_or_404(Game, pk=game_id)
+    
     if request.method == "POST":
         # for update
         update_game_form = GameForm(request.POST, instance=game_being_updated)
@@ -38,7 +40,8 @@ def update_game(request, game_id):
         update_game_form = GameForm(instance=game_being_updated)
 
     return render(request, 'catalogue/update_game.template.html',{
-        'form':update_game_form
+        'form':update_game_form,
+        'game':game_being_deleted
     })    
     
 def confirm_delete_game(request, game_id):
