@@ -46,7 +46,26 @@ def profile(request):
     return render(request, 'accounts/profile.template.html')
     
 def register(request):
-    register_form = RegistrationForm()
-    return render(request, 'accounts/register.template.html', {
-        'form': register_form
+    # when user submit form
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid(): # django check through fields one by one to validate. check email will run clean email
+            form.save() # registration is successful, form will be saved
+        
+        # log in user
+        user = auth.authenticate(username=request.POST['username'], password=request.POST['password1'])
+        
+        if user:
+            auth.login(user=user, request=request)
+            messages.success(request, "Registration is successful. You can now do many things")
+            return redirect(reverse('user_index'))
+        else:    
+            messages.error(request, "Sorry, we're unable to register your account")
+            return redirect(reverse('index'))
+            
+    else:
+        # if registration fail
+        register_form = RegistrationForm()
+        return render(request, 'accounts/register.template.html', {
+            'form': register_form
     })    
