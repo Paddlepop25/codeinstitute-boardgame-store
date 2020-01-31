@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'pyuploadcare.dj',
     'home',
     'catalogue',
+    'crispy_forms',
     
 ]
 
@@ -135,3 +136,6 @@ UPLOADCARE = {
     'pub_key': UPLOADCARE_PUBLIC_KEY,
     'secret': UPLOADCARE_SECRET_KEY,
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+

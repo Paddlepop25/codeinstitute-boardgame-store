@@ -1,28 +1,17 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'styles/styles.css' %}" type="text/css" />
-</head>
-<body>
-    <h1>Games</h1>
-    <ul>
+{% extends 'base.html' %} 
+
+{%block content %}
+<h1>Games</h1>
+<ul>
     {% for game in all_games %}
-        <li>
-        {{game.name}}
-        ${{game.price}}
+    <li>
+        {{game.name}} ${{game.price}}
         <a href="{% url 'update_game' game_id=game.id %}">Edit</a>
-        <a href="{% url 'confirm_delete' game_id=game.id %}">Delete</a>
-        {%if game.image %}
-        <img src="{{game.image.cdn_url}}"/>
-        {%endif%}
-        </li>    
+        <a href="{% url 'confirm_delete' game_id=game.id %}">Delete</a> {%if game.image %}
+        <img src="{{game.image.cdn_url}}" /> {%endif%}
+    </li>
     {% endfor %}
-    </ul>
-    <a href="{% url 'create_game' %}">Create New Game</a>
-</body>
-</html>
+</ul>
+<a href="{% url 'create_game' %}">Create New Game</a> 
+
+{%endblock%}
