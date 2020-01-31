@@ -1,4 +1,5 @@
 from django.db import models
+from pyuploadcare.dj.models import ImageField
 
 # Create your models here.
 class Game(models.Model):
@@ -15,7 +16,7 @@ class Game(models.Model):
     price = models.DecimalField(default=0, max_digits=5, decimal_places=2, blank=False)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
     # discount = models.ManyToManyField('Discount')
-    
+    image = ImageField(null=True)
     
     def __str__(self):
         return "{} x {}".format(self.name, self.stock_left)
