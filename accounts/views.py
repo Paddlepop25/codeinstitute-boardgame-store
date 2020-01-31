@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from .forms import LoginForm, RegistrationForm
+from .models import MyUser
 
 # Create your views here.
 def index(request):
@@ -43,7 +44,11 @@ def login(request):
     
 @login_required        
 def profile(request):
-    return render(request, 'accounts/profile.template.html')
+    User = MyUser
+    user = User.objects.get(email=request.user.email)
+    return render(request, 'accounts/profile.template.html', {
+        'user' : user
+    })
     
 def register(request):
     # when user submit form
@@ -61,7 +66,7 @@ def register(request):
             return redirect(reverse('user_index'))
         else:    
             messages.error(request, "Sorry, we're unable to register your account")
-            return redirect(reverse('index'))
+            return redirect(reverse('user_index'))
             
     else:
         # if registration fail
