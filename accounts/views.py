@@ -65,7 +65,7 @@ def register(request):
             messages.success(request, "Registration is successful. You can now do many things")
             return redirect(reverse('user_index'))
         else:    
-            messages.error(request, "Sorry, we're unable to register your account")
+            messages.error(request, "Sorry, we're unable to register your account.")
             return redirect(reverse('user_index'))
             
     else:
