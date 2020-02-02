@@ -67,7 +67,7 @@ def register(request):
         else:    
             messages.error(request, "Sorry, we're unable to register your account.")
             print(messages.error)
-            return redirect(reverse('user_index'))
+            return redirect(reverse('home'))
             
     else:
         # if registration fail
@@ -75,3 +75,6 @@ def register(request):
         return render(request, 'accounts/register.template.html', {
             'form': register_form
     })    
+    
+def my_account(request):
+    return render(request, 'accounts/my_account.template.html')    

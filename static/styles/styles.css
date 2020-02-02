@@ -1,3 +1,20 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.top-row,a {
+    color: orange;
+}
+
+.my-account {
+    text-align: right;
+}
+
+.my-account li {
+    list-style-type: none;
+}
+
 img {
-    width: 50%;
+    width: 20%;
 }

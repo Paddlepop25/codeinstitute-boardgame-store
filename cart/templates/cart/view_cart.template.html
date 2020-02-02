@@ -6,7 +6,13 @@
     {%for id,game in shopping_cart.items %}
         <li>
             {{game.name}}<br/>
-            ${{game.price}} | <a href="{% url 'remove_from_cart' game_id=id %}">Remove</a>
+            ${{game.price}}
+            
+            {%if game.image %}
+            <img src="{{game.image.cdn_url}}" /> 
+            {%endif%}
+            
+            <a href="{% url 'remove_from_cart' game_id=id %}">Remove</a>
         </li>
     {%endfor%}
 </ul>
