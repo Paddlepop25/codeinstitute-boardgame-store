@@ -30,5 +30,6 @@ urlpatterns = [
     # path('user/profile', profile, name='profile'),
     # path('user/register', register, name='register'),
     path('cart/', include('cart.urls')),
+    path('checkout/', include('checkout.urls')),
     
 ]

@@ -16,7 +16,8 @@ def add_to_cart(request, game_id):
         cart[game_id] = {
             'id':game_id,
             'name': game.name,
-            'price': 99
+            'price': str(game.price),
+            'image_url':game.image.cdn_url
             }
         
         # save the cart back to sessions

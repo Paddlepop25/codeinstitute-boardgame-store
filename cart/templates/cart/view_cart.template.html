@@ -8,9 +8,9 @@
             {{game.name}}<br/>
             ${{game.price}}
             
-            {%if game.image %}
-            <img src="{{game.image.cdn_url}}" /> 
-            {%endif%}
+            {%if game.image_url %}
+            <img src="{{game.image_url}}" /> 
+            {% endif%}
             
             <a href="{% url 'remove_from_cart' game_id=id %}">Remove</a>
         </li>
