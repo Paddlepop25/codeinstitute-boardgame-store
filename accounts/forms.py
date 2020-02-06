@@ -10,7 +10,7 @@ class LoginForm(forms.Form):
     
 class RegistrationForm(UserCreationForm):
     password1 = forms.CharField(label="Password", widget=forms.PasswordInput)
-    password2 = forms.CharField(label="Password Confirmation", widget=forms.PasswordInput)
+    password2 = forms.CharField(label="Re-enter Password", widget=forms.PasswordInput)
     
     class Meta:
         model = MyUser

@@ -11,148 +11,161 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'styles/styles.css' %}" type="text/css" />
-  <title>The Board Game Store</title>
+  <title>{%block title%} {%endblock%}</title>
 </head>
 
 <body>
-  
-<div class="container-fluid top-row">
-  <div class="row bg-dark">
+
+  <div class="container-fluid top-row">
+    <div class="row bg-dark">
       <div class="col free-shipping">
         <p>Free Shipping on All Orders Over $100!</p>
       </div>
-      
+
       <div class="search-form">
-            <form method="GET" class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search for Games" aria-label="Search">
-      <a class="my-2 my-sm-0" href="" type="submit"><i class="fas fa-search"></i></a>
-    </form>
+        <form method="GET" class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search for Games" aria-label="Search">
+          <a class="my-2 my-sm-0" href="" type="submit"><i class="fas fa-search"></i></a>
+        </form>
       </div>
 
-      <div class="col my-account">
-        <a href="{% url 'my_account' %}">MY ACCOUNT</a>
-          <ul>
-        {% if user.is_authenticated %}
-        <!--<li><a href='{% url 'profile' %}'/>PROFILE</a>-->
-          <li><a href='{% url 'logout' %}'/>LOGOUT</a>
-          </li>
-            <!--<li><a href='{% url 'password_reset' %}'>Reset password</a></li>-->
+      <div class="col account">
+        <ul>
+          {% if not user.is_authenticated %}
+          <li><a href="{% url 'register' %}">New User? REGISTER</a></li>
+          <li><a href="{% url 'login' %}">LOGIN</a></li>
           {% endif %}
-    </ul>
+
+
+          {% if user.is_authenticated %}
+          <!--<li><a href='{% url 'profile' %}'/>PROFILE</a>-->
+          <!--<li><a href='{% url 'password_reset' %}'>Reset password</a></li>-->
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown">Account</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+          <li><a href="{% url 'logout' %}" />LOGOUT</a>
+          </li>
+          {% endif %}
+        </ul>
       </div>
-      
+
+    </div>
   </div>
-</div>
 
 
   <!--Start of navbar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="{% url 'home' %}">Home</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fas fa-heart"></i> Wishlist</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i> Cart ({{number_of_items}})</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'my_account' %}"><i class="fas fa-user-circle"></i> Account</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fas fa-map-marker-alt"></i> Contact</a>
-      </li>
-      
-      
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-heart"></i> Wishlist</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i> Cart ({{number_of_items}})</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'my_account' %}"><i class="fas fa-user-circle"></i> Account</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-map-marker-alt"></i> Contact</a>
+        </li>
+
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-puzzle-piece"></i>
           Games
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Board Games</a>
-          <a class="dropdown-item" href="#">Card Games</a>
-          <a class="dropdown-item" href="#">Party Games</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{% url 'show_games' %}">Shop</a>
-        </div>
-      </li>
-    </ul>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Board Games</a>
+            <a class="dropdown-item" href="#">Card Games</a>
+            <a class="dropdown-item" href="#">Party Games</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'show_games' %}">Shop</a>
+          </div>
+        </li>
+      </ul>
 
-  </div>
-</nav>
+    </div>
+  </nav>
 
 
   <!--End of navbar-->
 
-  <div class="header">
+  <!--<div class="header">-->
+  <!--  <div>-->
+  <!--    Logged in as: {{ request.user.username }}-->
+  <!--    <br>-->
+
+  <!--  </div>-->
+
+  <!--flash messages-->
+  <hr> {% if messages %}
+
+  <div class="alert alert-success">
     <div>
-      Logged in as: {{ request.user.username }}
-      <br>
-      
+      {% for message in messages %} {{ message }} {% endfor %}
     </div>
+    {% endif %}
+  </div>
+  <!--user options like login, signout, etc -->
+  <!--<ul>-->
+  <!--{% if not user.is_authenticated %}-->
+  <!--<li><a class="text-dark" href='{% url 'login' %}'/>Login</a>-->
+  <!--</li>-->
+  <!--<li><a class="text-dark" href='{% url 'register' %}'/>Register</a>-->
+  <!--  {% endif %} -->
 
-    <!--flash messages-->
-    <hr> {% if messages %}
-
-    <div class="alert alert-success">
-      <div>
-        {% for message in messages %} {{ message }} {% endfor %}
-      </div>
-      {% endif %}
-    </div>
-    <!--user options like login, signout, etc -->
-    <!--<ul>-->
-      <!--{% if not user.is_authenticated %}-->
-      <!--<li><a class="text-dark" href='{% url 'login' %}'/>Login</a>-->
-      <!--</li>-->
-      <!--<li><a class="text-dark" href='{% url 'register' %}'/>Register</a>-->
-      <!--  {% endif %} -->
-        
-        <!--{% if user.is_authenticated %}-->
-        <!--<li><a href='{% url 'profile' %}'/>Profile</a>-->
-        <!--  <li><a href='{% url 'logout' %}'/>Logout</a>-->
-        <!--    <li><a href='{% url 'password_reset' %}'>Reset password</a></li>-->
-        <!--  </li>-->
-        <!--  {% endif %}-->
-    <!--</ul>-->
+  <!--{% if user.is_authenticated %}-->
+  <!--<li><a href='{% url 'profile' %}'/>Profile</a>-->
+  <!--  <li><a href='{% url 'logout' %}'/>Logout</a>-->
+  <!--    <li><a href='{% url 'password_reset' %}'>Reset password</a></li>-->
+  <!--  </li>-->
+  <!--  {% endif %}-->
+  <!--</ul>-->
 
   </div>
 
   <div class='container'>
-    <h1>{%block page_title%}{%endblock%}</h1>
+    <!--<h1>{%block page_title%}{%endblock%}</h1>-->
     {%block content%}{%endblock%}
   </div>
-  
+
   <footer class="footer">
     <div class="container-fluid">
       <div class="row">
         <div class="col">
           <p>Start searching</p>
-              <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search for Games" aria-label="Search">
-      <a class="my-2 my-sm-0" href="" type="submit"><i class="fas fa-search"></i></a>
-    </form>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search for Games" aria-label="Search">
+            <a class="my-2 my-sm-0" href="" type="submit"><i class="fas fa-search"></i></a>
+          </form>
         </div>
       </div>
       <div class="row">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">Checkout</a></li>
-        <li><a href="#">Terms & Conditions</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Contact & Locate Us</a></li>
-      </ul>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Checkout</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Contact & Locate Us</a></li>
+        </ul>
       </div>
       <div class="row"></div>
     </div>
   </footer>
-  
+
   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
   <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>-->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

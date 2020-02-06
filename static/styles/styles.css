@@ -3,22 +3,33 @@ body {
     box-sizing: border-box;
 }
 
+
+/*Top row of base.html*/
 .top-row,a {
     color: orange;
 }
 
-.my-account {
+.account {
     text-align: right;
 }
 
-.my-account li {
+.account li {
     list-style-type: none;
 }
+
+
+
 
 img {
     width: 20%;
 }
 
+/*Footer*/
 .footer {
-    background: green;
+    background: #F5F2F2;
 }
+    
+.footer li {
+    list-style-type: none;
+    float: left;
+}    

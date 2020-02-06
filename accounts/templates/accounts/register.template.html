@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 
-{%block page_title%} Register {%endblock%}
+{%block title%} New User | Register {%endblock%}
 {% load crispy_forms_tags %}
 
 {%block content%}
-<p>If you already have an account, you can <a href="{% url 'login' %}">sign in </a></p>
+
+<p>Have an account? Please <a href="{% url 'login' %}">sign in </a></p>
 
 <form method='POST'>
     {% csrf_token %}
     {{ form|crispy }}
     <input type='submit' value='Register' />
 </form>
+
+
 {%endblock%}
     
