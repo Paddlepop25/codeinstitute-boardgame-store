@@ -39,13 +39,13 @@
         {%endfor%}
         <tr class="total_price">
             <th scope="row">Order Total: </th>
-            <td>$100</td>
+            <td colspan="12">$100</td>
         </tr>
 
         <tr>
-            <td colspan="5">
+            <td colspan="12">
                 <a class='btn btn-warning float-right ml-2' href='/checkout/'>Proceed to checkout</a>
-                <a class='btn btn-primary float-right' href='/'>Continue shopping</a>
+                <a class='btn btn-primary float-right' href='{% url 'show_games' %}'>Continue shopping</a>
             </td>
         </tr>
     </tbody>
