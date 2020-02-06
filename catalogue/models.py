@@ -14,7 +14,7 @@ class Game(models.Model):
     image = ImageField(null=True, blank=True)
     
     def __str__(self):
-        return "{} x {}".format(self.name, self.stock_left)
+        return "{} x {} ({})".format(self.name, self.stock_left, self.category)
         
 class Category(models.Model):
     name = models.CharField(max_length=50, blank=False)

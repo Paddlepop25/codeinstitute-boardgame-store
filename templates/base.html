@@ -40,15 +40,8 @@
           {% if user.is_authenticated %}
           <!--<li><a href='{% url 'profile' %}'/>PROFILE</a>-->
           <!--<li><a href='{% url 'password_reset' %}'>Reset password</a></li>-->
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown">Account</button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div role="separator" class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
-          <li><a href="{% url 'logout' %}" />LOGOUT</a>
+          <li><a href="{% url 'profile' %}" />MY ACCOUNT</a>
+          <li><a href="{% url 'logout_confirm' %}" />LOGOUT</a>
           </li>
           {% endif %}
         </ul>
@@ -110,13 +103,15 @@
   <!--  </div>-->
 
   <!--flash messages-->
+  <div class="container">
   <hr> {% if messages %}
-
   <div class="alert alert-success">
     <div>
       {% for message in messages %} {{ message }} {% endfor %}
+    <a href="#" class="float-right">X</a>
     </div>
     {% endif %}
+  </div>
   </div>
   <!--user options like login, signout, etc -->
   <!--<ul>-->

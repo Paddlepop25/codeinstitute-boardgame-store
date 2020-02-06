@@ -48,4 +48,5 @@ def remove_from_cart(request, game_id):
         request.session['shopping_cart'] = cart
         messages.success(request, "Item removed from cart successfully!")
         
-    return redirect('/catalogue/')    
+    # return redirect('/catalogue/')    
+        return render(request, 'cart/view_cart.template.html')

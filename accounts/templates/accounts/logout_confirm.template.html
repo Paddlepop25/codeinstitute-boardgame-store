@@ -1,0 +1,9 @@
+{% extends 'base.html' %} 
+{% block page_title %} Logout {% endblock %}
+
+{%block content%}
+<h1>Logout</h1>
+<p>Are you sure you want to logout?</p>
+<a href="{% url 'logout' %}" class="btn btn-success mb-3">LOGOUT</a>
+<a href="{% url 'home' %}" class="btn btn-danger mb-3">CANCEL</a>
+{% endblock %}

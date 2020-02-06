@@ -1,7 +1,42 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %} {% load static %} {%block content%}
 
-{%block content%}
-<h1>Bubble Tea!</h1>
-<img src="{%static 'bbt.jpg' %}"></img>
+<!--<h1>Featured Products</h1>-->
+
+<!--<h1>Best Sellers</h1>-->
+
+<!--<h1>Coming Soon</h1>-->
+
+
+<!--<ul>-->
+<!--    {% for game in all_games %}-->
+<!--    <li>-->
+<!--        {{game.name}} ${{game.price}}-->
+
+<!--        {%if game.image %}-->
+<!--        <img src="{{game.image.cdn_url}}" /> -->
+<!--        {%endif%}-->
+<!--        <a href="{% url 'update_game' game_id=game.id %}">Edit</a>-->
+<!--        <a href="{% url 'add_to_cart' game_id=game.id %}">Add to Cart</a>-->
+<!--    </li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+
+<section class="games">
+    <div class="row">
+        {% for game in all_games %}
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{game.image.cdn_url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{game.name}}</h5>
+                    <p class="card-text">${{game.price}}</p>
+                    <a href="{% url 'add_to_cart' game_id=game.id %}" class="">ADD TO CART</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>
+
 {%endblock%}

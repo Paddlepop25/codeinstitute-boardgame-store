@@ -4,15 +4,14 @@
 {% load crispy_forms_tags %}
 
 {%block content%}
-
-<p>Have an account? Please <a href="{% url 'login' %}">sign in </a></p>
+<h1>Register an acoount</h1>
+<p>Have an account? Please <a href="{% url 'login' %}">login.</a></p>
 
 <form method='POST'>
     {% csrf_token %}
     {{ form|crispy }}
-    <input type='submit' value='Register' />
+    <button class="btn btn-primary mb-3" type='submit'>Register &raquo;</button>
 </form>
-
 
 {%endblock%}
     

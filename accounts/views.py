@@ -8,10 +8,17 @@ from .models import MyUser
 def index(request):
     return render(request, 'accounts/index.template.html')
 
+def logout_confirm(request):
+    return render(request, 'accounts/logout_confirm.template.html')
+
+# def password_reset(request):
+#     return render(request, 'accounts/password_reset.template.html')
+
 def logout(request):
     auth.logout(request)
-    messages.success(request, "You have been logged out") # flash message
-    return redirect( reverse('user_index'))
+    messages.success(request, "You have logged out.") # flash message
+    # return redirect( reverse('user_index'))
+    return redirect( reverse('home'))
 
 def login(request):
     if request.method == 'POST':
@@ -28,8 +35,9 @@ def login(request):
         if user:
             # log the user in
             auth.login(user=user, request=request)
-            messages.success(request, 'You have logged in successfully') # flash message
-            return redirect(reverse('user_index'))
+            messages.success(request, 'Successfully signed in as ' + username) # flash message
+            # return redirect(reverse('user_index'))
+            return redirect( reverse('home'))
         else:
             # if user is None, show flash message
             login_form.add_error(None, "Invalid user name or password")

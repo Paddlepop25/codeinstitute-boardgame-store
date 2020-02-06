@@ -15,13 +15,19 @@ body {
 
 .account li {
     list-style-type: none;
+    float: left;
+    margin-right: 5px;
 }
 
+/* Games' card*/
+.card {
+    /*border: none;*/
+    height: 30rem;
+}
 
-
-
+/* Shopping Cart page*/
 img {
-    width: 20%;
+    width: 4rem;
 }
 
 /*Footer*/
@@ -32,4 +38,5 @@ img {
 .footer li {
     list-style-type: none;
     float: left;
+    margin-right: 5px;
 }    
