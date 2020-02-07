@@ -1,30 +1,22 @@
 {% extends 'base.html' %} 
-{% block page_title %} Games Catalogue {% endblock %}
+{% load crispy_forms_tags %} 
+{% block page_title %} Games Catalogue {% endblock %} 
 
 {%block content %}
 <h1>Games</h1>
-<!--<ul>-->
-<!--    {% for game in all_games %}-->
-<!--    <li>-->
-<!--        {{game.name}} ${{game.price}}-->
-
-<!--        {%if game.image %}-->
-<!--        <img src="{{game.image.cdn_url}}" /> -->
-<!--        {%endif%}-->
-<!--        <a href="{% url 'update_game' game_id=game.id %}">Edit</a>-->
-<!--        <a href="{% url 'add_to_cart' game_id=game.id %}">Add to Cart</a>-->
-<!--    </li>-->
-<!--    {% endfor %}-->
-<!--</ul>-->
 <a href="{% url 'create_game' %}">Create New Game</a>
 
+<form method='GET'>
+    {{search_form|crispy}}
+    <input type='submit' value='Search' class='btn btn-primary' />
+</form>
 
 <section class="games">
     <div class="row">
         {% for game in all_games %}
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="card" style="width: 18rem;">
-                <img src="{{game.image.cdn_url}}" class="card-img-top" alt="...">
+                <a href=""><img src="{{game.image.cdn_url}}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box"></a>
                 <div class="card-body">
                     <h5 class="card-title">{{game.name}}</h5>
                     <p class="card-text">${{game.price}}</p>

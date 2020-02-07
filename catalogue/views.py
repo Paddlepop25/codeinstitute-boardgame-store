@@ -1,12 +1,26 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import Game
-from .forms import GameForm
+from .forms import GameForm, GameSearchForm
 
 # Create your views here.
 def show_games(request):
+    search_form = GameSearchForm(request.GET)
     all_games = Game.objects.all()
+    
+    if search_form.data.get('search_terms'):
+        # like SELECT * FROM courses WHERE title LIKE '%react%'
+        all_games = all_games.filter(name__contains=search_form.data['search_terms'])
+
+    if request.GET.get('min_cost'):
+        all_games = all_games.filter(price__gte=request.GET.get('min_cost'))
+
+
+    if request.GET.get('max_cost'):
+        all_games = all_games.filter(price__lte=request.GET.get('max_cost'))
+        
     return render(request, 'catalogue/games.template.html', {
-        'all_games':all_games
+        'all_games':all_games,
+        'search_form':search_form
     })
     
 def create_game(request):
@@ -54,3 +68,4 @@ def actually_delete_game(request, game_id):
     game_being_deleted = get_object_or_404(Game, pk=game_id)
     game_being_deleted.delete()
     return redirect(reverse('show_games'))     
+

@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from catalogue.models import Game
 
@@ -49,7 +50,8 @@ def remove_from_cart(request, game_id):
         
     # return redirect('/catalogue/')    
         return render(request, 'cart/view_cart.template.html')
-        
+
+@login_required        
 def checkout_form(request):
     return render(request, 'cart/checkout_form.template.html')        
     

@@ -21,7 +21,6 @@ class Category(models.Model):
     
     def __str__(self):
         return "{} (id: {})".format(self.name, self.id)
-        #return self.name + "( id:"+self.id+")"  
         
 # class Discount(models.Model):
 #     percent = models.IntegerField(blank=True)
