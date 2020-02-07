@@ -31,5 +31,5 @@ urlpatterns = [
     # path('user/register', register, name='register'),
     path('cart/', include('cart.urls')),
     path('checkout/', include('checkout.urls')),
-    
+    path('info_pages/', include('info_pages.urls')),
 ]
