@@ -8,4 +8,4 @@ def privacy_policy(request):
     return render(request, "info_pages/privacy_policy.template.html")
 
 def refund_policy(request):
-    return render(request, "refund_policy.template.html")
+    return render(request, "info_pages/refund_policy.template.html")

@@ -5,7 +5,7 @@ from home.views import home
 
 urlpatterns = [
     # path('', index, name='user_index'),
-    path('', home, name='home'),
+    # path('', home, name='home'),
     path('logout/', logout, name='logout'),
     path('login/', login, name='login'),
     path('logout_confirm/', logout_confirm, name='logout_confirm'),

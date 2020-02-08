@@ -29,12 +29,11 @@ class RegistrationForm(UserCreationForm):
             
         return user_email # django requirement, email user typed in form will be returned if not been used before 
         
-    # when this is uncommented, can't register new users    
-    # def clean_password1(self):
-    #     password1 = self.cleaned_data.get('password1')
-    #     password2 = self.cleaned_data.get('password2')
-
-    #     if password1 != password2:
-    #         raise forms.ValidationError("Password does not match")
-    
-    #     return password1
+    def clean_password1(self):
+        password1 = self.cleaned_data.get('password1')
+        password2 = self.cleaned_data.get('password2')
+            
+        if password1 != password2:
+            raise forms.ValidationError("Password does not match")
+        
+        return password1

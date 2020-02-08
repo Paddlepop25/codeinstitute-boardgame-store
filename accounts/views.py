@@ -65,17 +65,22 @@ def register(request):
         if form.is_valid(): # django check through fields one by one to validate. check email will run clean email
             form.save() # registration is successful, form will be saved
         
-        # log in user
-        user = auth.authenticate(username=request.POST['username'], password=request.POST['password1'])
+            # log in user
+            user = auth.authenticate(username=request.POST['username'], password=request.POST['password1'])
         
-        if user:
-            auth.login(user=user, request=request)
-            messages.success(request, "Registration is successful. You can checkout")
-            return redirect(reverse('user_index'))
-        else:    
-            messages.error(request, "Sorry, we're unable to register your account.")
-            print(messages.error)
-            return redirect(reverse('home'))
+            if user:
+                auth.login(user=user, request=request)
+                messages.success(request, "Registration is successful. You can checkout")
+                return redirect(reverse('home'))
+            else:    
+                messages.error(request, "Sorry, we're unable to register your account.")
+                # print(messages.error)
+                return redirect(reverse('home'))
+        
+        else:
+            return render(request, 'accounts/register.template.html', {
+                'form':form
+            })
             
     else:
         # if registration fail

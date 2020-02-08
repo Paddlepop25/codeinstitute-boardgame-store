@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-# from accounts.views import index as accounts_index, logout, login, profile, register
 
 # when user go to user/profile url, it sill call the register function, and we'll call this route register
 urlpatterns = [
@@ -24,11 +23,6 @@ urlpatterns = [
     path('catalogue/', include('catalogue.urls')),
     path('user/', include('accounts.urls')),
     path('user/', include('django.contrib.auth.urls')),
-    # path('user/', accounts_index, name='user_index'),
-    # path('user/logout', logout, name='logout'),
-    # path('user/login', login, name='login'),
-    # path('user/profile', profile, name='profile'),
-    # path('user/register', register, name='register'),
     path('cart/', include('cart.urls')),
     path('checkout/', include('checkout.urls')),
     path('info_pages/', include('info_pages.urls')),
