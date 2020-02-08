@@ -18,12 +18,12 @@ def checkout(request):
     # generate the line_items
     for id,game in cart.items():
         # For each item in the cart, get its details from the database
-        game = get_object_or_404(Game, pk=id)
+        game_from_db = get_object_or_404(Game, pk=id)
         line_items.append({
-            'name': game.name,
-            'amount': int(game.price*100), #convert to cents, in integer
+            'name': game_from_db.name,
+            'amount': int(game_from_db.price*100), #convert to cents, in integer
             'currency':'sgd',
-            'quantity':1
+            'quantity':game['quantity']
         })
     
     #generate the session
@@ -44,6 +44,7 @@ def checkout(request):
     })
     
 def checkout_success(request):
+    request.session['shopping_cart'] = {}
     return HttpResponse("Checkout success")
     
 def checkout_cancelled(request):

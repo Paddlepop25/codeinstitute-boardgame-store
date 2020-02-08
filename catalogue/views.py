@@ -4,23 +4,28 @@ from .forms import GameForm, GameSearchForm
 
 # Create your views here.
 def show_games(request):
-    search_form = GameSearchForm(request.GET)
+    # search_form = GameSearchForm(request.GET)
     all_games = Game.objects.all()
     
-    if search_form.data.get('search_terms'):
-        # like SELECT * FROM courses WHERE title LIKE '%react%'
-        all_games = all_games.filter(name__contains=search_form.data['search_terms'])
+    # if search_form.data.get('search_terms'):
+    #     # like SELECT * FROM courses WHERE title LIKE '%react%'
+    #     all_games = all_games.filter(name__contains=search_form.data['search_terms'])
 
-    if request.GET.get('min_cost'):
-        all_games = all_games.filter(price__gte=request.GET.get('min_cost'))
+    # if request.GET.get('min_cost'):
+    #     all_games = all_games.filter(price__gte=request.GET.get('min_cost'))
 
 
-    if request.GET.get('max_cost'):
-        all_games = all_games.filter(price__lte=request.GET.get('max_cost'))
+    # if request.GET.get('max_cost'):
+    #     all_games = all_games.filter(price__lte=request.GET.get('max_cost'))
+        
+        
+    if request.GET.get('search_terms'):
+        search_terms = request.GET.get('search_terms')
+        all_games = all_games.filter(name__contains=search_terms)
         
     return render(request, 'catalogue/games.template.html', {
         'all_games':all_games,
-        'search_form':search_form
+        # 'search_form':search_form
     })
     
 def create_game(request):

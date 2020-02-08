@@ -18,15 +18,20 @@ def add_to_cart(request, game_id):
             'id':game_id,
             'name': game.name,
             'price': str(game.price),
-            'image_url':game.image.cdn_url
+            'image_url':game.image.cdn_url,
+            'quantity':1
             }
         
         # save the cart back to sessions
         request.session['shopping_cart'] = cart
         messages.success(request, "Game has been added to your cart!")
-        return redirect('/catalogue/')
+        return redirect('/cart/')
+        
     else:
-        return redirect('/catalogue/')
+        cart[game_id]['quantity']+=1
+        request.session['shopping_cart'] = cart
+        print(cart[game_id]['quantity'])
+        return redirect('/cart/')
 
 def view_cart(request):
     # retrieve the cart

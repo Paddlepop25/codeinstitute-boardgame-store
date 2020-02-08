@@ -23,8 +23,8 @@
       </div>
 
       <div class="search-form">
-        <form method="GET" class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search for Games" aria-label="Search">
+        <form method="GET" class="form-inline my-2 my-lg-0" action="{% url 'show_games' %}">
+          <input name="search_terms" class="form-control mr-sm-2" type="search" placeholder="Search for Games">
           <a class="my-2 my-sm-0" href="" type="submit"><i class="fas fa-search"></i></a>
         </form>
       </div>
@@ -102,14 +102,23 @@
   <!--flash messages-->
   <div class="container">
     <hr> {% if messages %}
-    <div class="alert alert-success">
+    <div class="alert alert-success"  \role="alert">
       <div>
         {% for message in messages %} {{ message }} {% endfor %}
-        <a href="#" class="float-right">X</a>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
       </div>
       {% endif %}
     </div>
   </div>
+
+  
+  
+  
+  
+  
+  
   <!--user options like login, signout, etc -->
   <!--<ul>-->
   <!--{% if not user.is_authenticated %}-->
@@ -144,10 +153,12 @@
 
       <div class="row">
         <div class="col">
-          <form class="">
-            <input class="" type="search" placeholder="Search for Games">
-            <a class="" href="" type="submit"><i class="fas fa-search"></i></a>
-          </form>
+          <div class="search-form">
+        <form method="GET" class="form-inline my-2 my-lg-0" action="{% url 'show_games' %}">
+          <input name="search_terms" class="form-control mr-sm-2" type="search" placeholder="Search for Games">
+          <a class="my-2 my-sm-0" href="" type="submit"><i class="fas fa-search"></i></a>
+        </form>
+      </div>
         </div>
       </div>
 
