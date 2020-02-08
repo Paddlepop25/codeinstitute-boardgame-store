@@ -36,4 +36,4 @@ class RegistrationForm(UserCreationForm):
         if password1 != password2:
             raise forms.ValidationError("Password does not match")
         
-        return password1
+        return password2
