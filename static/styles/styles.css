@@ -10,12 +10,28 @@ body {
 }
 
 .top-row .free-shipping {
-    margin: 10px auto;
+    margin: 0 auto;
+    margin-top: 15px;
 }
 
 .top-row .search_games {
     margin: 0 auto;
     margin-bottom: 15px;
+}
+
+.top-row .account {
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.top-row .account li {
+    list-style-type: none;
+    float: left;
+    margin-right: 10px;
+}
+
+.top-row .account a {
+    color: orange;
 }
 
 /*.account {*/
