@@ -10,13 +10,24 @@ body {
 }
 
 .account {
-    text-align: right;
+    /*text-align: right;*/
+    background: red;
 }
 
 .account li {
     list-style-type: none;
     float: left;
-    margin-right: 5px;
+    /*margin-right: 5px;*/
+}
+
+.account li:nth-last-child(2) {
+    background: blue;
+    /*margin-left: 10px;*/
+}
+
+.account li:nth-last-child(1) {
+    background: green;
+    margin-left: 10px;
 }
 
 /* Games' card*/

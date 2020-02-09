@@ -40,13 +40,13 @@
                 <a href="{% url 'add_to_cart' game_id=id %}"><i class="fas fa-plus ml-2"></i></a>
             </td>
             <td>${{game.price}}</td>
-            <td>$</td>
+            <td>${{total_price}}</td>
             <td><a href="{% url 'remove_from_cart' game_id=id %}" style="color: red"><i class="fas fa-trash"></i></a></td>
         </tr>
         {%endfor%}
         <tr class="total_price">
             <th scope="row">Order Total: </th>
-            <td colspan="12">$100</td>
+            <td colspan="12">$grand_total</td>
         </tr>
 
         <tr>
