@@ -5,30 +5,39 @@ body {
 
 
 /*Top row of base.html*/
-.top-row,a {
+.top-row {
     color: orange;
 }
 
-.account {
+.top-row .free-shipping {
+    margin: 10px auto;
+}
+
+.top-row .search_games {
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+/*.account {*/
     /*text-align: right;*/
-    background: red;
-}
+/*    background: red;*/
+/*}*/
 
-.account li {
-    list-style-type: none;
-    float: left;
-    /*margin-right: 5px;*/
-}
+/*.account li {*/
+/*    list-style-type: none;*/
+/*    float: left;*/
+/*    margin-right: 5px;*/
+/*}*/
 
-.account li:nth-last-child(2) {
-    background: blue;
-    /*margin-left: 10px;*/
-}
+/*.account li:nth-last-child(2) {*/
+/*    background: blue;*/
+/*    margin-left: 10px;*/
+/*}*/
 
-.account li:nth-last-child(1) {
-    background: green;
-    margin-left: 10px;
-}
+/*.account li:nth-last-child(1) {*/
+/*    background: green;*/
+/*    margin-left: 10px;*/
+/*}*/
 
 /* Games' card*/
 .card {
