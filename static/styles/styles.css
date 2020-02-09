@@ -4,7 +4,7 @@ body {
 }
 
 
-/*Top row of base.html*/
+/* Top row of base.html */
 .top-row {
     color: orange;
 }
@@ -34,26 +34,10 @@ body {
     color: orange;
 }
 
-/*.account {*/
-    /*text-align: right;*/
-/*    background: red;*/
-/*}*/
-
-/*.account li {*/
-/*    list-style-type: none;*/
-/*    float: left;*/
-/*    margin-right: 5px;*/
-/*}*/
-
-/*.account li:nth-last-child(2) {*/
-/*    background: blue;*/
-/*    margin-left: 10px;*/
-/*}*/
-
-/*.account li:nth-last-child(1) {*/
-/*    background: green;*/
-/*    margin-left: 10px;*/
-/*}*/
+/* Navbar of base.html */
+.navbar li {
+    text-align: center
+}
 
 /* Games' card*/
 .card {
