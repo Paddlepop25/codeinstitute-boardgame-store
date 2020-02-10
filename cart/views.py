@@ -7,7 +7,6 @@ from catalogue.models import Game
 def view_cart(request):
     # retrieve the cart
     cart = request.session.get('shopping_cart', {})
-    
     return render(request, 'cart/view_cart.template.html', {
         'shopping_cart':cart
     })
@@ -39,17 +38,43 @@ def add_to_cart(request, game_id):
     else:
         cart[game_id]['quantity']+=1
         request.session['shopping_cart'] = cart
-        total_price = round(int(cart[game_id]['quantity']) * float(cart[game_id]['price']),2)
-        return render(request, 'cart/view_cart.template.html', {
-            'total_price':total_price
-        })
+        return render(request, 'cart/view_cart.template.html')
         
-def minus_from_cart(request, game_id):
-    print("Hi")
+def total_price(request, game_id):
+    game = get_object_or_404(Game, pk=game_id)
     cart = request.session.get('shopping_cart', {})
-    
-    if game_id not in cart:
-        game = get_object_or_404(Game, pk=game_id)
+    cart[game_id] = {
+    'id':game_id,
+    'name': game.name,
+    'price': str(game.price),
+    'image_url':game.image.cdn_url,
+    'quantity':cart['quantity'],
+    'total_price':round(int(cart[game_id]['quantity']) * float(cart[game_id]['price']),2)
+    }
+    request.session['shopping_cart'] = cart
+    print(cart[game_id]['quantity'])        
+    return render(request, 'cart/view_cart.template.html', {
+            'total_price':total_price
+        })        
+     
+def grand_total_price(request):
+    cart = request.session.get('shopping_cart')
+    # print(cart)
+    total_price = len(cart['total_price'])
+    grand_total_price = 0
+    if total_price > 0:
+        for price in total_price:
+            grand_total_price += price
+    else:
+        grand_total_price = 0
+    return render(request, 'cart/view_cart.template.html', {
+    'grand_total_price':grand_total_price
+    })
+
+def minus_from_cart(request, game_id):
+    cart = request.session.get('shopping_cart', {})
+    if game_id in cart:
+        game = get_object_or_404(Game, pk=game_id) 
         cart[game_id] = {
             'id':game_id,
             'name': game.name,
@@ -57,39 +82,15 @@ def minus_from_cart(request, game_id):
             'image_url':game.image.cdn_url,
             'quantity':1,
             }
-        
+        cart[game_id]['quantity']-=1
         # save the cart back to sessions
         request.session['shopping_cart'] = cart
-        messages.success(request, "Game has been removed from your cart")
+        messages.success(request, "Game has been removed from your cart.")
         return redirect('/cart/')
-        
-    else:
-        cart[game_id]['quantity']-=1
-        request.session['shopping_cart'] = cart
-        total_price = round(int(cart[game_id]['quantity']) * float(cart[game_id]['price']),2)
-        return render(request, 'cart/view_cart.template.html', {
-            'total_price':total_price
-        })        
-        
-def grand_total_price(request, game_id):
-    cart = request.session.get('shopping_cart')
-    print("hi")
-    request.session['shopping_cart'] = cart
-    total_price = len(cart.total_price)
-    
-    grand_total_price = 0
-    if total_price > 0:
-        for price in total_price:
-            grand_total_price += price
-    # print(int(cart[game_id]['quantity']))
-    return render(request, 'cart/view_cart.template.html', {
-    'grand_total_price':grand_total_price
-    })
     
 def remove_from_cart(request, game_id):
     # retrieve the cart from session
     cart = request.session.get('shopping_cart',{})
-    
     # if the game is in the cart
     if game_id in cart:
         # remove it from the cart
@@ -97,8 +98,6 @@ def remove_from_cart(request, game_id):
         # save back to the session
         request.session['shopping_cart'] = cart
         messages.success(request, "Item removed from cart successfully!")
-        
-    # return redirect('/catalogue/')    
         return render(request, 'cart/view_cart.template.html')
 
 @login_required        

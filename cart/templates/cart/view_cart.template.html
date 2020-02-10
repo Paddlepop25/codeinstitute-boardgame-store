@@ -35,7 +35,7 @@
             <td><img src="{{game.image_url}}" /></td>
             <td>{{game.name}}</td>
             <td>
-                <a href=""><i class="fas fa-minus mr-2"></i></a>
+                <a href="{% url 'minus_from_cart' game_id=id %}"><i class="fas fa-minus mr-2"></i></a>
                  {{game.quantity}} 
                 <a href="{% url 'add_to_cart' game_id=id %}"><i class="fas fa-plus ml-2"></i></a>
             </td>
@@ -46,7 +46,7 @@
         {%endfor%}
         <tr class="total_price">
             <th scope="row">Order Total: </th>
-            <td colspan="12">$grand_total</td>
+            <td colspan="12">${{grand_total_price}}</td>
         </tr>
 
         <tr>

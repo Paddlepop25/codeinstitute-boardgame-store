@@ -55,7 +55,7 @@ img {
 }
 
 /*Footer*/
-.footer p,a {
+.footer p,a,small {
     color: orange;
 }
 
@@ -72,5 +72,5 @@ img {
 .footer li {
     list-style-type: none;
     float: left;
-    margin-right: 5px;
+    /*margin-right: 5px;*/
 }    
