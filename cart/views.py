@@ -66,31 +66,10 @@ def total_price(request, game_id):
             'total_price':total_price
         })        
      
-# def grand_total_price(request):
-#     cart = request.session.get('shopping_cart')
-#     # print(cart)
-#     total_price = len(cart['total_price'])
-#     grand_total_price = 0
-#     if total_price > 0:
-#         for price in total_price:
-#             grand_total_price += price
-#     else:
-#         grand_total_price = 0
-#     return render(request, 'cart/view_cart.template.html', {
-#     'grand_total_price':grand_total_price
-#     })
-
 def minus_from_cart(request, game_id):
     cart = request.session.get('shopping_cart', {})
     if game_id in cart:
         game = get_object_or_404(Game, pk=game_id) 
-        # cart[game_id] = {
-        #     'id':game_id,
-        #     'name': game.name,
-        #     'price': str(game.price),
-        #     'image_url':game.image.cdn_url,
-        #     'quantity':1,
-        #     }
         if cart[game_id]['quantity'] > 1:
             cart[game_id]['quantity']-=1
             cart[game_id]['total_price'] = round(int(cart[game_id]['quantity']) * float(cart[game_id]['price']),2)
