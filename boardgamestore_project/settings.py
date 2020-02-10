@@ -25,7 +25,7 @@ SECRET_KEY = 'v2!0s9j09c8-+2@=huc@($0&!y=m2qua1j2_bcuc60vkz@h-h('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["linda-boardgamestore.herokuapp.com/", '*']
+ALLOWED_HOSTS = ["linda-boardgamestore.herokuapp.com", '*']
 
 
 # Application definition
