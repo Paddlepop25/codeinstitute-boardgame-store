@@ -5,7 +5,7 @@ body {
 
 
 /* Top row of base.html */
-.top-row {
+.top-row p,a {
     color: orange;
 }
 
@@ -22,6 +22,10 @@ body {
 .top-row .account {
     margin: 0 auto;
     margin-bottom: 15px;
+}
+
+.top-row .hello {
+    margin: 0 auto;
 }
 
 .top-row .account li {
@@ -51,9 +55,19 @@ img {
 }
 
 /*Footer*/
-.footer {
-    background: #F5F2F2;
+.footer p,a {
+    color: orange;
 }
+
+.footer .company_name {
+    margin: 0 auto;
+    margin-top: 15px;
+}
+ 
+.footer .search_games {
+    margin: 0 auto;
+    margin-bottom: 15px;
+} 
     
 .footer li {
     list-style-type: none;

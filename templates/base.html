@@ -16,192 +16,93 @@
 
 <body>
   <div class="container-fluid top-row">
-      <div class="row bg-dark">
+    <div class="row bg-dark">
       <div class="free-shipping">
         <p>Free Shipping on All Orders Over $100!</p>
       </div>
-      </div>
-      
-      <div class="row bg-dark">
+    </div>
+
+    <div class="row bg-dark">
       <div class="search_games">
         <form method="GET" class="form-inline" action="{% url 'show_games' %}">
-        <input name="search_terms" class="form-control mr-sm-2" type="search" placeholder="Games Search">
-        <button class="btn btn-outline-warning" type="submit"><i class="fas fa-search"></i></button>
+          <input name="search_terms" class="form-control mr-sm-2" type="search" placeholder="Games Search">
+          <button class="btn btn-outline-warning" type="submit"><i class="fas fa-search"></i></button>
         </form>
       </div>
-      </div>
-      
-      <div class="row bg-dark">
-        <div class="account">
+    </div>
+
+    <div class="row bg-dark">
+      <div class="account">
         <ul>
           {% if not user.is_authenticated %}
           <li><a href="{% url 'register' %}">REGISTER</a></li>
           <li><a href="{% url 'login' %}">LOGIN</a></li>
           {% endif %} {% if user.is_authenticated %}
+          <div class="row hello">
+            <p>Hello {{ request.user.username }}!</p>
+          </div>
           <!--<li><a href='{% url 'profile' %}'/>PROFILE</a>-->
           <!--<li><a href='{% url 'password_reset' %}'>Reset password</a></li>-->
-          <li><a href="{% url 'profile' %}" />MY ACCOUNT</a></li>
-          <li><a href="{% url 'logout_confirm' %}" />LOGOUT</a></li>
+          <li><a href="{% url 'profile' %}" />MY ACCOUNT</a>
+          </li>
+          <li><a href="{% url 'logout_confirm' %}" />LOGOUT</a>
+          </li>
           {% endif %}
         </ul>
-      </div>  
-      </div>  
-      
+      </div>
+    </div>
+
   </div>
-  
+
   <div class="container-fluid">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="{% url 'home' %}">The BoardGameStore</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{% url 'home' %}">The BoardGameStore</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fas fa-heart"></i> Wishlist</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i> Cart ({{number_of_items}})</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'my_account' %}"><i class="fas fa-user-circle"></i> Account</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-heart"></i> Wishlist</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i> Cart ({{number_of_items}})</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'my_account' %}"><i class="fas fa-user-circle"></i> Account</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
           <i class="fas fa-puzzle-piece"></i>
           Games
         </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Board Games</a>
-          <a class="dropdown-item" href="#">Card Games</a>
-          <a class="dropdown-item" href="#">Party Games</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{% url 'show_games' %}">Shop</a>
-        </div>
-      </li>
-    </ul>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Board Games</a>
+              <a class="dropdown-item" href="#">Card Games</a>
+              <a class="dropdown-item" href="#">Party Games</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'show_games' %}">Shop</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </div>
-</nav>
-</div>
-  <!--<div class="container-fluid top-row">-->
-  <!--  <div class="row bg-dark">-->
-  <!--    <div class="col free-shipping">-->
-  <!--      <p>Free Shipping on All Orders Over $100!</p>-->
-  <!--    </div>-->
-
-  <!--    <div class="col">-->
-  <!--    <div class="search-form">-->
-  <!--      <form method="GET" class="form-inline my-2 my-lg-0" action="{% url 'show_games' %}">-->
-  <!--        <input name="search_terms" class="form-control mr-sm-2" type="search" placeholder="Search for Games">-->
-  <!--        <a class="my-2 my-sm-0" href="" type="submit"><i class="fas fa-search"></i></a>-->
-  <!--      </form>-->
-  <!--    </div>-->
-  <!--    </div>-->
-      
-  <!--    <div class="col account">-->
-  <!--      <ul>-->
-  <!--        {% if not user.is_authenticated %}-->
-  <!--        <li><a href="{% url 'register' %}">REGISTER</a></li>-->
-  <!--        <li><a href="{% url 'login' %}">LOGIN</a></li>-->
-  <!--        {% endif %} {% if user.is_authenticated %}-->
-  <!--        <li><a href="{% url 'profile' %}" />MY ACCOUNT</a></li>-->
-  <!--        <li><a href="{% url 'logout_confirm' %}" />LOGOUT</a></li>-->
-  <!--        {% endif %}-->
-  <!--      </ul>-->
-  <!--    </div>-->
-
-  <!--  </div>-->
-  <!--</div>-->
-
-
-  <!--Start of navbar-->
-  <!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
-  <!--  <a class="navbar-brand" href="{% url 'home' %}">Home</a>-->
-  <!--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
-  <!--  <span class="navbar-toggler-icon"></span>-->
-  <!--</button>-->
-
-  <!--  <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-  <!--    <ul class="navbar-nav mr-auto">-->
-  <!--      <li class="nav-item">-->
-  <!--        <a class="nav-link" href="#"><i class="fas fa-heart"></i> Wishlist</a>-->
-  <!--      </li>-->
-  <!--      <li class="nav-item">-->
-  <!--        <a class="nav-link" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i> Cart ({{number_of_items}})</a>-->
-  <!--      </li>-->
-  <!--      <li class="nav-item">-->
-  <!--        <a class="nav-link" href="{% url 'my_account' %}"><i class="fas fa-user-circle"></i> Account</a>-->
-  <!--      </li>-->
-  <!--      <li class="nav-item">-->
-  <!--        <a class="nav-link" href="#"><i class="fas fa-map-marker-alt"></i> Contact</a>-->
-  <!--      </li>-->
-
-
-  <!--      <li class="nav-item dropdown">-->
-  <!--        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-  <!--        <i class="fas fa-puzzle-piece"></i>-->
-  <!--        Games-->
-  <!--      </a>-->
-  <!--        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-  <!--          <a class="dropdown-item" href="#">Board Games</a>-->
-  <!--          <a class="dropdown-item" href="#">Card Games</a>-->
-  <!--          <a class="dropdown-item" href="#">Party Games</a>-->
-  <!--          <div class="dropdown-divider"></div>-->
-  <!--          <a class="dropdown-item" href="{% url 'show_games' %}">Shop</a>-->
-  <!--        </div>-->
-  <!--      </li>-->
-  <!--    </ul>-->
-
-  <!--  </div>-->
-  <!--</nav>-->
-
-  <!--End of navbar-->
-
-  <!--<div class="header">-->
-  <!--  <div>-->
-  <!--    Logged in as: {{ request.user.username }}-->
-  <!--    <br>-->
-
-  <!--  </div>-->
-
-  <!--flash messages-->
+  
+  <!-- flash messages-->
   <div class="container">
-    <hr> {% if messages %}
-    <div class="alert alert-success"  \role="alert">
-      <div>
-        {% for message in messages %} {{ message }} {% endfor %}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    {% if messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {% for message in messages %} {{ message }} {% endfor %}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-      </div>
-      {% endif %}
     </div>
+    {% endif %}
+  </div>
   </div>
 
-  
-  
-  
-  
-  
-  
-  <!--user options like login, signout, etc -->
-  <!--<ul>-->
-  <!--{% if not user.is_authenticated %}-->
-  <!--<li><a class="text-dark" href='{% url 'login' %}'/>Login</a>-->
-  <!--</li>-->
-  <!--<li><a class="text-dark" href='{% url 'register' %}'/>Register</a>-->
-  <!--  {% endif %} -->
-
-  <!--{% if user.is_authenticated %}-->
-  <!--<li><a href='{% url 'profile' %}'/>Profile</a>-->
-  <!--  <li><a href='{% url 'logout' %}'/>Logout</a>-->
-  <!--    <li><a href='{% url 'password_reset' %}'>Reset password</a></li>-->
-  <!--  </li>-->
-  <!--  {% endif %}-->
-  <!--</ul>-->
-
-  <!--</div>-->
 
   <div class='container'>
     <!--<h1>{%block page_title%}{%endblock%}</h1>-->
@@ -211,71 +112,48 @@
 
   <footer class="footer">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col start_searching">
-          <p>Start Searching</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <div class="search-form">
-        <form method="GET" class="form-inline my-2 my-lg-0" action="{% url 'show_games' %}">
-          <input name="search_terms" class="form-control mr-sm-2" type="search" placeholder="Search for Games">
-          <a class="my-2 my-sm-0" href="" type="submit"><i class="fas fa-search"></i></a>
-        </form>
-      </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
+      <div class="row bg-dark">
           <div class="company_name">
             <p>The BoardGameStore</p>
           </div>
+      </div>
+
+
+<div class="row bg-dark">
+      <div class="search_games">
+        <form method="GET" class="form-inline" action="{% url 'show_games' %}">
+          <input name="search_terms" class="form-control mr-sm-2" type="search" placeholder="Games Search">
+          <button class="btn btn-outline-warning" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+      
+      <div class="row bg-dark">
+        <div class="company_links">
+          <ul>
+            <a href=""><li>Contact Us</li></a>
+            <a href="{% url 'terms_and_conditions' %}"><li>Terms & Conditions</li></a>
+            <a href="{% url 'privacy_policy' %}"><li>Privacy Policy</li></a>
+            <a href="{% url 'refund_policy' %}"><li>Refund Policy</li></a>
+          </ul>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col">
-          <div class="links_1">
-            <ul>
-              <a href="">
-                <li>Home</li>
-              </a>
-              <a href="">
-                <li>Shop</li>
-              </a>
-              <a href="">
-                <li>Contact Us</li>
-              </a>
-              <a href="">
-                <li>Terms & Conditions</li>
-              </a>
-              <a href="">
-                <li>Privacy Policy</li>
-              </a>
-              <a href="">
-                <li>Refund Policy</li>
-              </a>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
+
+
       <div class="social_media">
         <p>Keep In Touch</p>
-          <span><a href="https://github.com/Paddlepop25" target="_blank"><i class="fab fa-github fa-2x"></i></a></span>
-          <span><a href="https://www.linkedin.com/in/lindahsu007/" target="_blank"><i class="fab fa-linkedin-in fa-2x"></i></a></span>
-          <span><a href="https://twitter.com/shecodeshsucode" target="_blank"><i class="fab fa-twitter fa-2x"></i></a></span>
-          <span><a href="https://www.instagram.com/shecodeshsucodes/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a></span>
-          <p class="copyright">&copy; Designed by Linda Hsu, 2019</p>
-          <small>For educational purpose</small>
+        <span><a href="https://github.com/Paddlepop25" target="_blank"><i class="fab fa-github fa-2x"></i></a></span>
+        <span><a href="https://www.linkedin.com/in/lindahsu007/" target="_blank"><i class="fab fa-linkedin-in fa-2x"></i></a></span>
+        <span><a href="https://twitter.com/shecodeshsucode" target="_blank"><i class="fab fa-twitter fa-2x"></i></a></span>
+        <span><a href="https://www.instagram.com/shecodeshsucodes/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a></span>
+        <p class="copyright">&copy; Designed by Linda Hsu, 2019</p>
+        <small>For educational purpose</small>
       </div>
 
     </div>
   </footer>
-  
+
 
   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
   <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>-->
