@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'boardgamestore_project.wsgi.application'
 #     }
 # }
 
-DATABASES = {'default': dj_database_url.parse(os.environ["DATABASE_URL"])}
+DATABASES = {'default': dj_database_url.parse(os.environ["HEROKU_POSTGRESQL_GRAY_URL"])}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

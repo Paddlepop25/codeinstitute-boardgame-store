@@ -7,8 +7,13 @@ from catalogue.models import Game
 def view_cart(request):
     # retrieve the cart
     cart = request.session.get('shopping_cart', {})
+    grand_total_price = 0.00
+    for game_id,game in cart.items():
+        grand_total_price += game['total_price']
+    print(grand_total_price)    
     return render(request, 'cart/view_cart.template.html', {
-        'shopping_cart':cart
+        'shopping_cart':cart,
+        'grand_total_price':round(grand_total_price, 2)
     })
     
 def add_to_cart(request, game_id):
@@ -27,6 +32,7 @@ def add_to_cart(request, game_id):
             'price': str(game.price),
             'image_url':game.image.cdn_url,
             'quantity':1,
+            'total_price':float(game.price)
             }
         
         # save the cart back to sessions
@@ -36,9 +42,12 @@ def add_to_cart(request, game_id):
         # return render(request, 'catalogue/games.template.html')  
         
     else:
+        messages.success(request, "The course is already in your shopping cart")
         cart[game_id]['quantity']+=1
+        cart[game_id]['total_price'] = round(int(cart[game_id]['quantity']) * float(cart[game_id]['price']),2)
         request.session['shopping_cart'] = cart
-        return render(request, 'cart/view_cart.template.html')
+        # return render(request, 'cart/view_cart.template.html')
+        return redirect('/cart/')
         
 def total_price(request, game_id):
     game = get_object_or_404(Game, pk=game_id)
@@ -57,35 +66,37 @@ def total_price(request, game_id):
             'total_price':total_price
         })        
      
-def grand_total_price(request):
-    cart = request.session.get('shopping_cart')
-    # print(cart)
-    total_price = len(cart['total_price'])
-    grand_total_price = 0
-    if total_price > 0:
-        for price in total_price:
-            grand_total_price += price
-    else:
-        grand_total_price = 0
-    return render(request, 'cart/view_cart.template.html', {
-    'grand_total_price':grand_total_price
-    })
+# def grand_total_price(request):
+#     cart = request.session.get('shopping_cart')
+#     # print(cart)
+#     total_price = len(cart['total_price'])
+#     grand_total_price = 0
+#     if total_price > 0:
+#         for price in total_price:
+#             grand_total_price += price
+#     else:
+#         grand_total_price = 0
+#     return render(request, 'cart/view_cart.template.html', {
+#     'grand_total_price':grand_total_price
+#     })
 
 def minus_from_cart(request, game_id):
     cart = request.session.get('shopping_cart', {})
     if game_id in cart:
         game = get_object_or_404(Game, pk=game_id) 
-        cart[game_id] = {
-            'id':game_id,
-            'name': game.name,
-            'price': str(game.price),
-            'image_url':game.image.cdn_url,
-            'quantity':1,
-            }
-        cart[game_id]['quantity']-=1
+        # cart[game_id] = {
+        #     'id':game_id,
+        #     'name': game.name,
+        #     'price': str(game.price),
+        #     'image_url':game.image.cdn_url,
+        #     'quantity':1,
+        #     }
+        if cart[game_id]['quantity'] > 1:
+            cart[game_id]['quantity']-=1
+            cart[game_id]['total_price'] = round(int(cart[game_id]['quantity']) * float(cart[game_id]['price']),2)
         # save the cart back to sessions
-        request.session['shopping_cart'] = cart
-        messages.success(request, "Game has been removed from your cart.")
+            request.session['shopping_cart'] = cart
+            messages.success(request, "Game has been removed from your cart.")
         return redirect('/cart/')
     
 def remove_from_cart(request, game_id):
@@ -98,7 +109,7 @@ def remove_from_cart(request, game_id):
         # save back to the session
         request.session['shopping_cart'] = cart
         messages.success(request, "Item removed from cart successfully!")
-        return render(request, 'cart/view_cart.template.html')
+        return redirect('/cart/')
 
 @login_required        
 def checkout_form(request):

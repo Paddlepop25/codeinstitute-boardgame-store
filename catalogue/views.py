@@ -22,6 +22,7 @@ def show_games(request):
     if request.GET.get('search_terms'):
         search_terms = request.GET.get('search_terms')
         all_games = all_games.filter(name__contains=search_terms)
+        print(list(all_games))
         
     return render(request, 'catalogue/games.template.html', {
         'all_games':all_games,
