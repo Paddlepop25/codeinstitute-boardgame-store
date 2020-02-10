@@ -7,15 +7,15 @@
   <link rel="stylesheet" href="{% static 'styles/styles.css' %}" type="text/css" />
   <title>{%block title%} {%endblock%}</title>
   <link rel="icon" href="{% static 'images/chess-favicon.png' %}" type="image/x-icon" />
-  
+
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width,xz initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="The BoardGameStore">
   <meta name="keywords" content="Boardgames, Fun, Puzzle, Party, Games">
   <meta name="author" content="Linda Hsu">
-  
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -23,6 +23,7 @@
 <body>
   <div class="container-fluid top-row">
     <div class="row bg-dark">
+      <!--<a class="boardgamestore" href="{% url 'home' %}"><img src="{% static 'images/chess.png' %}"></img>The BoardGameStore</a>-->
       <div class="free-shipping">
         <p>Free Shipping on All Orders Over $100!</p>
       </div>
@@ -37,32 +38,32 @@
       </div>
     </div>
 
-    <div class="row bg-dark">
-      <div class="account">
-        <ul>
-          {% if not user.is_authenticated %}
-          <li><a href="{% url 'register' %}">REGISTER</a></li>
-          <li><a href="{% url 'login' %}">LOGIN</a></li>
-          {% endif %} {% if user.is_authenticated %}
-          <div class="row hello">
-            <p>Hello {{ request.user.username }}!</p>
-          </div>
-          <!--<li><a href='{% url 'profile' %}'/>PROFILE</a>-->
-          <!--<li><a href='{% url 'password_reset' %}'>Reset password</a></li>-->
-          <li><a href="{% url 'profile' %}" />MY ACCOUNT</a>
-          </li>
-          <li><a href="{% url 'logout_confirm' %}" />LOGOUT</a>
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-    </div>
+    <!--<div class="row bg-dark">-->
+    <!--  <div class="account">-->
+    <!--    <ul>-->
+    <!--      {% if not user.is_authenticated %}-->
+    <!--      <li><a href="{% url 'register' %}">REGISTER</a></li>-->
+    <!--      <li><a href="{% url 'login' %}">LOGIN</a></li>-->
+    <!--      {% endif %} {% if user.is_authenticated %}-->
+    <!--      <div class="row hello">-->
+    <!--        <p>Hello {{ request.user.username }}!</p>-->
+    <!--      </div>-->
+    <!--<li><a href='{% url 'profile' %}'/>PROFILE</a>-->
+    <!--<li><a href='{% url 'password_reset' %}'>Reset password</a></li>-->
+    <!--      <li><a href="{% url 'profile' %}" />MY ACCOUNT</a>-->
+    <!--      </li>-->
+    <!--      <li><a href="{% url 'logout_confirm' %}" />LOGOUT</a>-->
+    <!--      </li>-->
+    <!--      {% endif %}-->
+    <!--    </ul>-->
+    <!--  </div>-->
+    <!--</div>-->
 
   </div>
 
   <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="{% url 'home' %}">The BoardGameStore</a>
+      <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/chess.png' %}"></img>The BoardGameStore</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -76,26 +77,32 @@
             <a class="nav-link" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i> Cart ({{number_of_items}})</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{% url 'show_games' %}"><i class="fas fa-puzzle-piece"></i> Shop</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'my_account' %}"><i class="fas fa-user-circle"></i> Account</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
-          <i class="fas fa-puzzle-piece"></i>
-          Games
-        </a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Board Games</a>
-              <a class="dropdown-item" href="#">Card Games</a>
-              <a class="dropdown-item" href="#">Party Games</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'show_games' %}">Shop</a>
-            </div>
+
+          {% if not user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}"><i class="fas fa-user-circle"></i> REGISTER</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-user-circle"></i> LOGIN</a>
+          </li>
+          {% endif %} {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'profile' %}"><i class="fas fa-user-circle"></i> MY ACCOUNT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout_confirm' %}"><i class="fas fa-user-circle"></i> LOGOUT</a>
+          </li>
+          {% endif %}
         </ul>
       </div>
     </nav>
   </div>
-  
+
   <!-- flash messages-->
   <div class="container">
     {% if messages %}
@@ -119,46 +126,54 @@
   <footer class="footer">
     <div class="container-fluid">
       <div class="row bg-dark">
-          <div class="company_name">
-            <a class="navbar-brand" href="{% url 'home' %}">The BoardGameStore</a>
-          </div>
+        <div class="company_name">
+          <a class="navbar-brand" href="{% url 'home' %}">The BoardGameStore</a>
+        </div>
       </div>
 
 
-<div class="row bg-dark">
-      <div class="search_games">
-        <form method="GET" class="form-inline" action="{% url 'show_games' %}">
-          <input name="search_terms" class="form-control mr-sm-2" type="search" placeholder="Games Search">
-          <button class="btn btn-outline-warning" type="submit"><i class="fas fa-search"></i></button>
-        </form>
+      <div class="row bg-dark">
+        <div class="search_games">
+          <form method="GET" class="form-inline" action="{% url 'show_games' %}">
+            <input name="search_terms" class="form-control mr-sm-2" type="search" placeholder="Games Search">
+            <button class="btn btn-outline-warning" type="submit"><i class="fas fa-search"></i></button>
+          </form>
+        </div>
       </div>
-    </div>
-      
+
       <div class="row bg-dark">
         <div class="col col-md-8">
-        <div class="company_links">
-          <ul>
-            <a href=""><li>Contact Us</li></a>
-            <a href="{% url 'terms_and_conditions' %}"><li>Terms & Conditions</li></a>
-            <a href="{% url 'privacy_policy' %}"><li>Privacy Policy</li></a>
-            <a href="{% url 'refund_policy' %}"><li>Refund Policy</li></a>
-          </ul>
+          <div class="company_links">
+            <ul>
+              <a href="">
+                <li>Contact Us</li>
+              </a>
+              <a href="{% url 'terms_and_conditions' %}">
+                <li>Terms & Conditions</li>
+              </a>
+              <a href="{% url 'privacy_policy' %}">
+                <li>Privacy Policy</li>
+              </a>
+              <a href="{% url 'refund_policy' %}">
+                <li>Refund Policy</li>
+              </a>
+            </ul>
+          </div>
         </div>
-        </div>
-        
+
         <div class="col col-md-4">
-      <div class="social_media">
-        <span><a href="https://github.com/Paddlepop25" target="_blank"><i class="fab fa-github fa-2x"></i></a></span>
-        <span><a href="https://www.linkedin.com/in/lindahsu007/" target="_blank"><i class="fab fa-linkedin-in fa-2x"></i></a></span>
-        <span><a href="https://twitter.com/shecodeshsucode" target="_blank"><i class="fab fa-twitter fa-2x"></i></a></span>
-        <span><a href="https://www.instagram.com/shecodeshsucodes/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a></span>
-        <p class="copyright">&copy; Designed by Linda Hsu, 2019</p>
-        <small>For educational purpose</small>
-      </div>
+          <div class="social_media">
+            <span><a href="https://github.com/Paddlepop25" target="_blank"><i class="fab fa-github fa-2x"></i></a></span>
+            <span><a href="https://www.linkedin.com/in/lindahsu007/" target="_blank"><i class="fab fa-linkedin-in fa-2x"></i></a></span>
+            <span><a href="https://twitter.com/shecodeshsucode" target="_blank"><i class="fab fa-twitter fa-2x"></i></a></span>
+            <span><a href="https://www.instagram.com/shecodeshsucodes/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a></span>
+            <p class="copyright">&copy; Designed by Linda Hsu, 2019</p>
+            <small>For educational purpose</small>
+          </div>
         </div>
-        
+
       </div>
-        
+
 
     </div>
   </footer>

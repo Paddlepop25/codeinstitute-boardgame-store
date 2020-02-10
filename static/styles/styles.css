@@ -19,24 +19,24 @@ body {
     margin-bottom: 15px;
 }
 
-.top-row .account {
-    margin: 0 auto;
-    margin-bottom: 15px;
-}
+/*.top-row .account {*/
+/*    margin: 0 auto;*/
+/*    margin-bottom: 15px;*/
+/*}*/
 
-.top-row .hello {
-    margin: 0 auto;
-}
+/*.top-row .hello {*/
+/*    margin: 0 auto;*/
+/*}*/
 
-.top-row .account li {
-    list-style-type: none;
-    float: left;
-    margin-right: 10px;
-}
+/*.top-row .account li {*/
+/*    list-style-type: none;*/
+/*    float: left;*/
+    /*margin-right: 10px;*/
+/*}*/
 
-.top-row .account a {
-    color: orange;
-}
+/*.top-row .account a {*/
+/*    color: orange;*/
+/*}*/
 
 /* Navbar of base.html */
 .navbar li {
