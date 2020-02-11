@@ -52,13 +52,28 @@ body {
     text-align: center
 }
 
+.navbar img {
+    width: 4rem;
+}
+
 /* Home page*/
 .welcome_image img {
     width: 100%;
     margin-bottom: 2rem;
 }
 
+.best_sellers .card  {
+    border: none;
+    /*height: 40rem;*/
+    margin-bottom: 5rem;
+}
 
+
+.best_sellers .card img {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
 
 
 
@@ -69,7 +84,7 @@ body {
 }
 
 /* Shopping Cart page*/
-img {
+.cart img {
     width: 4rem;
 }
 
@@ -93,6 +108,18 @@ img {
     float: left;
     /*margin-right: 5px;*/
 }    
+
+@media (min-width: 320px) {
+    .best_sellers .card {
+        height: 34rem;
+    }
+}
+
+@media (min-width: 364px) and (max-width: 575px)  {
+    .best_sellers .card {
+        height: 38rem;
+    }
+}
 
 @media (max-width: 386px) {
   .knight {
