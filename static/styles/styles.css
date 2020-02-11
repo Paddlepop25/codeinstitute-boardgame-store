@@ -1,6 +1,7 @@
 body {
     margin: 0;
     box-sizing: border-box;
+    font-size-adjust: 16px;
 }
 
 
@@ -50,6 +51,16 @@ body {
 .navbar li {
     text-align: center
 }
+
+/* Home page*/
+.welcome_image img {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+
+
+
 
 /* Games' card*/
 .card {
