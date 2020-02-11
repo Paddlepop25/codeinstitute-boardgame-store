@@ -49,8 +49,12 @@ body {
 
 /* Navbar of base.html */
 .navbar li {
-    text-align: center
+    text-align: center;
 }
+
+/*navbar-light .navbar-nav .nav-link i {*/
+/*    color: red;*/
+/*}*/
 
 .navbar img {
     width: 4rem;
@@ -65,7 +69,7 @@ body {
 .best_sellers .card  {
     border: none;
     /*height: 40rem;*/
-    margin-bottom: 5rem;
+    /*margin-bottom: 12rem;*/
 }
 
 
@@ -89,25 +93,32 @@ body {
 }
 
 /*Footer*/
-.footer p,a,small {
+
+.footer img {
+    width: 4rem;
+}
+
+.footer a {
+    color: black;
+}
+
+.footer a:hover {
     color: orange;
 }
+
 
 .footer .company_name {
     margin: 0 auto;
     margin-top: 15px;
+    margin-bottom: 1.2rem;
 }
  
-.footer .search_games {
-    margin: 0 auto;
-    margin-bottom: 15px;
-} 
-    
-.footer li {
+.footer .company_links li {
     list-style-type: none;
+    /*margin: 0 auto;*/
     float: left;
-    /*margin-right: 5px;*/
-}    
+    margin-right: 5px;
+}   
 
 @media (min-width: 320px) {
     .best_sellers .card {
@@ -125,4 +136,16 @@ body {
   .knight {
     margin: 0 auto;
   }
+}
+
+@media (min-width: 576px) {
+  .footer {
+    margin-top: 4rem;
+  }
+  
+  .footer .company_links ul li {
+    /*list-style-type: none;*/
+    /*float: left;*/
+    /*margin-right: 5px;*/
+}   
 }
