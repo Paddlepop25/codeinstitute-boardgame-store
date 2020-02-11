@@ -75,3 +75,8 @@ def actually_delete_game(request, game_id):
     game_being_deleted.delete()
     return redirect(reverse('show_games'))     
 
+def game_info(request, game_id):
+    game = get_object_or_404(Game, pk=game_id)
+    return render(request, 'catalogue/game_info.template.html', {
+        'game':game
+    })    

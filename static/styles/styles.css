@@ -19,6 +19,14 @@ body {
     margin-bottom: 15px;
 }
 
+.top-row .search_games input {
+    width: 15rem;
+}
+
+.top-row .search_games button {
+    margin-left: 0.3rem;
+}
+
 /*.top-row .account {*/
 /*    margin: 0 auto;*/
 /*    margin-bottom: 15px;*/
@@ -74,3 +82,9 @@ img {
     float: left;
     /*margin-right: 5px;*/
 }    
+
+@media (max-width: 386px) {
+  .knight {
+    margin: 0 auto;
+  }
+}

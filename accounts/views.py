@@ -16,7 +16,7 @@ def logout_confirm(request):
 
 def logout(request):
     auth.logout(request)
-    messages.success(request, "You have logged out.") # flash message
+    messages.success(request, "You have successfully logged out.") # flash message
     # return redirect( reverse('user_index'))
     return redirect( reverse('home'))
 
@@ -70,10 +70,10 @@ def register(request):
         
             if user:
                 auth.login(user=user, request=request)
-                messages.success(request, "Registration is successful. You can checkout")
+                messages.success(request, "Registration is successful. You can now checkout!")
                 return redirect(reverse('home'))
             else:    
-                messages.error(request, "Sorry, we're unable to register your account.")
+                messages.error(request, "Sorry, we're unable to register your account. Please try again.")
                 # print(messages.error)
                 return redirect(reverse('home'))
         

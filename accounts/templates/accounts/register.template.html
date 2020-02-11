@@ -4,8 +4,8 @@
 {% load crispy_forms_tags %}
 
 {%block content%}
-<h1>Register an acoount</h1>
-<p>Have an account? Please <a href="{% url 'login' %}">login.</a></p>
+<h1>Register an Account</h1>
+<p>Already have an account? Please <a href="{% url 'login' %}">login.</a></p>
 
 <form method='POST'>
     {% csrf_token %}

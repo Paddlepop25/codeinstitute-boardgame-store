@@ -2,6 +2,7 @@
 {% block page_title %} Login {% endblock %}
 
 {% block content %}
+<div class="login_form">
   <h1>Login</h1>
   <p>If you have not created an account yet, then please <a href="{% url 'register' %}">register</a> first.</p>
   <form method='POST'>
@@ -11,4 +12,5 @@
     <button class="btn btn-primary mb-3" type='submit'>Sign In</button>
     <a href="{% url 'password_reset' %}" class="btn btn-success mb-3">Forgot Password</a>
     </form>
+</div>    
 {% endblock %}   
