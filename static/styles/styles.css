@@ -92,6 +92,11 @@ body {
     width: 4rem;
 }
 
+/*Checkout page*/
+.checkout_form .card {
+    height: 100rem;
+} 
+
 /*Footer*/
 
 .footer img {
@@ -148,4 +153,11 @@ body {
     /*float: left;*/
     /*margin-right: 5px;*/
 }   
+}
+
+
+@media (min-width: 768px) {
+  .checkout_form .card {
+    height: 73rem;
+  }
 }
