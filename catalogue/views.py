@@ -6,6 +6,11 @@ from .forms import GameForm, GameSearchForm
 def show_games(request):
     # search_form = GameSearchForm(request.GET)
     all_games = Game.objects.all()
+    # field_name = 'price'
+    # obj = Game.objects.all()
+    # price_strikethrough = getattr(all_games, field_name)
+    print(Game)
+    # price_strikethrough = all_games.filter(request.GET.get('price'))
     
     # if search_form.data.get('search_terms'):
     #     # like SELECT * FROM courses WHERE title LIKE '%react%'
@@ -22,10 +27,11 @@ def show_games(request):
     if request.GET.get('search_terms'):
         search_terms = request.GET.get('search_terms')
         all_games = all_games.filter(name__icontains=search_terms)
-        print(list(all_games))
+        # print(list(all_games))
         
     return render(request, 'catalogue/games.template.html', {
         'all_games':all_games,
+        # 'price_strikethrough':price_strikethrough
         # 'search_form':search_form
     })
     

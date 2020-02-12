@@ -10,7 +10,7 @@ def view_cart(request):
     grand_total_price = 0.00
     for game_id,game in cart.items():
         grand_total_price += game['total_price']
-    print(grand_total_price)    
+    # print(grand_total_price)    
     return render(request, 'cart/view_cart.template.html', {
         'shopping_cart':cart,
         'grand_total_price':round(grand_total_price, 2)

@@ -84,7 +84,20 @@ body {
 /* Games' card*/
 .card {
     /*border: none;*/
+    width: 16rem;
     height: 30rem;
+    margin: 0 auto;
+}
+
+.card a {
+    /*border: none;*/
+    width: 13rem;
+    margin: 8px auto;
+}
+
+.price_strikethrough    {
+    text-decoration: line-through;
+    margin-right: 5px;
 }
 
 /* Shopping Cart page*/
