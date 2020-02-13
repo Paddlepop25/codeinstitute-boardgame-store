@@ -11,8 +11,19 @@ def index(request):
 def logout_confirm(request):
     return render(request, 'accounts/logout_confirm.template.html')
 
+def password_change(request):
+    return render(request, 'registration/password_change.template.html')
+    
+def password_change_done(request):
+    if request.method == 'POST':
+        return render(request, 'registration/password_change_done.template.html')    
+        
 def password_reset(request):
     return render(request, 'accounts/password_reset.template.html')
+    
+def password_reset_done(request):
+    if request.method == 'POST':
+        return render(request, 'registration/password_reset_done.template.html')    
 
 def logout(request):
     auth.logout(request)
