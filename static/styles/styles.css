@@ -111,6 +111,9 @@ body {
 } 
 
 /*Footer*/
+.footer {
+    margin-top: 5rem;
+}
 
 .footer img {
     width: 4rem;
@@ -183,10 +186,6 @@ body {
 }
 
 @media (min-width: 576px) {
-  .footer {
-    margin-top: 4rem;
-  }
-  
   .footer .company_links ul li {
     /*list-style-type: none;*/
     /*float: left;*/
@@ -199,4 +198,11 @@ body {
   .checkout_form .card {
     height: 73rem;
   }
+}
+
+@media (min-width: 1200px) {
+   .footer {
+    margin-top: 8rem;
+  }
+  
 }

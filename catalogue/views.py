@@ -1,15 +1,21 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from .models import Game
+from .models import Game, Category
 from .forms import GameForm, GameSearchForm
 
 # Create your views here.
 def show_games(request):
     # search_form = GameSearchForm(request.GET)
     all_games = Game.objects.all()
+    party_games = all_games.filter(category_id=1)
+    card_games = all_games.filter(category_id=2)
+    board_games = all_games.filter(category_id=3)
+    # all_games.filter(category__contains="Card Games (id: 2)")
+    # Blog.objects.get(name="Cheddar Talk")
+    # print(len(board_games))
     # field_name = 'price'
     # obj = Game.objects.all()
     # price_strikethrough = getattr(all_games, field_name)
-    print(Game)
+    # print(Game)
     # price_strikethrough = all_games.filter(request.GET.get('price'))
     
     # if search_form.data.get('search_terms'):
@@ -31,6 +37,9 @@ def show_games(request):
         
     return render(request, 'catalogue/games.template.html', {
         'all_games':all_games,
+        'party_games':party_games,
+        'card_games':card_games,
+        'board_games':board_games
         # 'price_strikethrough':price_strikethrough
         # 'search_form':search_form
     })
@@ -82,7 +91,8 @@ def actually_delete_game(request, game_id):
     return redirect(reverse('show_games'))     
 
 def game_info(request, game_id):
-    game = get_object_or_404(Game, pk=game_id)
+    all_games = get_object_or_404(Game, pk=game_id)
+    print(all_games)
     return render(request, 'catalogue/game_info.template.html', {
-        'game':game
+        'all_games':all_games
     })    
