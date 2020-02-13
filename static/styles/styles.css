@@ -187,6 +187,7 @@ body {
   margin: 100px auto;
   padding: 20px;
   height: 20rem;
+  text-align: center;
 }
 
 /*Register page*/
@@ -233,11 +234,21 @@ body {
 }
 
 /* Reset password page*/
+.reset_password_form_look {
+  background: #fffef8;
+  border: 1px solid black;
+  border-radius: 25px;
+  box-shadow: 2px 2px 8px grey;
+  margin: 100px auto;
+  padding: 20px;
+  height: 30rem;
+}
+
 .reset_password input {
     color: gray;
     font-weight: 100;
     margin-bottom: 30px;
-    width: 60%;
+    width: 50%;
 }
 
 .reset_password button {
@@ -268,6 +279,21 @@ body {
     margin-top: 10px;
     width: 80%;
 }
+
+/* Password reset success page*/
+.password_reset_done {
+    text-align: center;
+}
+
+.password_reset_done h2 {
+    margin-top: 10px;
+}
+
+.password_reset_done img {
+    margin-top: 10px;
+    width: 80%;
+}
+
 
 /*Footer*/
 .footer {
