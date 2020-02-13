@@ -172,6 +172,22 @@ body {
   height: 20rem;
 }
 
+/*Register page*/
+.register_form_look {
+  background: #fffef8;
+  border: 1px solid black;
+  border-radius: 25px;
+  box-shadow: 2px 2px 8px grey;
+  margin: 100px auto;
+  padding: 20px;
+  height: 40rem;
+}
+
+.register_form_look a {
+    color: orange;
+}
+
+/* Reset password page*/
 .reset_password input {
     color: gray;
     font-weight: 100;
@@ -182,6 +198,8 @@ body {
 .reset_password button {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+
 
 
 /*Checkout page*/
