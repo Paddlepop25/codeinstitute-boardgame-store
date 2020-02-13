@@ -11,8 +11,8 @@ def index(request):
 def logout_confirm(request):
     return render(request, 'accounts/logout_confirm.template.html')
 
-# def password_reset(request):
-#     return render(request, 'accounts/password_reset.template.html')
+def password_reset(request):
+    return render(request, 'accounts/password_reset.template.html')
 
 def logout(request):
     auth.logout(request)

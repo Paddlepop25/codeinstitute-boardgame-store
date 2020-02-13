@@ -163,7 +163,7 @@ body {
 
 /*Standardised form look*/
 .accounts_form_look {
-  background: #fffbeb;
+  background: #fffef8;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 2px 2px 8px grey;
@@ -171,6 +171,18 @@ body {
   padding: 20px;
   height: 20rem;
 }
+
+.reset_password input {
+    color: gray;
+    font-weight: 100;
+    margin-bottom: 30px;
+    width: 60%;
+}
+
+.reset_password button {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 
 /*Checkout page*/
 .checkout_form .card {
