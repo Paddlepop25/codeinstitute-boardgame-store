@@ -9,15 +9,8 @@ def show_games(request):
     party_games = all_games.filter(category_id=1)
     card_games = all_games.filter(category_id=2)
     board_games = all_games.filter(category_id=3)
-    
-    price_strikethrough = type(p.price for p in all_games)
-    # price_strikethrough = all_games.get(price__gte=0)
-    # field_name = 'price'
-    # price_strikethrough = all_games.filter('price')
-    
-    # price_strikethrough = all_games.filter(request.GET.get('price'))
-    print(price_strikethrough)
-    
+    filtering = True
+    results = True
     # if search_form.data.get('search_terms'):
     #     # like SELECT * FROM courses WHERE title LIKE '%react%'
     #     all_games = all_games.filter(name__contains=search_form.data['search_terms'])
@@ -33,9 +26,17 @@ def show_games(request):
     # if request.GET.get('search_terms'):
     search_terms = request.GET.get('search_terms')
     if search_terms == None:
-        pass
-    else:        
+          filtering = False
+      
+    else:
         all_games = all_games.filter(name__icontains=search_terms)
+     
+    if all_games.exists():
+        pass
+        
+    else:
+        all_games = None
+        results = False
         
     return render(request, 'catalogue/games.template.html', {
         'all_games':all_games,
@@ -43,7 +44,8 @@ def show_games(request):
         'party_games':party_games,
         'card_games':card_games,
         'board_games':board_games,
-        'price_strikethrough':price_strikethrough
+        'filtering':filtering,
+        'results':results
         # 'search_form':search_form
     })
     
@@ -94,8 +96,8 @@ def actually_delete_game(request, game_id):
     return redirect(reverse('show_games'))     
 
 def game_info(request, game_id):
-    all_games = get_object_or_404(Game, pk=game_id)
-    print(all_games)
+    game = get_object_or_404(Game, pk=game_id)
+    # print(all_games)
     return render(request, 'catalogue/game_info.template.html', {
-        'all_games':all_games
+        'game':game
     })    

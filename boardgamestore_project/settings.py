@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'v2!0s9j09c8-+2@=huc@($0&!y=m2qua1j2_bcuc60vkz@h-h('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["linda-boardgamestore.herokuapp.com", '*']
 

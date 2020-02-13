@@ -12,7 +12,7 @@ def logout_confirm(request):
     return render(request, 'accounts/logout_confirm.template.html')
 
 def password_change(request):
-    return render(request, 'registration/password_change.template.html')
+    return render(request, 'accounts/password_change.html')
     
 def password_change_done(request):
     if request.method == 'POST':
@@ -29,7 +29,7 @@ def logout(request):
     auth.logout(request)
     messages.success(request, "You have successfully logged out.") # flash message
     # return redirect( reverse('user_index'))
-    return redirect( reverse('home'))
+    return redirect(reverse('home'))
 
 def login(request):
     if request.method == 'POST':

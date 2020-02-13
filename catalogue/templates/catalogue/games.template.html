@@ -7,16 +7,85 @@
 <!--    <input type='submit' value='Search' class='btn btn-primary' />-->
 <!--</form>-->
 
-
-
 <section class="search_results">
+    {% if search_terms == None %} {% else %}
     <h2>Search Results for '{{search_terms}}'</h2>
-    <!--if len(search results) == 0:-->
-    <!--<h2>Sorry, no results is found for '{{search_terms}}'</h2>-->
-    <!--else:-->
-    
+
+    {% endif %} {% if filtering is False %}
+
+    <section class="card_games">
+        <h2>Card Games</h2>
+        <div class="row">
+            {% for game in card_games %}
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card">
+                    <a href="{% url 'game_info' game_id=game.id %}">
+                    <img src="{{game.image.cdn_url}}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box">
+                </a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{game.name}}</h5>
+                        <span class="card-text price_strikethrough">${{game.price|add:"18"}}</span>
+                        <span class="card-text">${{game.price}}</span>
+                        <br />
+                        <a href="{% url 'game_info' game_id=game.id %}" class="btn btn-outline-warning more_info">MORE INFO</a>
+                        <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="party_games">
+        <h2>Party Games</h2>
+        <div class="row">
+            {% for game in party_games %}
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card">
+                    <a href=""><img src="{{game.image.cdn_url}}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{game.name}}</h5>
+                        <span class="card-text price_strikethrough">${{game.price|add:"18"}}</span>
+                        <span class="card-text">${{game.price}}</span>
+                        <br />
+                        <a href="{% url 'game_info' game_id=game.id %}" class="btn btn-outline-warning more_info">MORE INFO</a>
+                        <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="board_games">
+        <h2>Board Games</h2>
+        <div class="row">
+            {% for game in board_games %}
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card">
+                    <a href=""><img src="{{game.image.cdn_url}}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{game.name}}</h5>
+                        <span class="card-text price_strikethrough">${{game.price|add:"18"}}</span>
+                        <span class="card-text">${{game.price}}</span>
+                        <br />
+                        <a href="{% url 'game_info' game_id=game.id %}" class="btn btn-outline-warning more_info">MORE INFO</a>
+                        <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    {% else %} {% if results is False %}
+
+    <p>Sorry, no results are found</p>
+
+    {% else%}
+
     <div class="row">
-    {% for game in all_games %}
+        {% for game in all_games %}
         <div class="col-md-6 col-lg-3 mb-4">
             <div class="card">
                 <a href="{% url 'game_info' game_id=game.id %}">
@@ -24,30 +93,7 @@
                 </a>
                 <div class="card-body">
                     <h5 class="card-title">{{game.name}}</h5>
-                    <span class="card-text price_strikethrough">${{game.price}}</span>
-                    <span class="card-text">${{game.price}}</span>
-                    <br />
-                    <a href="{% url 'game_info' game_id=game.id %}" class="btn btn-outline-warning more_info">MORE INFO</a>
-                    <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
-    </div>
-</section>
-
-<section class="card_games">
-    <h2>Card Games</h2>
-    <div class="row">
-        {% for game in card_games %}
-        <div class="col-md-6 col-lg-3 mb-4">
-            <div class="card">
-                <a href="{% url 'game_info' game_id=game.id %}">
-                    <img src="{{game.image.cdn_url}}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box">
-                </a>
-                <div class="card-body">
-                    <h5 class="card-title">{{game.name}}</h5>
-                    <span class="card-text price_strikethrough">${{game.price_strikethrough}}</span>
+                    <span class="card-text price_strikethrough">${{game.price|add:"18"}}</span>
                     <span class="card-text">${{game.price}}</span>
                     <br />
                     <a href="{% url 'game_info' game_id=game.id %}" class="btn btn-outline-warning more_info">MORE INFO</a>
@@ -57,49 +103,22 @@
         </div>
         {% endfor %}
     </div>
+
+    {% endif %}
+
 </section>
 
-<section class="party_games">
-    <h2>Party Games</h2>
-    <div class="row">
-        {% for game in party_games %}
-        <div class="col-md-6 col-lg-3 mb-4">
-            <div class="card">
-                <a href=""><img src="{{game.image.cdn_url}}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box"></a>
-                <div class="card-body">
-                    <h5 class="card-title">{{game.name}}</h5>
-                    <span class="card-text price_strikethrough">${{game.price}}</span>
-                    <span class="card-text">${{game.price}}</span>
-                    <br />
-                    <a href="{% url 'game_info' game_id=game.id %}" class="btn btn-outline-warning more_info">MORE INFO</a>
-                    <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-</section>
 
-<section class="board_games">
-    <h2>Board Games</h2>
-    <div class="row">
-        {% for game in board_games %}
-        <div class="col-md-6 col-lg-3 mb-4">
-            <div class="card">
-                <a href=""><img src="{{game.image.cdn_url}}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box"></a>
-                <div class="card-body">
-                    <h5 class="card-title">{{game.name}}</h5>
-                    <span class="card-text price_strikethrough">${{game.price}}</span>
-                    <span class="card-text">${{game.price}}</span>
-                    <br />
-                    <a href="{% url 'game_info' game_id=game.id %}" class="btn btn-outline-warning more_info">MORE INFO</a>
-                    <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-</section>
+
+
+
+{% endif %}
+<!--if len(search results) == 0:-->
+<!--<h2>Sorry, no results is found for '{{search_terms}}'</h2>-->
+<!--else:-->
+
+
+
 
 
 {%endblock%}
