@@ -81,11 +81,59 @@ body {
 
 
 /* Game cards*/
-.best_sellers,.card_games .more_info {
+.best_sellers .more_info {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.best_sellers,.card_games .add_to_cart {
+.best_sellers .add_to_cart {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.search_results .card {
+    border: none;
+}
+
+.card_games .card {
+    border: none;
+}
+
+.party_games .card {
+    border: none;
+}
+
+.board_games .card {
+    border: none;
+}
+
+.search_results .more_info {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.search_results .add_to_cart {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card_games .more_info {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card_games .add_to_cart {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.party_games .more_info {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.party_games .add_to_cart {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.board_games .more_info {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.board_games .add_to_cart {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -111,6 +159,17 @@ body {
 /* Shopping Cart page*/
 .cart img {
     width: 4rem;
+}
+
+/*Standardised form look*/
+.accounts_form_look {
+  background: #fffbeb;
+  border: 1px solid black;
+  border-radius: 25px;
+  box-shadow: 2px 2px 8px grey;
+  margin: 100px auto;
+  padding: 20px;
+  height: 20rem;
 }
 
 /*Checkout page*/

@@ -9,14 +9,14 @@ def show_games(request):
     party_games = all_games.filter(category_id=1)
     card_games = all_games.filter(category_id=2)
     board_games = all_games.filter(category_id=3)
-    # all_games.filter(category__contains="Card Games (id: 2)")
-    # Blog.objects.get(name="Cheddar Talk")
-    # print(len(board_games))
+    
+    price_strikethrough = type(p.price for p in all_games)
+    # price_strikethrough = all_games.get(price__gte=0)
     # field_name = 'price'
-    # obj = Game.objects.all()
-    # price_strikethrough = getattr(all_games, field_name)
-    # print(Game)
+    # price_strikethrough = all_games.filter('price')
+    
     # price_strikethrough = all_games.filter(request.GET.get('price'))
+    print(price_strikethrough)
     
     # if search_form.data.get('search_terms'):
     #     # like SELECT * FROM courses WHERE title LIKE '%react%'
@@ -30,17 +30,20 @@ def show_games(request):
     #     all_games = all_games.filter(price__lte=request.GET.get('max_cost'))
         
         
-    if request.GET.get('search_terms'):
-        search_terms = request.GET.get('search_terms')
+    # if request.GET.get('search_terms'):
+    search_terms = request.GET.get('search_terms')
+    if search_terms == None:
+        pass
+    else:        
         all_games = all_games.filter(name__icontains=search_terms)
-        # print(list(all_games))
         
     return render(request, 'catalogue/games.template.html', {
         'all_games':all_games,
+        'search_terms':search_terms,
         'party_games':party_games,
         'card_games':card_games,
-        'board_games':board_games
-        # 'price_strikethrough':price_strikethrough
+        'board_games':board_games,
+        'price_strikethrough':price_strikethrough
         # 'search_form':search_form
     })
     

@@ -1,11 +1,14 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %} 
 
-{% block title %} {{user}}'s Profile {% endblock %}
+{% block title %} {{user}}'s profile {% endblock %} 
 
-{% block content %}
-    <h1>Profile Page</h1>
-    put user form here with home address, game reward points, image upload etc
-    <p>Your email: {{ user.email }}</p>
-    <p><a href='{% url 'password_reset' %}'>Reset password</a></p>
-{% endblock %}
+{%block content %}
+
+<div class="accounts_form_look">
+<h1>Profile Page</h1>
+<p>Hello {{user}}!</p>
+<p>Your email: {{ user.email }}</p>
+<p><a href="{% url 'password_reset' %}" class="btn btn-warning">Reset password</a></p>
+</div>
+
+{%endblock%}

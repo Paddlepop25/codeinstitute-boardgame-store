@@ -38,14 +38,17 @@ def add_to_cart(request, game_id):
         request.session['shopping_cart'] = cart
         messages.success(request, "Game has been added to your cart!")
         return redirect('/catalogue/')
+        
+    # elif game_id in cart:    
         # if press again
-            # messages.success(request, "The game is already in your shopping cart")
+        # messages.success(request, "The game is already in your shopping cart")
+        # return redirect('/catalogue/')
         
     else:
+        
         cart[game_id]['quantity']+=1
         cart[game_id]['total_price'] = round(int(cart[game_id]['quantity']) * float(cart[game_id]['price']),2)
         request.session['shopping_cart'] = cart
-        # return render(request, 'cart/view_cart.template.html')
         return redirect('/cart/')
         
 def total_price(request, game_id):
