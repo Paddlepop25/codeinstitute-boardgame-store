@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+
+{% block title %} Checkout success {% endblock %} 
+
+{% load static %}
+
+{%block content %}
+
+<div class="checkout_success">
+<h2>Thank you for your purchase!</h2>
+<div class="happy_cat">
+
+<img src="{% static 'images/happy_cat.jpeg'%}"></img>
+</div>
+</div>
+
+{% endblock %}

@@ -4,6 +4,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+<div class="login_form_look">
 <div class="login_form">
   <h1>Login</h1>
   <p>If you have not created an account yet, then please <a href="{% url 'register' %}">register</a> first.</p>
@@ -11,8 +12,9 @@
         {% csrf_token %}
         <!--{{ login_form.as_p }}-->
         {{ login_form|crispy }}
-    <button class="btn btn-primary mb-3" type='submit'>Sign In</button>
-    <a href="{% url 'password_reset' %}" class="btn btn-success mb-3">Forgot Password</a>
+    <button class="btn btn-warning mb-3" type='submit'>Sign In</button>
+    <a href="{% url 'password_reset' %}" class="btn btn-danger mb-3 forgot_password">Forgot Password</a>
     </form>
 </div>    
+</div>
 {% endblock %}   

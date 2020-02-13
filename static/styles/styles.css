@@ -161,6 +161,23 @@ body {
     width: 4rem;
 }
 
+.cart i {
+    color: orange;
+}
+
+.cart .dustbin {
+    color: red;
+}
+
+.cart .shopping {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+    color: black;
+}
+
+.cart .proceed_checkout {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 /*Standardised form look*/
 .accounts_form_look {
   background: #fffef8;
@@ -187,6 +204,34 @@ body {
     color: orange;
 }
 
+.register_form_look button {
+    width: 12rem;
+}
+
+/*Login page*/
+.login_form_look {
+  background: #fffef8;
+  border: 1px solid black;
+  border-radius: 25px;
+  box-shadow: 2px 2px 8px grey;
+  margin: 100px auto;
+  padding: 20px;
+  height: 30rem;
+}
+
+.login_form_look a {
+    color: orange;
+    width: 12rem;
+}
+
+.login_form_look button {
+    width: 12rem;
+}
+
+.login_form_look .forgot_password {
+    color: black;
+}
+
 /* Reset password page*/
 .reset_password input {
     color: gray;
@@ -199,13 +244,30 @@ body {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-
-
-
 /*Checkout page*/
-.checkout_form .card {
-    height: 100rem;
-} 
+.checkout_form {
+  background: #fffef8;
+  border: 1px solid black;
+  border-radius: 25px;
+  box-shadow: 2px 2px 8px grey;
+  margin: 100px auto;
+  padding: 20px;
+  height: 65rem;
+}
+
+/*Checkout success page*/
+.checkout_success {
+    text-align: center;
+}
+
+.checkout_success h2 {
+    margin-top: 10px;
+}
+
+.checkout_success img {
+    margin-top: 10px;
+    width: 80%;
+}
 
 /*Footer*/
 .footer {
