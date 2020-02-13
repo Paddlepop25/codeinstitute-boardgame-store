@@ -80,8 +80,15 @@ body {
 }
 
 
+/* Game cards*/
+.best_sellers,.card_games .more_info {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
 
-/* Games' card*/
+.best_sellers,.card_games .add_to_cart {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 .card {
     /*border: none;*/
     width: 16rem;
@@ -97,6 +104,7 @@ body {
 
 .price_strikethrough    {
     text-decoration: line-through;
+    color: gray;
     margin-right: 5px;
 }
 
