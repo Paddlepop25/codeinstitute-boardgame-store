@@ -377,10 +377,15 @@ body {
 .footer .company_links li {
     list-style-type: none;
     /*margin: 0 auto;*/
-    /*margin: 0 auto;*/
     /*float: left;*/
     /*margin-right: 5px;*/
 }  
+
+.footer .company_links a {
+    text-decoration: none;
+}  
+
+
 
 .footer .social_media {
     margin: 0 auto;
