@@ -1,34 +1,64 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %} {% block title %} Game Information {% endblock %} {% block content %}
+<h1>Game Information</h1>
 
-{% block title %} Game's Information {% endblock %} 
-
-{% block content %}
-<h1>More Info</h1>
-
-<section class="games">
-    <div class="row">
-        
-        <div class="col-md-6 col-lg-3 mb-4">
-            <div class="card">
-                <a href=""><img src="{{game.image.cdn_url}}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box"></a>
+<section class="game_info">
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="{{game.image.cdn_url}}" class="card-img" alt="Fun party boardgame {{game.name}} cardboard box">
+            </div>
+            <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">{{game.name}}</h5>
-                    <span class="card-text price_strikethrough">${{game.price_strikethrough}}</span>
+                    <span class="card-text price_strikethrough">${{game.price|add:"18"}}</span>
                     <span class="card-text">${{game.price}}</span>
-                    {{game.description}}
-                    {{game.inside_box}}
-                    {{game.available}}
-                    {{game.inside_box}}
-                    {{game.stock_left}}
-                    {{game.category}}
-                    
-                    <br />
-                    <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-outline-success">ADD TO CART</a>
+                    <p class="card-text">Category: {{game.category}}</p>
+                    <p class="card-text">Description <br />{{game.description}}</p>
+                    <p>Inside this box</p>
+                    <ul>
+                        <!--for content in game.inside_box -->
+                        <li>{{game.inside_box|linebreaks}}</li>
+
+                        <!--endfor -->
+                    </ul>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'update_game' game_id=game.id %}" class="btn btn-outline-danger more_info">EDIT GAME</a>
+                    <a href="{% url 'confirm_delete' game_id=game.id %}" class="btn btn-danger more_info">DELETE GAME</a>
+                    <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a> 
+                    {% endif %} 
+                    {% if not user.is_authenticated %}
+                    <a href="{% url 'update_game' game_id=game.id %}" class="btn btn-outline-danger more_info">EDIT GAME</a>
+                    <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a> 
+                    {% endif %}
                 </div>
             </div>
         </div>
-        
     </div>
+
+
+    <!--<div class="row">-->
+
+    <!--    <div class="col-md-6 col-lg-3 mb-4">-->
+    <!--        <div class="card">-->
+    <!--            <a href=""><img src="{{game.image.cdn_url}}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box"></a>-->
+    <!--            <div class="card-body">-->
+    <!--                <h5 class="card-title">{{game.name}}</h5>-->
+    <!--                <span class="card-text price_strikethrough">${{game.price_strikethrough}}</span>-->
+    <!--                <span class="card-text">${{game.price}}</span>-->
+    <!--                {{game.description}}-->
+    <!--                {{game.inside_box}}-->
+    <!--                {{game.available}}-->
+    <!--                {{game.inside_box}}-->
+    <!--                {{game.stock_left}}-->
+    <!--                {{game.category}}-->
+
+    <!--                <br />-->
+    <!--                <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-outline-success">ADD TO CART</a>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <!--</div>-->
 </section>
 
-{% endblock %} 
+{% endblock %}

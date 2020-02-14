@@ -28,25 +28,6 @@ body {
     margin-left: 0.3rem;
 }
 
-/*.top-row .account {*/
-/*    margin: 0 auto;*/
-/*    margin-bottom: 15px;*/
-/*}*/
-
-/*.top-row .hello {*/
-/*    margin: 0 auto;*/
-/*}*/
-
-/*.top-row .account li {*/
-/*    list-style-type: none;*/
-/*    float: left;*/
-    /*margin-right: 10px;*/
-/*}*/
-
-/*.top-row .account a {*/
-/*    color: orange;*/
-/*}*/
-
 /* Navbar of base.html */
 .navbar li {
     text-align: center;
@@ -160,6 +141,13 @@ body {
     margin-right: 5px;
 }
 
+/*Game info page*/
+.game_info .card {
+    width: 18rem;
+    height: 100rem;
+}
+
+
 /* Shopping Cart page*/
 .cart img {
     width: 4rem;
@@ -195,13 +183,17 @@ body {
 }
 
 .confirm_delete_look {
-  background: #fffef8;
-  border: 1px solid black;
-  border-radius: 25px;
-  box-shadow: 2px 2px 8px grey;
-  margin: 100px auto;
-  padding: 20px;
-  height: 40rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.confirm_delete_look a,input{
+  width: 100%;
+}
+
+.confirm_delete_look .card {
+  border: none;
+  margin-top: 2rem;
 }
 
 .confirm_delete_look img {
@@ -413,6 +405,18 @@ body {
   .checkout_form .card {
     height: 73rem;
   }
+  
+  .game_info .card {
+    width: 40rem;
+}
+
+}
+
+@media (min-width: 1024px) {
+  .game_info .card {
+    width: 58rem;
+}
+
 }
 
 @media (min-width: 1200px) {
@@ -420,4 +424,11 @@ body {
     margin-top: 8rem;
   }
   
+}
+
+@media (min-width: 1440px) {
+  .game_info .card {
+    width: 69rem;
+}
+
 }
