@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="{% static 'styles/styles.css' %}" type="text/css" />
   <title>{%block title%} {%endblock%}</title>
   <link rel="icon" href="{% static 'images/knight-favicon.png' %}" type="image/x-icon" />
-
+  
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,xz initial-scale=1, shrink-to-fit=no">
@@ -46,15 +46,15 @@
   </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto navfont">
           <li class="nav-item">
-            <a class="nav-link na" href="#"><i class="fas fa-heart"></i> Wishlist</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i> Cart ({{number_of_items}})</a>
+            <a class="nav-link" href="{% url 'create_game' %}"><i class="fas fa-heart"></i> Add a Game</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'show_games' %}"><i class="fas fa-puzzle-piece"></i> Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i> Cart ({{number_of_items}})</a>
           </li>
           <!--<li class="nav-item">-->
           <!--  <a class="nav-link" href="{% url 'my_account' %}"><i class="fas fa-user-circle"></i> Account</a>-->

@@ -52,12 +52,16 @@ body {
     text-align: center;
 }
 
-/*navbar-light .navbar-nav .nav-link i {*/
-/*    color: red;*/
-/*}*/
-
 .navbar img {
     width: 4rem;
+}
+
+.navbar-light .navfont a {
+    color: black !important
+}
+
+.navbar-light .navfont a:hover {
+    color: orange !important
 }
 
 /* Home page*/
@@ -178,7 +182,19 @@ body {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/*Standardised form look*/
+/*Standardised form look for all pages with forms*/
+
+.create_game_form_look {
+  background: #fffef8;
+  border: 1px solid black;
+  border-radius: 25px;
+  box-shadow: 2px 2px 8px grey;
+  margin: 100px auto;
+  padding: 20px;
+  height: 80rem;
+}
+
+
 .accounts_form_look {
   background: #fffef8;
   border: 1px solid black;
