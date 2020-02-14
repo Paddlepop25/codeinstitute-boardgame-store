@@ -1,9 +1,15 @@
 {% extends 'base.html' %} 
 
-{% block title %} Games Catalogue {% endblock %} 
+{% block title %} 404 Error {% endblock %} 
+
+{% load static %} 
 
 {% block content %}
 
-<h1>HELP!</h1>
+<div class="error_page">
+  <h1>Sorry, something went wrong</h1>
+    <img src="{% static 'images/sad_cat.jpg'%}"></img>
+    <a href="{% url 'home' %}" class="btn btn-warning">Click for Home Page</a>
+</div>
 
 {% endblock %}
