@@ -416,6 +416,7 @@ body {
 /* 404 Error page*/
 .error_page {
     text-align: center;
+    margin-top: 1rem;
 }
 
 .error_page h2 {
@@ -425,6 +426,12 @@ body {
 .error_page img {
     margin-top: 10px;
     width: 80%;
+    border-radius: 15px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.error_page a {
+    margin-top: 1rem;
 }
 
 @media (min-width: 320px) {
