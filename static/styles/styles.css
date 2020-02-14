@@ -335,6 +335,8 @@ body {
     width: 80%;
 }
 
+
+
 /* Password reset success page*/
 .password_reset_done {
     text-align: center;
@@ -411,9 +413,19 @@ body {
     padding-right: 5px;
 }
 
-/*.footer .social_media small {*/
-/*    margin-botttom: 3rem;*/
-/*}*/
+/* 404 Error page*/
+.error_page {
+    text-align: center;
+}
+
+.error_page h2 {
+    margin-top: 10px;
+}
+
+.error_page img {
+    margin-top: 10px;
+    width: 80%;
+}
 
 @media (min-width: 320px) {
     .best_sellers .card {
