@@ -299,16 +299,29 @@ body {
   height: 30rem;
 }
 
-.reset_password input {
-    color: gray;
-    font-weight: 100;
-    margin-bottom: 30px;
-    width: 50%;
-}
-
-.reset_password button {
+.reset_password_form_look input {
+    margin-top: 10px;
+    width: 100%;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+/* Change password page*/
+.change_password_form_look {
+  background: #fffef8;
+  border: 1px solid black;
+  border-radius: 25px;
+  box-shadow: 2px 2px 8px grey;
+  margin: 100px auto;
+  padding: 20px;
+  height: 50rem;
+}
+
+.change_password_form_look input {
+    margin-top: 10px;
+    width: 100%;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 
 /*Checkout page*/
 .checkout_form {
@@ -349,6 +362,26 @@ body {
 .password_reset_done img {
     margin-top: 10px;
     width: 80%;
+}
+
+/* Password change success page*/
+.password_change_done {
+    text-align: center;
+}
+
+.password_change_done h2 {
+    margin-top: 10px;
+}
+
+.password_change_done img {
+    margin-top: 10px;
+    width: 80%;
+}
+
+.password_change_done a {
+    margin-top: 10px;
+    width: 80%;
+    height: 100%;
 }
 
 /*Footer*/

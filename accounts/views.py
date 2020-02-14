@@ -11,30 +11,18 @@ def index(request):
 def logout_confirm(request):
     return render(request, 'accounts/logout_confirm.template.html')
 
-def password_change(request):
-    return render(request, 'accounts/password_change.html')
-    
-def password_change_done(request):
-    if request.method == 'POST':
-        return render(request, 'registration/password_change_done.template.html')    
-        
-def password_reset(request):
-    return render(request, 'accounts/password_reset.template.html')
-    
-def password_reset_done(request):
-    if request.method == 'POST':
-        return render(request, 'registration/password_reset_done.template.html')    
-
 def logout(request):
     auth.logout(request)
-    messages.success(request, "You have successfully logged out.") # flash message
-    # return redirect( reverse('user_index'))
+    # flash message
+    messages.success(request, "You have successfully logged out.") 
     return redirect(reverse('home'))
 
 def login(request):
     if request.method == 'POST':
-        username = request.POST['username'] # username from form
-        password = request.POST['password'] # password from form
+        # username from form
+        username = request.POST['username'] 
+        # password from form
+        password = request.POST['password'] 
 
         # check if username and password matches
         user = auth.authenticate(username=username, password=password)
@@ -51,7 +39,9 @@ def login(request):
             return redirect( reverse('home'))
         else:
             # if user is None, show flash message
-            login_form.add_error(None, "Invalid user name or password")
+            # login_form.add_error(None, "Invalid user name or password")
+            # flash message, line break doesn't work
+            messages.error(request, 'Invalid username or password. \nMake sure they are case-sensitive.') 
             return render(request, 'accounts/login.template.html', {
             'login_form':login_form
         })
@@ -73,8 +63,10 @@ def register(request):
     # when user submit form
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
-        if form.is_valid(): # django check through fields one by one to validate. check email will run clean email
-            form.save() # registration is successful, form will be saved
+        # django check through fields one by one to validate. check email will run clean email
+        if form.is_valid(): 
+            # if registration is successful, form will be saved
+            form.save() 
         
             # log in user
             user = auth.authenticate(username=request.POST['username'], password=request.POST['password1'])
@@ -99,6 +91,3 @@ def register(request):
         return render(request, 'accounts/register.template.html', {
             'form': register_form
     })    
-    
-def my_account(request):
-    return render(request, 'accounts/my_account.template.html')    

@@ -10,7 +10,6 @@
   <p>If you have not created an account yet, then please <a href="{% url 'register' %}">register</a> first.</p>
   <form method='POST'>
         {% csrf_token %}
-        <!--{{ login_form.as_p }}-->
         {{ login_form|crispy }}
     <button class="btn btn-warning mb-3" type='submit'>Sign In</button>
     <a href="{% url 'password_reset' %}" class="btn btn-danger mb-3 forgot_password">Forgot Password</a>

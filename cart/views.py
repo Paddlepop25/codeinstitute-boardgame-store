@@ -42,7 +42,7 @@ def add_to_cart(request, game_id):
     # elif game_id in cart:    
         # if press again
         # messages.success(request, "The game is already in your shopping cart")
-        # return redirect('/catalogue/')
+        # return redirect('/cart/')
         
     else:
         
