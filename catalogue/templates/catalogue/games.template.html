@@ -1,7 +1,5 @@
 {% extends 'base.html' %} {% load crispy_forms_tags %} {% block title %} Games Catalogue {% endblock %} {% block content %}
 <!--<h1>Games</h1>-->
-<a href="{% url 'create_game' %}">Create New Game</a>
-
 <!--<form method='GET'>-->
 <!--    {{search_form|crispy}}-->
 <!--    <input type='submit' value='Search' class='btn btn-primary' />-->
@@ -27,8 +25,16 @@
                         <span class="card-text price_strikethrough">${{game.price|add:"18"}}</span>
                         <span class="card-text">SGD ${{game.price}}</span>
                         <br />
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'update_game' game_id=game.id %}" class="btn btn-outline-danger more_info">EDIT GAME</a>
+                        <a href="{% url 'confirm_delete' game_id=game.id %}" class="btn btn-danger more_info">DELETE GAME</a>
                         <a href="{% url 'game_info' game_id=game.id %}" class="btn btn-outline-warning more_info">MORE INFO</a>
                         <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a>
+                        {% endif %}
+                        {% if not user.is_authenticated %}
+                        <a href="{% url 'game_info' game_id=game.id %}" class="btn btn-outline-warning more_info">MORE INFO</a>
+                        <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

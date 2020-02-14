@@ -194,6 +194,20 @@ body {
   height: 80rem;
 }
 
+.confirm_delete_look {
+  background: #fffef8;
+  border: 1px solid black;
+  border-radius: 25px;
+  box-shadow: 2px 2px 8px grey;
+  margin: 100px auto;
+  padding: 20px;
+  height: 40rem;
+}
+
+.confirm_delete_look img {
+  width: 80%;
+}
+
 
 .accounts_form_look {
   background: #fffef8;

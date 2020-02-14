@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import Game, Category
 from .forms import GameForm, GameSearchForm
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -98,6 +99,7 @@ def confirm_delete_game(request, game_id):
 def actually_delete_game(request, game_id):
     game_being_deleted = get_object_or_404(Game, pk=game_id)
     game_being_deleted.delete()
+    messages.success(request, "Your games has been deleted")
     return redirect(reverse('show_games'))     
 
 def game_info(request, game_id):
