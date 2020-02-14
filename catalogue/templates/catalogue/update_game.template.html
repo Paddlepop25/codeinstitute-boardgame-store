@@ -1,18 +1,18 @@
-{% extends 'base.html' %} 
-
-{% block title %} Update Games {% endblock %} 
-
-{% load crispy_forms_tags %}
-
-{%block content %}
-
-<h1>Update Game</h1>
-{{ form.media }}
-<form method='POST' enctype="multipart/form-data">
-    {% csrf_token %} 
-    {{ form|crispy }}
-    <input type='submit' value='Update Game' />
-</form>
-    <a href="{% url 'confirm_delete' game_id=game.id %}">Delete</a> 
-
+{% extends 'base.html' %} {% block title %} Update Games {% endblock %} {% load crispy_forms_tags %} {%block content %}
+<div class="update_game_form_look">
+    <h1>Update Game</h1>
+    {{ form.media }}
+    <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %} {{ form|crispy }} 
+        {% if user.is_authenticated %}
+        <input type='submit' value='Update Game' class="btn btn-warning"/>
+        <a href="{% url 'confirm_delete' game_id=game.id %}" class="btn btn-danger update_game">DELETE GAME</a>
+        {% endif %} 
+        {% if not user.is_authenticated %}
+        <input type='submit' value='Update Game' class="btn btn-warning" />
+        <a href="{% url 'confirm_delete' game_id=game.id %}" class="btn btn-danger confirm_delete_game">DELETE GAME</a>
+        {% endif %}
+        
+    </form>
+</div>
 {%endblock%}
