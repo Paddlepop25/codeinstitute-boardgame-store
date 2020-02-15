@@ -1,7 +1,8 @@
 body {
     margin: 0;
     box-sizing: border-box;
-    font-size-adjust: 16px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -31,10 +32,11 @@ body {
 /* Navbar of base.html */
 .navbar_whole {
     padding: 0 !important;
+    margin-bottom: 2rem;
 }
 
 .navbar_whole .navbar {
-    background: #fffef8 !important; 
+    background: #FFAA25 !important; 
 }
 
 .navbar li {
@@ -50,7 +52,7 @@ body {
 }
 
 .navbar-light .navfont a:hover {
-    color: orange !important
+    color: white !important
 }
 
 /* Home page*/
@@ -189,7 +191,7 @@ body {
 /*Standardised form look for all pages with forms*/
 
 .create_game_form_look {
-  background: #fffef8;
+  background: #fcf7e0;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 2px 2px 8px grey;
@@ -199,7 +201,7 @@ body {
 }
 
 .update_game_form_look {
-  background: #fffef8;
+  background: #fcf7e0;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 2px 2px 8px grey;
@@ -235,7 +237,7 @@ body {
 
 
 .accounts_form_look {
-  background: #fffef8;
+  background: #fcf7e0;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 2px 2px 8px grey;
@@ -247,7 +249,7 @@ body {
 
 /*Register page*/
 .register_form_look {
-  background: #fffef8;
+  background: #fcf7e0;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 2px 2px 8px grey;
@@ -266,7 +268,7 @@ body {
 
 /*Login page*/
 .login_form_look {
-  background: #fffef8;
+  background: #fcf7e0;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 2px 2px 8px grey;
@@ -290,7 +292,7 @@ body {
 
 /* Reset password page*/
 .reset_password_form_look {
-  background: #fffef8;
+  background: #fcf7e0;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 2px 2px 8px grey;
@@ -307,7 +309,7 @@ body {
 
 /* Change password page*/
 .change_password_form_look {
-  background: #fffef8;
+  background: #fcf7e0;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 2px 2px 8px grey;
@@ -325,7 +327,7 @@ body {
 
 /*Checkout page*/
 .checkout_form {
-  background: #fffef8;
+  background: #fcf7e0;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 2px 2px 8px grey;
@@ -390,7 +392,7 @@ body {
 }
 
 .footer .row {
-    background: #fffef8;
+    background: #FFAA25;
 }
 
 .footer img {
@@ -402,7 +404,7 @@ body {
 }
 
 .footer a:hover {
-    color: orange;
+    color: white;
 }
 
 

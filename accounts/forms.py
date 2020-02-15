@@ -38,21 +38,3 @@ class RegistrationForm(UserCreationForm):
             raise forms.ValidationError("Password does not match")
         
         return password2
-        
-        
-
-        # 
-# class PasswordResetForm(UserCreationForm):
-        
-#     def clean_email(self):
-#         user_email = self.cleaned_data.get('email') # email from form
-#         # username = self.cleaned_data.get('username') # username from form
-        
-#         User = get_user_model()
-        
-        
-#         if User.objects.filter(email=user_email):
-#             raise forms.ValidationError('This email address has already been used')
-            
-#         return user_email # django requirement, email user typed in form will be returned if not been used before 
-       
