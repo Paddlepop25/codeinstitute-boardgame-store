@@ -3,8 +3,10 @@
 {% load crispy_forms_tags %}
 {% load static %}
 {% block footer_js %}
+<!--load stripe library-->
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
+// cdata tells the browser not to publish any key that's inside the publishable key
     //<![CDATA[
         Stripe.publishableKey = '{{ publishable }}';
     //]]>

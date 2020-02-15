@@ -14,17 +14,21 @@ def donate(request):
     return render(request, 'checkout/donate.template.html')
 
 def charge(request):
-    order_form = OrderForm()
-    payment_form = PaymentForm()
-    amount = request.GET['amount']
-    # if request.method == 'GET':
+    if request.method == 'GET':
+        order_form = OrderForm()
+        payment_form = PaymentForm()
+        amount = request.GET['amount']
         #show form
-    return render(request, 'checkout/charge.html', {
-        # 'publishable' : settings.STRIPE_PUBLISHABLE_KEY,
-        'order_form' : OrderForm,
-        'payment_form' : PaymentForm,
-        'amount': amount
-    })
+        return render(request, 'checkout/charge.html', {
+            'publishable' : settings.STRIPE_PUBLISHABLE_KEY,
+            'order_form' : OrderForm,
+            'payment_form' : PaymentForm,
+            'amount': amount
+        })
+        
+    else:
+        stripeToken = request.POST['stripe_id']
+        return HttpResponse(stripeToken)
     
 # simple method
 # def checkout(request):
