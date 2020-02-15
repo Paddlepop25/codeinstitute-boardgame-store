@@ -1,15 +1,20 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 
 from catalogue.models import Game
 
+# @login_required        
+# def checkout_form(request):
+#     return render(request, 'cart/checkout_form.template.html')   
+    
 def view_cart(request):
     # retrieve the cart
     cart = request.session.get('shopping_cart', {})
     grand_total_price = 0.00
     for game_id,game in cart.items():
         grand_total_price += game['total_price']
+        # print(type(grand_total_price))
     return render(request, 'cart/view_cart.template.html', {
         'shopping_cart':cart,
         'grand_total_price':round(grand_total_price, 2)
@@ -91,9 +96,6 @@ def remove_from_cart(request, game_id):
         request.session['shopping_cart'] = cart
         messages.success(request, "Game has been removed from your cart")
         return redirect('/cart/')
-
-@login_required        
-def checkout_form(request):
-    return render(request, 'cart/checkout_form.template.html')        
+     
     
     

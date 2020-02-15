@@ -1,33 +1,61 @@
 from django.shortcuts import render, reverse, HttpResponse, get_object_or_404
 from .forms import OrderForm, PaymentForm
-
+from django.contrib.auth.decorators import login_required
 
 #import settings so that we can access the public stripe key
 from django.conf import settings
-# import stripe
+import stripe
 
 # from catalogue.models import Game
 
 # Create your views here.
 
+@login_required        
+def checkout(request):
+    return render(request, 'checkout/checkout.template.html') 
+
 def donate(request):
     return render(request, 'checkout/donate.template.html')
 
+@login_required    
 def charge(request):
-    if request.method == 'GET':
-        order_form = OrderForm()
-        payment_form = PaymentForm()
         amount = request.GET['amount']
-        #show form
-        return render(request, 'checkout/charge.html', {
-            'publishable' : settings.STRIPE_PUBLISHABLE_KEY,
-            'order_form' : OrderForm,
-            'payment_form' : PaymentForm,
-            'amount': amount
-        })
         
-    else:
-        stripeToken = request.POST['stripe_id']
+        if request.method == 'GET':
+            order_form = OrderForm()
+            payment_form = PaymentForm()
+            #show form
+            # return render(request, 'checkout/checkout.template.html', {
+            return render(request, 'checkout/charge.html', {
+                'publishable' : settings.STRIPE_PUBLISHABLE_KEY,
+                'order_form' : OrderForm,
+                'payment_form' : PaymentForm,
+                'amount': amount
+            })
+        
+        else:
+            # set secret key for Stripe API
+            stripeToken = request.POST['stripe_id']
+            stripe.api_key = settings.STRIPE_SECRET_KEY
+            
+            order_form = OrderForm(request.POST)
+            payment_form = PaymentForm(request.POST)
+    
+            if order_form.is_valid() and payment_form.is_valid():
+                customer = stripe.Charge.create(
+                        amount=int(request.POST['amount'])*100,
+                        currency='usd',
+                        description='Payment',
+                        card=stripeToken
+                    )
+                    
+                if customer.paid:
+                    return render(request, 'checkout/checkout_success.template.html')
+                else:
+                    return HttpResponse("Payment failed")
+        
+        
+        
         return HttpResponse(stripeToken)
     
 # simple method
