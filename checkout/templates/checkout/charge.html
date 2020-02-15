@@ -16,19 +16,21 @@
 <script type="text/javascript" src="{% static 'checkout/stripe.js' %}"></script>
 {% endblock %} {% block content %}
 
+<div class="checkout_form">
 <form role="form" method="POST" id="payment-form">
     <legend>Payment Details</legend>
         <p>THis is the charge.html</p>
-    <!--<div class='alert alert-danger' id='credit-card-errors' style='display:none'>-->
-    <!--    <p id='stripe-error-message'></p>-->
-    <!--</div>-->
-
-    <div class="alert alert-danger alert-dismissible fade show" role="alert" style='display:none'>
+        
+    <div class='alert alert-danger' id='credit-card-errors' style='display:none'>
         <p id='stripe-error-message'></p>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
     </div>
+
+  <!--  <div class="alert alert-danger alert-dismissible fade show" role="alert" style='display:none'>-->
+  <!--      <p id='stripe-error-message'></p>-->
+  <!--    <button type="button" class="close" data-dismiss="alert" aria-label="Close">-->
+  <!--  <span aria-hidden="true">&times;</span>-->
+  <!--</button>-->
+  <!--  </div>-->
 
     <div class="form-group col-md-6">
         {{ order_form | crispy }}
@@ -46,4 +48,5 @@
         <input class=" btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
     </div>
 </form>
+</div>
 {% endblock %}

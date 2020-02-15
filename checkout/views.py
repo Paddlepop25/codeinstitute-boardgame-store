@@ -1,6 +1,8 @@
 from django.shortcuts import render, reverse, HttpResponse, get_object_or_404
 from .forms import OrderForm, PaymentForm
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from django.utils import timezone
 
 #import settings so that we can access the public stripe key
 from django.conf import settings
@@ -42,21 +44,40 @@ def charge(request):
             payment_form = PaymentForm(request.POST)
     
             if order_form.is_valid() and payment_form.is_valid():
-                customer = stripe.Charge.create(
-                        amount=int(request.POST['amount'])*100,
-                        currency='usd',
-                        description='Payment',
-                        card=stripeToken
-                    )
+                try:
+                    customer = stripe.Charge.create(
+                            amount=int(request.POST['amount'])*100,
+                            currency='usd',
+                            description='Payment',
+                            card=stripeToken
+                        )
+                        
+                    if customer.paid:
+                        order = order_form.save(commit=False)
+                        order.date = timezone.now()
+                        order.save()
+                        return render(request, 'checkout/checkout_success.template.html')
                     
-                if customer.paid:
-                    return render(request, 'checkout/checkout_success.template.html')
-                else:
-                    return HttpResponse("Payment failed")
-        
-        
-        
-        return HttpResponse(stripeToken)
+                    else:
+                        messages.error(request, "Your card has been declined!")
+                        
+                except stripe.error.CardError:
+                        messages.error(request, "Your card was declined!")
+                    
+            else:
+                 return render(request, 'checkout/charge.html', {
+                'order_form' : OrderForm,
+                'payment_form' : PaymentForm,
+                'amount': amount,
+                'publishable' : settings.STRIPE_PUBLISHABLE_KEY
+            })
+
+            return render(request, 'checkout/charge.html', {
+            'order_form' : OrderForm,
+            'payment_form' : PaymentForm,
+            'amount': amount,
+            'publishable' : settings.STRIPE_PUBLISHABLE_KEY
+            })
     
 # simple method
 # def checkout(request):
