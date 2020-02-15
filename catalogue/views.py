@@ -99,7 +99,7 @@ def confirm_delete_game(request, game_id):
 def actually_delete_game(request, game_id):
     game_being_deleted = get_object_or_404(Game, pk=game_id)
     game_being_deleted.delete()
-    messages.success(request, "Your games has been deleted :(")
+    messages.success(request, "Game has been deleted successfully")
     return redirect(reverse('show_games'))     
 
 def game_info(request, game_id):

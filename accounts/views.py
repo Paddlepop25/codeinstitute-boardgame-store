@@ -39,7 +39,7 @@ def login(request):
             return redirect( reverse('home'))
         else:
             # if user is None, show flash message
-            # login_form.add_error(None, "Invalid user name or password")
+            # login_form.add_error(None, "Invalid user name or password. Make sure they are case-sensitive.")
             # flash message, line break doesn't work
             messages.error(request, 'Invalid username or password. \nMake sure they are case-sensitive.') 
             return render(request, 'accounts/login.template.html', {
@@ -73,7 +73,7 @@ def register(request):
         
             if user:
                 auth.login(user=user, request=request)
-                messages.success(request, "Registration is successful. You can now checkout!")
+                messages.success(request, "Registration is successful. You can now make payment")
                 return redirect(reverse('home'))
             else:    
                 messages.error(request, "Sorry, we're unable to register your account. Please try again.")

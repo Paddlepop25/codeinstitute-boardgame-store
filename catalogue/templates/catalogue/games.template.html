@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load crispy_forms_tags %} {% block title %} Games Catalogue {% endblock %} {% block content %}
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block title %} Games Catalogue {% endblock %} {% load static %} {% block content %}
 <!--<h1>Games</h1>-->
 <!--<form method='GET'>-->
 <!--    {{search_form|crispy}}-->
@@ -7,7 +7,7 @@
 
 <section class="search_results">
     {% if search_terms == None %} {% else %}
-    <h2>Search Results for '{{search_terms}}'</h2>
+    <h2>Search Results for "{{search_terms}}"</h2>
 
     {% endif %} {% if filtering is False %}
 
@@ -77,8 +77,12 @@
     </section>
 
     {% else %} {% if results is False %}
-
-    <p>Sorry, no results are found</p>
+    <div class="no_results">
+        <h1>Sorry, no results are found. 
+        <br />
+        Please try another word.</h1>
+        <img src="{% static 'images/sad_cat.jpg'%}"></img>
+    </div>
 
     {% else%}
 
@@ -106,17 +110,9 @@
 
 </section>
 
-
-
-
-
 {% endif %}
 <!--if len(search results) == 0:-->
 <!--<h2>Sorry, no results is found for '{{search_terms}}'</h2>-->
 <!--else:-->
-
-
-
-
 
 {%endblock%}

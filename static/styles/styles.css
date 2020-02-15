@@ -102,6 +102,15 @@ body {
     border: none;
 }
 
+.no_results {
+    text-align: center;
+}
+
+.no_results img {
+    width: 80%;
+    margin: 1rem auto;
+}
+
 .search_results .more_info {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -191,7 +200,7 @@ body {
 /*Standardised form look for all pages with forms*/
 
 .create_game_form_look {
-  background: #fcf7e0;
+  background: #fffbed;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 2px 2px 8px grey;
@@ -201,7 +210,7 @@ body {
 }
 
 .update_game_form_look {
-  background: #fcf7e0;
+  background: #fffbed;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 2px 2px 8px grey;
@@ -237,7 +246,7 @@ body {
 
 
 .accounts_form_look {
-  background: #fcf7e0;
+  background: #fffbed;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 2px 2px 8px grey;
@@ -249,7 +258,7 @@ body {
 
 /*Register page*/
 .register_form_look {
-  background: #fcf7e0;
+  background: #fffbed;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 2px 2px 8px grey;
@@ -268,7 +277,7 @@ body {
 
 /*Login page*/
 .login_form_look {
-  background: #fcf7e0;
+  background: #fffbed;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 2px 2px 8px grey;
@@ -292,7 +301,7 @@ body {
 
 /* Reset password page*/
 .reset_password_form_look {
-  background: #fcf7e0;
+  background: #fffbed;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 2px 2px 8px grey;
@@ -309,7 +318,7 @@ body {
 
 /* Change password page*/
 .change_password_form_look {
-  background: #fcf7e0;
+  background: #fffbed;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 2px 2px 8px grey;
@@ -327,7 +336,7 @@ body {
 
 /*Checkout page*/
 .checkout_form {
-  background: #fcf7e0;
+  background: #fffbed;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 2px 2px 8px grey;
