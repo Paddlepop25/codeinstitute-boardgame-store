@@ -69,13 +69,11 @@ body {
     /*margin-bottom: 12rem;*/
 }
 
-
 .best_sellers .card img {
     width: 80%;
     margin: 0 auto;
     margin-top: 1rem;
 }
-
 
 /* Game cards*/
 .best_sellers .more_info {
@@ -198,7 +196,6 @@ body {
 }
 
 /*Standardised form look for all pages with forms*/
-
 .create_game_form_look {
   background: #fffbed;
   border: 1px solid black;
@@ -243,7 +240,6 @@ body {
 .confirm_delete_look img {
   width: 80%;
 }
-
 
 .accounts_form_look {
   background: #fffbed;
@@ -359,8 +355,6 @@ body {
     width: 80%;
 }
 
-
-
 /* Password reset success page*/
 .password_reset_done {
     text-align: center;
@@ -393,6 +387,22 @@ body {
     margin-top: 10px;
     width: 80%;
     height: 100%;
+}
+
+/*Contact page*/
+.google-maps {
+    position: relative;
+    padding-bottom: 75%; /* This is the aspect ratio*/
+    height: 0;
+    overflow: hidden;
+}
+
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 70% !important;
 }
 
 /*Footer*/
@@ -435,16 +445,11 @@ body {
  
 .footer .company_links li {
     list-style-type: none;
-    /*margin: 0 auto;*/
-    /*float: left;*/
-    /*margin-right: 5px;*/
 }  
 
 .footer .company_links a {
     text-decoration: none;
 }  
-
-
 
 .footer .social_media {
     margin: 0 auto;
@@ -498,9 +503,6 @@ body {
 
 @media (min-width: 576px) {
   .footer .company_links ul li {
-    /*list-style-type: none;*/
-    /*float: left;*/
-    /*margin-right: 5px;*/
 }   
 }
 
