@@ -163,8 +163,8 @@ LOGIN_URL = 'login'
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
 # for sending email to users for password reset
-# EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # this from contact form
 DEFAULT_FROM_EMAIL = 'testing@example.com'
