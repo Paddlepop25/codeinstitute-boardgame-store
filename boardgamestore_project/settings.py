@@ -163,8 +163,17 @@ LOGIN_URL = 'login'
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
 # for sending email to users for password reset
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# this from contact form
+DEFAULT_FROM_EMAIL = 'testing@example.com'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+EMAIL_PORT = 1025
+
+# end of contact form
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 
 STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')

@@ -414,14 +414,14 @@ body {
     list-style-type: none;
 }
 
-.newsletter_form_look {
+.contact_form_look {
   background: #fffbed;
   border: 1px solid black;
   border-radius: 25px;
   box-shadow: 2px 2px 8px grey;
   margin: 100px auto;
   padding: 20px;
-  height: 80rem;
+  height: 50rem;
 }
 
 

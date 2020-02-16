@@ -1,8 +1,12 @@
 from django.shortcuts import render
+from .forms import ContactForm
 
 # Create your views here.
 def contact_us(request):
-    return render(request, "info_pages/contact_us.template.html")
+    form = ContactForm
+    return render(request, "info_pages/contact_us.template.html", {
+        'form':form
+    })
     
 def terms_and_conditions(request):
     return render(request, "info_pages/terms_and_conditions.template.html")
