@@ -392,7 +392,8 @@ body {
 /*Contact page*/
 .google-maps {
     position: relative;
-    padding-bottom: 75%; /* This is the aspect ratio*/
+    /* This is the aspect ratio*/
+    padding-bottom: 75%; 
     height: 0;
     overflow: hidden;
 }
@@ -404,6 +405,25 @@ body {
     width: 100% !important;
     height: 70% !important;
 }
+
+.reaching_us {
+    padding: 0;
+}
+
+.reaching_us li {
+    list-style-type: none;
+}
+
+.newsletter_form_look {
+  background: #fffbed;
+  border: 1px solid black;
+  border-radius: 25px;
+  box-shadow: 2px 2px 8px grey;
+  margin: 100px auto;
+  padding: 20px;
+  height: 80rem;
+}
+
 
 /*Footer*/
 .footer {
