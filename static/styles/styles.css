@@ -7,7 +7,9 @@ body {
 
 
 /* Top row of base.html */
-.top-row p,a {
+
+.top-row p,
+a {
     color: orange;
 }
 
@@ -30,13 +32,14 @@ body {
 }
 
 /* Navbar of base.html */
+
 .navbar_whole {
     padding: 0 !important;
     margin-bottom: 2rem;
 }
 
 .navbar_whole .navbar {
-    background: #FFAA25 !important; 
+    background: #FFAA25 !important;
 }
 
 .navbar li {
@@ -56,6 +59,7 @@ body {
 }
 
 /* Home page*/
+
 .welcome_image img {
     width: 100%;
     margin-bottom: 2rem;
@@ -63,7 +67,7 @@ body {
     border-radius: 15px;
 }
 
-.best_sellers .card  {
+.best_sellers .card {
     border: none;
     /*height: 40rem;*/
     /*margin-bottom: 12rem;*/
@@ -76,6 +80,7 @@ body {
 }
 
 /* Game cards*/
+
 .best_sellers .more_info {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -154,13 +159,14 @@ body {
     margin: 8px auto;
 }
 
-.price_strikethrough    {
+.price_strikethrough {
     text-decoration: line-through;
     color: gray;
     margin-right: 5px;
 }
 
 /*Game info page*/
+
 .game_info .card {
     width: 18rem;
     height: 120rem;
@@ -174,6 +180,7 @@ body {
 
 
 /* Shopping Cart page*/
+
 .cart img {
     width: 4rem;
 }
@@ -196,71 +203,74 @@ body {
 }
 
 /*Standardised form look for all pages with forms*/
+
 .create_game_form_look {
-  background: #fffbed;
-  border: 1px solid black;
-  border-radius: 25px;
-  box-shadow: 2px 2px 8px grey;
-  margin: 100px auto;
-  padding: 20px;
-  height: 80rem;
+    background: #fffbed;
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 2px 2px 8px grey;
+    margin: 100px auto;
+    padding: 20px;
+    height: 80rem;
 }
 
 .update_game_form_look {
-  background: #fffbed;
-  border: 1px solid black;
-  border-radius: 25px;
-  box-shadow: 2px 2px 8px grey;
-  margin: 100px auto;
-  padding: 20px;
-  height: 100rem;
+    background: #fffbed;
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 2px 2px 8px grey;
+    margin: 100px auto;
+    padding: 20px;
+    height: 100rem;
 }
 
 .update_game_form_look a {
-  width: 100%;
-  margin-top: 10px;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 
 .confirm_delete_look {
-  text-align: center;
-  margin-top: 2rem;
+    text-align: center;
+    margin-top: 2rem;
 }
 
-.confirm_delete_look a,input{
-  width: 100%;
+.confirm_delete_look a,
+input {
+    width: 100%;
 }
 
 .confirm_delete_look .card {
-  border: none;
-  margin-top: 2rem;
+    border: none;
+    margin-top: 2rem;
 }
 
 .confirm_delete_look img {
-  width: 80%;
+    width: 80%;
 }
 
 .accounts_form_look {
-  background: #fffbed;
-  border: 1px solid black;
-  border-radius: 25px;
-  box-shadow: 2px 2px 8px grey;
-  margin: 100px auto;
-  padding: 20px;
-  height: 20rem;
-  text-align: center;
+    background: #fffbed;
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 2px 2px 8px grey;
+    margin: 100px auto;
+    padding: 20px;
+    height: 20rem;
+    text-align: center;
 }
 
 /*Register page*/
+
 .register_form_look {
-  background: #fffbed;
-  border: 1px solid black;
-  border-radius: 25px;
-  box-shadow: 2px 2px 8px grey;
-  margin: 100px auto;
-  padding: 20px;
-  height: 40rem;
+    background: #fffbed;
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 2px 2px 8px grey;
+    margin: 100px auto;
+    padding: 20px;
+    height: 40rem;
 }
 
 .register_form_look a {
@@ -272,14 +282,15 @@ body {
 }
 
 /*Login page*/
+
 .login_form_look {
-  background: #fffbed;
-  border: 1px solid black;
-  border-radius: 25px;
-  box-shadow: 2px 2px 8px grey;
-  margin: 100px auto;
-  padding: 20px;
-  height: 30rem;
+    background: #fffbed;
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 2px 2px 8px grey;
+    margin: 100px auto;
+    padding: 20px;
+    height: 30rem;
 }
 
 .login_form_look a {
@@ -296,14 +307,15 @@ body {
 }
 
 /* Reset password page*/
+
 .reset_password_form_look {
-  background: #fffbed;
-  border: 1px solid black;
-  border-radius: 25px;
-  box-shadow: 2px 2px 8px grey;
-  margin: 100px auto;
-  padding: 20px;
-  height: 30rem;
+    background: #fffbed;
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 2px 2px 8px grey;
+    margin: 100px auto;
+    padding: 20px;
+    height: 30rem;
 }
 
 .reset_password_form_look input {
@@ -313,14 +325,15 @@ body {
 }
 
 /* Change password page*/
+
 .change_password_form_look {
-  background: #fffbed;
-  border: 1px solid black;
-  border-radius: 25px;
-  box-shadow: 2px 2px 8px grey;
-  margin: 100px auto;
-  padding: 20px;
-  height: 50rem;
+    background: #fffbed;
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 2px 2px 8px grey;
+    margin: 100px auto;
+    padding: 20px;
+    height: 50rem;
 }
 
 .change_password_form_look input {
@@ -331,17 +344,19 @@ body {
 
 
 /*Checkout page*/
+
 .checkout_form {
-  background: #fffbed;
-  border: 1px solid black;
-  border-radius: 25px;
-  box-shadow: 2px 2px 8px grey;
-  margin: 100px auto;
-  padding: 20px;
-  height: 80rem;
+    background: #fffbed;
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 2px 2px 8px grey;
+    margin: 100px auto;
+    padding: 20px;
+    height: 80rem;
 }
 
 /*Checkout success page*/
+
 .checkout_success {
     text-align: center;
 }
@@ -356,6 +371,7 @@ body {
 }
 
 /* Password reset success page*/
+
 .password_reset_done {
     text-align: center;
 }
@@ -370,6 +386,7 @@ body {
 }
 
 /* Password change success page*/
+
 .password_change_done {
     text-align: center;
 }
@@ -390,10 +407,11 @@ body {
 }
 
 /*Contact page*/
+
 .google-maps {
     position: relative;
     /* This is the aspect ratio*/
-    padding-bottom: 75%; 
+    padding-bottom: 75%;
     height: 0;
     overflow: hidden;
 }
@@ -406,6 +424,14 @@ body {
     height: 70% !important;
 }
 
+.more_info {
+    margin-top: -2rem;
+}
+
+.contact_us {
+    margin-top: -4rem;
+}
+
 .reaching_us {
     padding: 0;
 }
@@ -415,17 +441,18 @@ body {
 }
 
 .contact_form_look {
-  background: #fffbed;
-  border: 1px solid black;
-  border-radius: 25px;
-  box-shadow: 2px 2px 8px grey;
-  margin: 100px auto;
-  padding: 20px;
-  height: 50rem;
+    background: #fffbed;
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 2px 2px 8px grey;
+    margin: 100px auto;
+    padding: 20px;
+    height: 45rem;
 }
 
 
 /*Footer*/
+
 .footer {
     margin-top: 5rem;
 }
@@ -462,14 +489,14 @@ body {
     text-align: center;
     padding-bottom: 1rem;
 }
- 
+
 .footer .company_links li {
     list-style-type: none;
-}  
+}
 
 .footer .company_links a {
     text-decoration: none;
-}  
+}
 
 .footer .social_media {
     margin: 0 auto;
@@ -483,6 +510,7 @@ body {
 }
 
 /* 404 Error page*/
+
 .error_page {
     text-align: center;
     margin-top: 1rem;
@@ -509,52 +537,66 @@ body {
     }
 }
 
-@media (min-width: 364px) and (max-width: 575px)  {
+@media (min-width: 364px) and (max-width: 575px) {
     .best_sellers .card {
         height: 38rem;
     }
 }
 
 @media (max-width: 386px) {
-  .knight {
-    margin: 0 auto;
-  }
+    .knight {
+        margin: 0 auto;
+    }
 }
 
-@media (min-width: 576px) {
-  .footer .company_links ul li {
-}   
+@media (min-width: 425px) {
+    .more_info {
+        margin-top: -4rem;
+    }
 }
-
 
 @media (min-width: 768px) {
-  .checkout_form .card {
-    height: 73rem;
-  }
-  
-  .game_info .card {
-    width: 40rem;
+    .checkout_form .card {
+        height: 73rem;
+    }
+
+    .game_info .card {
+        width: 40rem;
+    }
+
+    .more_info {
+        margin-top: -7rem;
+    }
+
 }
 
+@media (min-width: 992px) {
+    .more_info {
+        margin-top: -4rem;
+    }
+    
+    .contact_us {
+        margin-top: -16rem;
+    }
 }
 
 @media (min-width: 1024px) {
-  .game_info .card {
-    width: 58rem;
-}
+    .game_info .card {
+        width: 58rem;
+    }
 
 }
 
 @media (min-width: 1200px) {
-   .footer {
-    margin-top: 8rem;
-  }
-  
+    .footer {
+        margin-top: 8rem;
+    }
+
 }
 
 @media (min-width: 1440px) {
-  .game_info .card {
-    width: 69rem;
-}
+    .game_info .card {
+        width: 69rem;
+    }
 
 }
