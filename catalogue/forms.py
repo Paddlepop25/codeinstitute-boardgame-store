@@ -10,5 +10,5 @@ class GameForm(forms.ModelForm):
         
 class GameSearchForm(forms.Form):
     search_terms = forms.CharField(required=False)
-    min_cost = forms.FloatField(required=False, min_value=0)
-    max_cost = forms.FloatField(required=False)      
+    # min_cost = forms.FloatField(required=False, min_value=0)
+    # max_cost = forms.FloatField(required=False)      

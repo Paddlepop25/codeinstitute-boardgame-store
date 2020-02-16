@@ -2,6 +2,7 @@ from django.core.mail import EmailMessage
 from django.shortcuts import redirect
 from django.template.loader import get_template
 from django.shortcuts import render
+from django.contrib import messages
 from .forms import ContactForm
 
 # Create your views here.
@@ -38,6 +39,7 @@ def contact_us(request):
                 headers = {'Reply-To': contact_email }
             )
             email.send()
+            messages.success(request, "Thank you for your query. We will contact you shortly.")
             return redirect('contact_us')
             
     return render(request, "info_pages/contact_us.template.html", {
