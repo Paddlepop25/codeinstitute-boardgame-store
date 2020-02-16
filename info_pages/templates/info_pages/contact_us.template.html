@@ -1,28 +1,16 @@
-{% extends 'base.html' %} 
-
-{% block title %} Contact Us {% endblock %} 
-
-{% block content %}
+{% extends 'base.html' %} {% block title %} Contact Us {% endblock %} {% block content %}
 
 <section id="contact">
   <h1>Contact Us</h1>
   <!-- Google Map -->
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        
-      </div>
-      <div class="col">
-        
-      </div>
-    </div>
 
+  <div class="row">
+    <div class="col d-none d-md-block">
       <div class="google-maps">
         <iframe width="600" height="450" id="gmap_canvas" src="https://maps.google.com/maps?q=tampines%20one&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
       </div>
-
+    </div>
   </div>
-
 </section>
 
 {% endblock %}
