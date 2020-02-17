@@ -19,4 +19,5 @@ class Category(models.Model):
     name = models.CharField(max_length=50, blank=False)
     
     def __str__(self):
-        return "{} (id: {})".format(self.name, self.id)
+        # return "{} (id: {})".format(self.name, self.id)
+        return self.name

@@ -17,21 +17,24 @@
       <h4>More Info</h4>
       <p>The BoardGameStore is made up of a team of board gaming enthusiasts, who strive to bring the best of board games into Singapore at the most affordable prices.</p>
       <p>Customers may wish to walk in to purchase game off our shelves. Current payment mode is GrabPay and cash only.</p>
-
+      <br />
+      
       <h4>Our operation hours:</h4>
       <ul>
         <li>Tuesdays to Saturdays: 12 – 9pm</li>
         <li>Sundays: 12 – 5pm</li>
         <li>Closed on Public Holidays & Mondays</li>
       </ul>
-
+      <br />
+      
       <h4>Reaching us</h4>
       <ul class="reaching_us">
         <li><i class="fas fa-map-marker-alt"></i> 10 Tampines Central 1 #05-35 Tampines 1 Singapore 529536</li>
-        <li>* Nearest MRT is Tampines MRT (1 min walk)</li>
-        <li>** Parking is available.</li>
         <li><i class="far fa-clock"></i> 10am - 10pm</li>
         <li><i class="fas fa-phone-alt"></i> +65 9856 2565 (Whatsapp only)</li>
+        <br />
+        <li>* Nearest MRT is Tampines MRT (1 min walk)</li>
+        <li>** Parking is available.</li>
       </ul>
     </div>
     
@@ -43,8 +46,9 @@
         <i class="fas fa-puzzle-piece"></i>
         </h5>
         <form role="form" action="" method="POST">
-          {% csrf_token %} {{ form|crispy }}
-          <button type="submit">Submit</button>
+          {% csrf_token %} 
+          {{ form|crispy }}
+          <button type="submit" class="btn btn-warning contact_btn">Submit</button>
         </form>
       </div>
     </div>

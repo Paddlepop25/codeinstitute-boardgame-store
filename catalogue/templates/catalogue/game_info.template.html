@@ -9,11 +9,14 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">{{game.name}}</h5>
+                    <h2 class="card-title">{{game.name}}</h2>
                     <span class="card-text price_strikethrough">${{game.price|add:"18"}}</span>
-                    <span class="card-text">${{game.price}}</span>
+                    <span class="card-text">SGD ${{game.price}}</span>
+                    <br />
+                    <br />
                     <p class="card-text">Category: {{game.category}}</p>
-                    <p class="card-text">Description <br />{{game.description|linebreaks}}</p>
+                    
+                    <p class="card-text">Game description: <br />{{game.description|linebreaks}}</p>
                     <p>Inside this box</p>
                     <ul>
                         <!--for content in game.inside_box -->

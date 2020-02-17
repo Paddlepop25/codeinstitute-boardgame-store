@@ -67,6 +67,10 @@ a {
     border-radius: 15px;
 }
 
+.welcome_message h1,h3 {
+    text-align: center;
+}
+
 .best_sellers .card {
     border: none;
     /*height: 40rem;*/
@@ -200,6 +204,7 @@ a {
 
 .cart .proceed_checkout {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+    height: 2.4rem;
 }
 
 /*Standardised form look for all pages with forms*/
@@ -449,6 +454,10 @@ input {
     padding: 20px;
     height: 45rem;
 }
+
+/*.contact_form_look button {*/
+/*    width: 15rem;*/
+/*}*/
 
 
 /*Footer*/
