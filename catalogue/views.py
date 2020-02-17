@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import Game, Category
 from .forms import GameForm, GameSearchForm
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 # Create your views here.
 def show_games(request):
@@ -51,7 +51,8 @@ def show_games(request):
         # 'search_form':search_form
     })
 
-@login_required    
+# @login_required
+@user_passes_test(lambda u: u.is_superuser)
 def create_game(request):
     if request.method == 'POST':
         create_game_form = GameForm(request.POST)
@@ -66,7 +67,8 @@ def create_game(request):
         'form':create_game_form
     })    
 
-@login_required
+# @login_required
+@user_passes_test(lambda u: u.is_superuser)
 def update_game(request, game_id):
     # all_games = Game.objects.all()
     game_being_updated = get_object_or_404(Game, pk=game_id)
@@ -88,14 +90,16 @@ def update_game(request, game_id):
         'game':game_being_deleted
     })    
 
-@login_required    
+# @login_required    
+@user_passes_test(lambda u: u.is_superuser)
 def confirm_delete_game(request, game_id):
     game_being_deleted = get_object_or_404(Game, pk=game_id)
     return render(request, 'catalogue/confirm_delete_game.template.html', {
         'game':game_being_deleted
     })    
 
-@login_required    
+# @login_required
+@user_passes_test(lambda u: u.is_superuser)
 def actually_delete_game(request, game_id):
     game_being_deleted = get_object_or_404(Game, pk=game_id)
     game_being_deleted.delete()
