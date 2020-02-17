@@ -19,8 +19,6 @@
 <div class="checkout_form">
 <form role="form" method="POST" id="payment-form">
     <legend>Payment Details</legend>
-        <p>THis is the charge.html</p>
-        
     <div class='alert alert-danger' id='credit-card-errors' style='display:none'>
         <p id='stripe-error-message'></p>
     </div>
@@ -45,7 +43,7 @@
     <input type='hidden' value='{{amount}}' name='amount' />
 
     <div class="form-group col-md-12">
-        <input class=" btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+        <input class=" btn btn-warning" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
     </div>
 </form>
 </div>
