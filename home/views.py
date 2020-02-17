@@ -5,9 +5,11 @@ from catalogue.models import Game
 def home(request):
     dixit_game = Game.objects.get(name='Dixit')
     resistance_game = Game.objects.get(name='The Resistance')
+    catan_game = Game.objects.get(name='Catan')
     betrayal_game = Game.objects.get(name='Betrayal at House')
     return render(request, 'home/index.template.html', {
         'dixit':dixit_game,
         'resistance':resistance_game,
-        'betrayal':betrayal_game
+        'betrayal':betrayal_game,
+        'catan':catan_game
     })

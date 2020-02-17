@@ -7,42 +7,72 @@
 <section class="welcome_message">
   <h1>Welcome to The BoardGameStore!</h1>
   <h3>Singapore's best online boardgame store</h3>
-  <p>Here you will be spoiled for choice for the variety of fun and adventure that is awaiting you, your friends and your family! 
-  Staying home or indoors this COVID-19 period? What better way to spend your time than play some boardgames! Head on over to our shop, 
-  there are so many different kinds of games for some fun activity your brain is screaming for.</p>
-  <p>Our prices are the best in Singapore! We dare say if you show us a game that is sold at a lower price, you'll get to keep the game bought from our store, plus a refund!
-  Come come come, get ready for some wonder and introvert friendly activity you know you can't resist. What are you waiting for? Click on the shop button and checkout a game today!</p>
+  <p>Here you will be spoiled for choice for the variety of fun and adventure that is awaiting you, your friends and your family! Staying home or indoors this COVID-19 period? What better way to spend your time than play some boardgames! Head on over to
+    our shop, there are so many different kinds of games for some fun activity your brain is screaming for.</p>
+  <p>Our prices are the best in Singapore! We dare say if you show us a game that is sold at a lower price, you'll get to keep the game bought from our store, plus a refund! Come come come, get ready for some wonder and introvert friendly activity you know
+    you can't resist. What are you waiting for? Click on the shop button and checkout a game today!</p>
 
 </section>
 
 <section class="best_sellers">
-  <h3>Best Sellers</h3>
-
-  <div class="card-group">
-    <div class="card">
-      <img src="{% static 'images/dixit_best.jpg' %}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{dixit.name}}</h5>
-        <p class="card-text">2011 Guldbrikken Best Family Game</p>
-        <p class="card-text">2010 Games Magazine Best New Party Game Winner</p>
-        <a href="{% url 'game_info' game_id=dixit.id %}" class="btn btn-outline-warning more_info">MORE INFO</a>
-        <a href="{% url 'add_to_cart' game_id=dixit.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  <h3>Our Best Sellers</h3>
+  <div class="row">
+      <div class="col col-lg-3">
+        <div class="card">
+          <img src="{% static 'images/dixit_best.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{dixit.name}}</h5>
+            <p class="card-text">2011 Guldbrikken Best Family Game</p>
+            <p class="card-text">2010 Games Magazine Best New Party Game Winner</p>
+            <a href="{% url 'game_info' game_id=dixit.id %}" class="btn btn-outline-warning more_info">MORE INFO</a>
+            <a href="{% url 'add_to_cart' game_id=dixit.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a>
+            <p class="card-text"><small class="text-muted">Last updated 2 mins ago</small></p>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="card">
-      <img src="{% static 'images/betrayal_best.jpg' %}" class="card-img-top" alt="...">
-      <div class="card-body">
-
-        <h5 class="card-title">{{betrayal.name}}</h5>
-        <p class="card-text">2004 Origins Gamers’ Choice Award</p>
-        <p class="card-text">2010 Games Magazine Best New Party Game Winner</p>
-        <a href="{% url 'game_info' game_id=betrayal.id %}" class="btn btn-outline-warning more_info">MORE INFO</a>
-        <a href="{% url 'add_to_cart' game_id=betrayal.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a>
-        <p class="card-text"><small class="text-muted">Last updated 7 mins ago</small></p>
+    
+      <div class="col col-lg-3">
+        <div class="card">
+          <img src="{% static 'images/catan.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{catan.name}}</h5>
+            <p class="card-text">2011 Ludo Award Best Board Game Editor's Choice Winner</p>
+            <p class="card-text">2005 Gra Roku Game of the Year</p>
+            <a href="{% url 'game_info' game_id=catan.id %}" class="btn btn-outline-warning more_info">MORE INFO</a>
+            <a href="{% url 'add_to_cart' game_id=catan.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
       </div>
-    </div>
+      
+      <div class="col col-lg-3">
+        <div class="card">
+          <img src="{% static 'images/betrayal_best.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{betrayal.name}}</h5>
+            <p class="card-text">2010 Games Magazine Best New Party Game Winner</p>
+            <p class="card-text">2004 Origins Gamers’ Choice Award</p>
+            <a href="{% url 'game_info' game_id=betrayal.id %}" class="btn btn-outline-warning more_info">MORE INFO</a>
+            <a href="{% url 'add_to_cart' game_id=betrayal.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a>
+            <p class="card-text"><small class="text-muted">Last updated 7 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col col-lg-3">
+        <div class="card">
+          <img src="{% static 'images/resistance_best.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{resistance.name}}</h5>
+            <p class="card-text">2011 Japan Boardgame Prize Voters’ Selection Nominee</p>
+            <p class="card-text">2010 Golden Geek Best Print & Play Board Game Nominee</p>
+            <a href="{% url 'game_info' game_id=resistance.id %}" class="btn btn-outline-warning more_info">MORE INFO</a>
+            <a href="{% url 'add_to_cart' game_id=resistance.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a>
+            <p class="card-text"><small class="text-muted">Last updated 11 mins ago</small></p>
+          </div>
+        </div>
+      </div>
 
   </div>
 
