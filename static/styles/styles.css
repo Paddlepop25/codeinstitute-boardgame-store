@@ -73,14 +73,18 @@ a {
 
 .best_sellers .card {
     border: none;
-    /*height: 40rem;*/
-    /*margin-bottom: 12rem;*/
 }
 
 .best_sellers .card img {
     width: 70%;
     margin: 0 auto;
     margin-top: 1rem;
+}
+
+/*Search results*/
+.search_results {
+    margin-top: 3rem;
+    margin-bottom: 7rem;
 }
 
 /* Game cards*/
@@ -184,6 +188,10 @@ a {
 
 
 /* Shopping Cart page*/
+.cart {
+    margin-bottom: 30rem;
+    /*border: 3px solid red;*/
+}
 
 .cart img {
     width: 4rem;
@@ -217,6 +225,15 @@ a {
     margin: 100px auto;
     padding: 20px;
     height: 80rem;
+}
+
+.create_game_form_look .form-check {
+    /*padding-left: 0;*/
+}
+
+.create_game_form_look a {
+    width: 100%;
+    margin-top: 1rem;
 }
 
 .update_game_form_look {
@@ -275,7 +292,7 @@ input {
     box-shadow: 2px 2px 8px grey;
     margin: 100px auto;
     padding: 20px;
-    height: 40rem;
+    height: 50rem;
 }
 
 .register_form_look a {
@@ -455,11 +472,6 @@ input {
     height: 45rem;
 }
 
-/*.contact_form_look button {*/
-/*    width: 15rem;*/
-/*}*/
-
-
 /*Footer*/
 
 .footer {
@@ -587,6 +599,11 @@ input {
     .contact_us {
         margin-top: -16rem;
     }
+    
+    .logout {
+        margin-bottom: 21rem;
+    }
+
 }
 
 @media (min-width: 1024px) {

@@ -40,7 +40,7 @@ def contact_us(request):
             )
             email.send()
             messages.success(request, "Thank you for your query. We will contact you shortly.")
-            return redirect('contact_us')
+            return redirect('home')
             
     return render(request, "info_pages/contact_us.template.html", {
         'form':form_class
