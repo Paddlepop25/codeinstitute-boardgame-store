@@ -46,8 +46,8 @@ def charge(request):
             if order_form.is_valid() and payment_form.is_valid():
                 try:
                     customer = stripe.Charge.create(
-                            amount=int(request.POST['amount'])*100,
-                            currency='usd',
+                            amount=int(float(request.POST['amount'])*100),
+                            currency='sgd',
                             description='Payment',
                             card=stripeToken
                         )
