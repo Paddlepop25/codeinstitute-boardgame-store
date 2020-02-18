@@ -64,9 +64,14 @@ I ensured that:
 - Each field was left intentionally blank to check for form validation.
 - The name field was limited to 21 characters and this was checked with inputting more than 21 characters.
 - UploadCare works for the image upload option.
-- The 'Add a Game' button will create a new game and save it to the database. Also, this new game is displayed under the correct category in the `games.template.html` page.
-- The 'Cancel' button will bring the user back to the home page.
-- This 'Add a Game' link is not visible to non-logged in user and logged-in user without CRUD rights. Only a logged-in superuser have this link appear in their navbar.
+- The 'ADD A GAME' button will create a new game and save it to the database. Also, this new game is displayed under the correct category in the `games.template.html` page.
+- The 'CANCEL' button will bring the user back to the home page.
+- This 'ADD A GAME' link is not visible to non-logged in user and logged-in user without CRUD rights. Only a logged-in superuser have this link appear in their navbar.
 
 #### 3. Shop for Game page
 I ensured that:
+- The three categories are displayed with the games in alphabetical order. This makes it easy for the user to locate games.
+- A click on the game image or the 'MORE INFO' button will bring the user to the 'game information' page.
+- The 'ADD TO CART' button will add the game to the cart. If the user adds it again, he/she is directed to the 'cart' page where the quantity is shown as '2' (because the user added it twice). The game quantity could be changed in the 'cart' page.
+- A flash message indicating success is shown on top when the user clicks on the 'ADD TO CART' button.
+-

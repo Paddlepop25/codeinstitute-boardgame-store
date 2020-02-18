@@ -11,8 +11,8 @@
 <form method='POST' enctype="multipart/form-data">
     {% csrf_token %} 
     {{ form|crispy}}
-    <input type='submit' value='Add a Game' class="btn btn-success"/>
-    <a href="{% url 'home' %}" class="btn btn-danger">Cancel</a> 
+    <input type='submit' value='ADD A GAME' class="btn btn-success"/>
+    <a href="{% url 'home' %}" class="btn btn-danger">CANCEL</a> 
     
 </form>
 </div>
