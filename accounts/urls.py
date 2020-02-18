@@ -3,7 +3,6 @@ from .views import logout, logout_confirm, login, profile, register
 # from home.views import home
 
 urlpatterns = [
-    # path('', home, name='home'),
     path('logout/', logout, name='logout'),
     path('login/', login, name='login'),
     path('logout_confirm/', logout_confirm, name='logout_confirm'),
