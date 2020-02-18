@@ -14,7 +14,7 @@
     {% empty %}
     <div class="row empty_cart">
     <h3>Your Cart is empty :(</h3>
-    <img src="{% static 'images/sad_cat.jpg'%}"></img>
+    <img src="{% static 'images/sad_cat.jpg'%}" id="meow"></img>
     </div>
     {% endfor %}
 
@@ -58,11 +58,15 @@
             <!--endfor-->
             
     {%endfor%}
+    
+    {% if grand_total_price %}
             <tr class="total_price">
                 <td>Grand Total: </td>
                 <td></td>
                 <td colspan="12">${{grand_total_price}}</td>
             </tr>
+            
+            {% endif %}
     <!--endfor-->
 
             <tr>
@@ -83,8 +87,7 @@
     <!-- Medium and Large screen sizes-->
     <div class="row d-none d-md-block">
     <table class="table cart">
-        <thead>
-            
+        <thead id="table_head">
             <tr>
                 <th scope="col">Image</th>
                 <th scope="col">Game</th>
@@ -109,6 +112,8 @@
             </tr>
             
             {%endfor%}
+            
+            {% if grand_total_price %}
             <tr class="total_price">
                 <th scope="row">Grand Total: </th>
                 <td></td>
@@ -116,7 +121,7 @@
                 <td></td>
                 <td colspan="12">${{grand_total_price}}</td>
             </tr>
-            
+            {% endif %}
 
             <tr>
                 <td colspan="12">
