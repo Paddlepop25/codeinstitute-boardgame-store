@@ -8,6 +8,9 @@
 <div class="login_form">
   <h1>Login</h1>
   <p>If you have not created an account yet, then please <a href="{% url 'register' %}">register</a> first.</p>
+  <small>* If you want to add/edit/delete a game, please login us a superuser.</small>
+  <br />
+  <br />
   <form method='POST'>
         {% csrf_token %}
         {{ login_form|crispy }}
