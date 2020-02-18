@@ -19,6 +19,16 @@
 <section class="shopping_cart">
     <!--Small screen sizes-->
     <h1>Game Cart</h1>
+    
+    {%for game in shopping_cart.items %}
+    
+    {% if game.total_price < 2.0 %}
+    <h1>There's nothing here</h1>
+    
+    {% endif %}
+    {% endfor %}
+                
+
      <div class="row d-md-none">
     <table class="table cart small_cart">
         <tbody>
@@ -79,12 +89,6 @@
     </table>
     </div>
     
-    <!--{% if variable|length %}-->
-                <!--variable is not empty-->
-                <!--{% else %}-->
-                <!--variable is empty-->
-                <!--{% endif %}-->
-                
     <!-- Medium and Large screen sizes-->
     <div class="row d-none d-md-block">
     <table class="table cart">
@@ -104,8 +108,8 @@
                 <td><img src="{{game.image_url}}" /></td>
                 <td>{{game.name}}</td>
                 <td>
-                    <a href="{% url 'minus_from_cart' game_id=id %}"><i class="fas fa-minus mr-2"></i></a> {{game.quantity}}
-                    <a href="{% url 'add_to_cart' game_id=id %}"><i class="fas fa-plus ml-2"></i></a>
+                    <a href="{% url 'minus_from_cart' game_id=id %}"><i class="fas fa-minus mr-2 plus"></i></a> {{game.quantity}}
+                    <a href="{% url 'add_to_cart' game_id=id %}"><i class="fas fa-plus ml-2 minus"></i></a>
                 </td>
                 <td>${{game.price}}</td>
                 <!--{% if variable|length %}-->
@@ -130,9 +134,9 @@
                     <form method='GET' action="{% url 'charge' %}">
                         <input type='number' name='amount' class='form-control' value="{{grand_total_price}}" style="display:none;" />
                         <!--<input type='submit' value='Proceed to checkout' class='btn btn-primary'/>-->
-                        <button class='btn-warning float-right ml-2' href="{% url 'charge' %}">Proceed to checkout</button>
+                        <button class='btn-warning float-right ml-2' href="{% url 'charge' %}"><i class="fas fa-location-arrow"></i>  Proceed to checkout</button>
                         <!--<a class='btn btn-warning float-right ml-2 proceed_checkout' href='{% url 'charge' %}'>Proceed to checkout</a>-->
-                        <a class='btn btn-success float-right shopping' href="{% url 'show_games' %}">Continue shopping</a>
+                        <a class='btn btn-success float-right shopping' href="{% url 'show_games' %}"><i class="fas fa-shopping-cart"></i> Continue shopping</a>
                     </form>
                 </td>
             </tr>

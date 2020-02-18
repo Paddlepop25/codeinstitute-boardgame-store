@@ -212,8 +212,16 @@ a {
     width: 4rem;
 }
 
-.cart i {
+.cart .plus {
     color: orange;
+}
+
+.cart .minus {
+    color: orange;
+}
+
+.cart i {
+    color: black;
 }
 
 .cart .dustbin {
@@ -587,6 +595,7 @@ input {
 .error_page {
     text-align: center;
     margin-top: 1rem;
+    margin-bottom: 4rem;
 }
 
 .error_page h2 {
@@ -602,6 +611,7 @@ input {
 
 .error_page a {
     margin-top: 1rem;
+    width: 60%;
 }
 
 @media (min-width: 320px) {

@@ -13,7 +13,7 @@
   <br />
   <form method='POST'>
     {% csrf_token %} {{ login_form|crispy }}
-    <button class="btn btn-success mb-3" type='submit'>Sign In</button>
+    <button class="btn btn-success mb-3" type='submit'>Sign In &raquo;</button>
     <a href="{% url 'password_reset' %}" class="btn btn-danger mb-3 forgot_password">Forgot Password</a>
   </form>
 </div>
