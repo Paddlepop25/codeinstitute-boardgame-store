@@ -212,11 +212,14 @@ a {
 .cart .shopping {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
     color: black;
+    width: 100%;
 }
 
-.cart .proceed_checkout {
+.cart button {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
     height: 2.4rem;
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
 /*small screens view;*/
@@ -294,6 +297,7 @@ input {
     width: 80%;
 }
 
+/*Profile page*/
 .accounts_form_look {
     background: #fffbed;
     border: 1px solid black;
@@ -301,9 +305,16 @@ input {
     box-shadow: 2px 2px 8px grey;
     margin: 100px auto;
     padding: 20px;
-    height: 20rem;
+    height: 25rem;
     text-align: center;
+    margin-bottom: 16rem;
 }
+
+.accounts_form_look a {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
 
 /*Register page*/
 
@@ -360,6 +371,7 @@ input {
     margin: 100px auto;
     padding: 20px;
     height: 30rem;
+    margin-bottom: 10rem;
 }
 
 .reset_password_form_look input {
@@ -494,11 +506,16 @@ input {
     height: 45rem;
 }
 
+.contact_form_look button {
+    width: 100%;
+}
+
+
 /*Footer*/
 
-.footer {
-    margin-top: 5rem;
-}
+/*.footer {*/
+/*    margin-top: 5rem;*/
+/*}*/
 
 .footer .row {
     background: #FFAA25;
@@ -610,6 +627,11 @@ input {
     .more_info {
         margin-top: -7rem;
     }
+    
+    .accounts_form_look a {
+    width: 50%;
+    margin-bottom: 1rem;
+}
 
 }
 
@@ -623,7 +645,7 @@ input {
     }
     
     .logout {
-        margin-bottom: 21rem;
+        margin-bottom: 16rem;
     }
 
 }
@@ -636,9 +658,9 @@ input {
 }
 
 @media (min-width: 1200px) {
-    .footer {
-        margin-top: 8rem;
-    }
+    /*.footer {*/
+    /*    margin-top: 10rem;*/
+    /*}*/
 
 }
 
