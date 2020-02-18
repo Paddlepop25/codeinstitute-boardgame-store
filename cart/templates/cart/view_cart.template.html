@@ -100,7 +100,7 @@
         <tbody>
             {%for id,game in shopping_cart.items %}
             <tr>
-                <td><img src="{{game.image_url}}" /></td>
+                <td class="game_img"><a href="{% url 'game_info' game_id=game.id %}"><img src="{{game.image_url}}" /></a></td>
                 <td>{{game.name}}</td>
                 <td>
                     <a href="{% url 'minus_from_cart' game_id=id %}"><i class="fas fa-minus mr-2 plus"></i></a> {{game.quantity}}
