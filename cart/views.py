@@ -68,7 +68,7 @@ def total_price(request, game_id):
     'total_price':round(int(cart[game_id]['quantity']) * float(cart[game_id]['price']),2)
     }
     request.session['shopping_cart'] = cart
-    print(cart[game_id]['quantity'])        
+    # print(cart[game_id]['quantity'])        
     return render(request, 'cart/view_cart.template.html', {
             'total_price':total_price
         })        

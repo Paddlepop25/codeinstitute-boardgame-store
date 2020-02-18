@@ -16,8 +16,8 @@ import stripe
 def checkout(request):
     return render(request, 'checkout/checkout.template.html') 
 
-def donate(request):
-    return render(request, 'checkout/donate.template.html')
+# def donate(request):
+#     return render(request, 'checkout/donate.template.html')
 
 @login_required    
 def charge(request):

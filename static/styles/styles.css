@@ -33,7 +33,6 @@ a {
     width: 41px;
     margin-top: -1rem;
     margin-left: 5px;
-
 }
 
 /* Navbar of base.html */
@@ -45,6 +44,14 @@ a {
 
 .navbar_whole .navbar {
     background: #FFAA25 !important;
+}
+
+.navbar_whole .boardgamestore_brand {
+    margin: 0 auto;
+}
+
+.navbar_whole button {
+    border: none;
 }
 
 .navbar li {
@@ -64,6 +71,7 @@ a {
 }
 
 /* Home page*/
+
 .show .cross {
     margin-left: 15rem;
 }
@@ -75,7 +83,8 @@ a {
     border-radius: 15px;
 }
 
-.welcome_message h1,h3 {
+.welcome_message h1,
+h3 {
     text-align: center;
 }
 
@@ -90,6 +99,7 @@ a {
 }
 
 /*Search results*/
+
 .search_results {
     margin-top: 3rem;
     margin-bottom: 7rem;
@@ -204,6 +214,7 @@ a {
 
 
 /* Shopping Cart page*/
+
 .cart {
     margin-bottom: 23rem;
 }
@@ -244,8 +255,11 @@ a {
 /*Empty cart*/
 
 .empty_cart {
-    /*background: red;*/
     margin: 0;
+}
+
+.empty_cart h3 {
+    margin: 10px auto;
 }
 
 .empty_cart img {
@@ -254,6 +268,7 @@ a {
 }
 
 /*small screens view;*/
+
 .small_cart img {
     width: 5rem;
 }
@@ -329,6 +344,7 @@ input {
 }
 
 /*Profile page*/
+
 .accounts_form_look {
     background: #fffbed;
     border: 1px solid black;
@@ -379,7 +395,8 @@ input {
     height: 40rem;
 }
 
-.login_form_look a,button {
+.login_form_look a,
+button {
     width: 100%;
 }
 
@@ -436,6 +453,11 @@ input {
     padding: 20px;
     height: 80rem;
 }
+
+.checkout_form a {
+        width: 100%;
+        margin: 10px auto;
+    }
 
 /*Checkout success page*/
 
@@ -547,7 +569,9 @@ input {
 /*Footer*/
 
 /*.footer {*/
+
 /*    margin-top: 5rem;*/
+
 /*}*/
 
 .footer .row {
@@ -634,7 +658,7 @@ input {
 
 @media (min-width: 360px) {
     .show .cross {
-    margin-left: 18rem;
+        margin-left: 18rem;
     }
 }
 
@@ -652,7 +676,7 @@ input {
 
 @media (min-width: 411px) {
     .show .cross {
-    margin-left: 21rem;
+        margin-left: 21rem;
     }
 }
 
@@ -661,23 +685,41 @@ input {
     .more_info {
         margin-top: -4rem;
     }
-    
+
     .show .cross {
-    margin-left: 22rem;
+        margin-left: 22rem;
     }
 
 }
 
 @media (min-width: 576px) {
     .show .cross {
-    margin-left: 29rem;
-}
+        margin-left: 29rem;
+    }
 }
 
 @media (min-width: 768px) {
     .show .cross {
-    margin-left: 40rem;
-}
+        margin-left: 40rem;
+    }
+    
+    .checkout_form {
+        width: 70%;
+    }
+    
+    .checkout_form input {
+        width: 210%;
+    }
+    
+    /*.checkout_form a {*/
+    /*    width: 100%;*/
+    /*    margin: 10px auto;*/
+    /*}*/
+    
+    #submit_payment_btn {
+        width: 100%;
+        margin-top: 1rem;
+    }
 
     .checkout_form .card {
         height: 73rem;
@@ -690,11 +732,11 @@ input {
     .more_info {
         margin-top: -7rem;
     }
-    
+
     .accounts_form_look a {
-    width: 50%;
-    margin-bottom: 1rem;
-}
+        width: 50%;
+        margin-bottom: 1rem;
+    }
 
 }
 
@@ -702,11 +744,11 @@ input {
     .more_info {
         margin-top: -4rem;
     }
-    
+
     .contact_us {
         margin-top: -16rem;
     }
-    
+
     .logout {
         margin-bottom: 16rem;
     }
@@ -715,8 +757,8 @@ input {
 
 @media (min-width: 1024px) {
     .show .cross {
-    margin-left: 55rem;
-}
+        margin-left: 55rem;
+    }
 
     .game_info .card {
         width: 58rem;
@@ -726,8 +768,8 @@ input {
 
 @media (min-width: 1440px) {
     .show .cross {
-    margin-left: 66rem;
-}
+        margin-left: 66rem;
+    }
 
     .game_info .card {
         width: 69rem;

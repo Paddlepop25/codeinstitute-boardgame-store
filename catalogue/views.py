@@ -9,7 +9,7 @@ def show_games(request):
     # search_form = GameSearchForm(request.GET)
     all_games = Game.objects.all()
     all_category = all_games.filter(category_id=1)
-    print(all_games)
+    # print(all_games)
     party_games = all_games.filter(category_id=1).order_by('name')
     card_games = all_games.filter(category_id=2).order_by('name')
     board_games = all_games.filter(category_id=3).order_by('name')
