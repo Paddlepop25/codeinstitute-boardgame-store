@@ -32,7 +32,7 @@
     <div class="row bg-dark">
       <div class="search_games">
         <form method="GET" class="form-inline" action="{% url 'show_games' %}">
-          <input name="search_terms" class="form-control mr-sm-2" type="search" placeholder="Search For Games">
+          <input name="search_terms" class="form-control mr-sm-2" type="search" placeholder="Search For Games/ Category">
           <button class="btn btn-outline-warning" type="submit"><i class="fas fa-search"></i></button>
         </form>
       </div>
@@ -90,7 +90,7 @@
     <div class="alert alert-info alert-dismissible fade show" role="alert">
       {% for message in messages %} {{ message }} {% endfor %}
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
+      <span aria-hidden="true" class="cross">&times;</span>
   </button>
     </div>
     {% endif %}

@@ -25,10 +25,15 @@ a {
 
 .top-row .search_games input {
     width: 15rem;
+    margin-bottom: 15px;
+    /*margin: 0 auto;*/
 }
 
 .top-row .search_games button {
-    margin-left: 0.3rem;
+    width: 41px;
+    margin-top: -1rem;
+    margin-left: 5px;
+
 }
 
 /* Navbar of base.html */
@@ -59,6 +64,9 @@ a {
 }
 
 /* Home page*/
+.show .cross {
+    margin-left: 15rem;
+}
 
 .welcome_image img {
     width: 100%;
@@ -186,6 +194,10 @@ a {
     border: none;
 }
 
+.game_info li {
+    list-style-type: none;
+}
+
 .game_info_links a {
     width: 100%;
 }
@@ -193,8 +205,7 @@ a {
 
 /* Shopping Cart page*/
 .cart {
-    margin-bottom: 30rem;
-    /*border: 3px solid red;*/
+    margin-bottom: 23rem;
 }
 
 .cart img {
@@ -325,7 +336,7 @@ input {
     box-shadow: 2px 2px 8px grey;
     margin: 100px auto;
     padding: 20px;
-    height: 50rem;
+    height: 40rem;
 }
 
 .register_form_look a {
@@ -333,7 +344,7 @@ input {
 }
 
 .register_form_look button {
-    width: 12rem;
+    width: 100%;
 }
 
 /*Login page*/
@@ -345,16 +356,11 @@ input {
     box-shadow: 2px 2px 8px grey;
     margin: 100px auto;
     padding: 20px;
-    height: 30rem;
+    height: 40rem;
 }
 
-.login_form_look a {
-    color: orange;
-    width: 12rem;
-}
-
-.login_form_look button {
-    width: 12rem;
+.login_form_look a,button {
+    width: 100%;
 }
 
 .login_form_look .forgot_password {
@@ -415,6 +421,7 @@ input {
 
 .checkout_success {
     text-align: center;
+    margin-bottom: 5rem;
 }
 
 .checkout_success h2 {
@@ -424,6 +431,11 @@ input {
 .checkout_success img {
     margin-top: 10px;
     width: 80%;
+}
+
+.checkout_success a {
+    margin-top: 1rem;
+    width: 70%;
 }
 
 /* Password reset success page*/
@@ -439,6 +451,7 @@ input {
 .password_reset_done img {
     margin-top: 10px;
     width: 80%;
+    margin-bottom: 5rem;
 }
 
 /* Password change success page*/
@@ -597,6 +610,12 @@ input {
     }
 }
 
+@media (min-width: 360px) {
+    .show .cross {
+    margin-left: 18rem;
+    }
+}
+
 @media (min-width: 364px) and (max-width: 575px) {
     .best_sellers .card {
         height: 38rem;
@@ -609,13 +628,35 @@ input {
     }
 }
 
+@media (min-width: 411px) {
+    .show .cross {
+    margin-left: 21rem;
+    }
+}
+
+
 @media (min-width: 425px) {
     .more_info {
         margin-top: -4rem;
     }
+    
+    .show .cross {
+    margin-left: 22rem;
+    }
+
+}
+
+@media (min-width: 576px) {
+    .show .cross {
+    margin-left: 29rem;
+}
 }
 
 @media (min-width: 768px) {
+    .show .cross {
+    margin-left: 40rem;
+}
+
     .checkout_form .card {
         height: 73rem;
     }
@@ -651,20 +692,21 @@ input {
 }
 
 @media (min-width: 1024px) {
+    .show .cross {
+    margin-left: 55rem;
+}
+
     .game_info .card {
         width: 58rem;
     }
 
 }
 
-@media (min-width: 1200px) {
-    /*.footer {*/
-    /*    margin-top: 10rem;*/
-    /*}*/
-
+@media (min-width: 1440px) {
+    .show .cross {
+    margin-left: 66rem;
 }
 
-@media (min-width: 1440px) {
     .game_info .card {
         width: 69rem;
     }

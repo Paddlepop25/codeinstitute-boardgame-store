@@ -1,22 +1,20 @@
-{% extends 'base.html' %}
-{% block title %} Login {% endblock %}
+{% extends 'base.html' %} 
 
-{% load crispy_forms_tags %}
+{% block title %} Login {% endblock %} 
+
+{% load crispy_forms_tags %} 
 
 {% block content %}
 <div class="login_form_look">
-<div class="login_form">
-  <h1>Login</h1>
+  <h1>Login Account</h1>
   <p>If you have not created an account yet, then please <a href="{% url 'register' %}">register</a> first.</p>
   <small>* If you want to add/edit/delete a game, please login us a superuser.</small>
   <br />
   <br />
   <form method='POST'>
-        {% csrf_token %}
-        {{ login_form|crispy }}
-    <button class="btn btn-warning mb-3" type='submit'>Sign In</button>
+    {% csrf_token %} {{ login_form|crispy }}
+    <button class="btn btn-success mb-3" type='submit'>Sign In</button>
     <a href="{% url 'password_reset' %}" class="btn btn-danger mb-3 forgot_password">Forgot Password</a>
-    </form>
-</div>    
+  </form>
 </div>
-{% endblock %}   
+{% endblock %}

@@ -17,7 +17,7 @@
                     <p class="card-text">Category: {{game.category}}</p>
                     
                     <p class="card-text">Game description: <br />{{game.description|linebreaks}}</p>
-                    <p>Inside this box</p>
+                    <p>Inside this box:</p>
                     <ul>
                         <!--for content in game.inside_box -->
                         <li>{{game.inside_box|linebreaks}}</li>
@@ -26,10 +26,11 @@
                     </ul>
                     <div class="game_info_links">
                     {% if user.is_authenticated and user.is_superuser %}
-                    <a href="{% url 'update_game' game_id=game.id %}" class="btn btn-outline-warning more_info">EDIT GAME</a>
+                    <a href="{% url 'update_game' game_id=game.id %}" class="btn btn-outline-danger more_info">EDIT GAME</a>
                     {% endif %} 
-                    <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a>
+                    <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-success add_to_cart"><i class="fas fa-shopping-cart"></i> ADD TO CART</a>
                     <a href="{% url 'view_cart' %}" class="btn btn-warning add_to_cart"><i class="fas fa-shopping-cart"></i> VIEW CART</a>
+                    <a href="{% url 'show_games' %}" class="btn btn-info">BACK TO SHOP</a>
                     <!--{% if not user.is_authenticated %}-->
                     <!--<a href="{% url 'update_game' game_id=game.id %}" class="btn btn-outline-warning more_info">EDIT GAME</a>-->
                     <!--<a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a> -->

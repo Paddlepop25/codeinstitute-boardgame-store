@@ -40,7 +40,7 @@
             {% for game in party_games %}
             <div class="col-md-6 col-lg-3 mb-4">
                 <div class="card">
-                    <a href=""><img src="{{game.image.cdn_url}}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box"></a>
+                    <a href="{% url 'game_info' game_id=game.id %}"><img src="{{game.image.cdn_url}}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box"></a>
                     <div class="card-body">
                         <h5 class="card-title">{{game.name}}</h5>
                         <span class="card-text price_strikethrough">${{game.price|add:"18"}}</span>
@@ -61,7 +61,7 @@
             {% for game in board_games %}
             <div class="col-md-6 col-lg-3 mb-4">
                 <div class="card">
-                    <a href=""><img src="{{game.image.cdn_url}}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box"></a>
+                    <a href="{% url 'game_info' game_id=game.id %}"><img src="{{game.image.cdn_url}}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box"></a>
                     <div class="card-body">
                         <h5 class="card-title">{{game.name}}</h5>
                         <span class="card-text price_strikethrough">${{game.price|add:"18"}}</span>
@@ -78,13 +78,11 @@
 
     {% else %} {% if results is False %}
     <div class="no_results">
-        <h1>Sorry, no results are found. 
-        <br />
-        Please try another word.</h1>
+        <h1 Sorry, no results are found. <br /> Please try another word.</h1>
         <img src="{% static 'images/sad_cat.jpg'%}"></img>
     </div>
 
-    {% else%}
+    {% else %}
 
     <div class="row search_results">
         {% for game in all_games %}
@@ -98,7 +96,7 @@
                     <span class="card-text price_strikethrough">${{game.price|add:"18"}}</span>
                     <span class="card-text">SGD ${{game.price}}</span>
                     <br />
-                    <a href="{% url 'game_info' game_id=game.id %}" class="btn btn-outline-warning more_info">MORE INFO</a>
+                    <a href="{% url 'game_info' game_id=game.id %}" class="btn btn-outline-success more_info">MORE INFO</a>
                     <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-warning add_to_cart">ADD TO CART</a>
                 </div>
             </div>
@@ -111,8 +109,5 @@
 </section>
 
 {% endif %}
-<!--if len(search results) == 0:-->
-<!--<h2>Sorry, no results is found for '{{search_terms}}'</h2>-->
-<!--else:-->
 
 {%endblock%}
