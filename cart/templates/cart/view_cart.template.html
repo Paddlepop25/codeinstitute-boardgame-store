@@ -17,40 +17,48 @@
 
 
 <section class="shopping_cart">
-    <!--Small screens-->
-    <table class="d-md-none table cart">
-        <thead>
-            <tr>
-                <th scope="col">Image</th>
-                <th scope="col">Game</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Price</th>
-                <th scope="col">Total Item Price</th>
-            </tr>
-        </thead>
+    <!--Small screen sizes-->
+     <div class="row d-md-none">
+    <table class="table cart small_cart">
         <tbody>
             {%for id,game in shopping_cart.items %}
             <tr>
-                <td><img src="{{game.image_url}}" /></td>
-                <td>{{game.name}}</td>
-                <td>
-                    <a href="{% url 'minus_from_cart' game_id=id %}"><i class="fas fa-minus mr-2"></i></a> {{game.quantity}}
-                    <a href="{% url 'add_to_cart' game_id=id %}"><i class="fas fa-plus ml-2"></i></a>
-                </td>
-                <td>${{game.price}}</td>
-                <!--{% if variable|length %}-->
-                <!--variable is not empty-->
-                <!--{% else %}-->
-                <!--variable is empty-->
-                <!--{% endif %}-->
-                <td>${{game.total_price}}</td>
-                <td><a href="{% url 'remove_from_cart' game_id=id %}"><i class="fas fa-trash dustbin"></i></a></td>
+                <td></td>
+                <td class="game_img"><a href="{% url 'game_info' game_id=game.id %}"><img src="{{game.image_url}}" /></a></td>
+                <td><a href="{% url 'remove_from_cart' game_id=id %}"><i class="fas fa-times" style="color:black;"></i></a></td>
             </tr>
+            
+            <tr>
+                <td>Game:</td>
+                <td></td>
+                <td>{{game.name}}</td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td></td>
+                <td>${{game.price}}</td>
+            </tr>
+            <tr>
+                <td>Quantity:</td>
+                <td></td>
+                <!--<td><input type="number" value="{{game.quantity}}" placeholder="1" min="1" max="99"/></td>-->
+                <td>
+                <a href="{% url 'minus_from_cart' game_id=id %}"><i class="fas fa-minus mr-2"></i></a> {{game.quantity}}
+                <a href="{% url 'add_to_cart' game_id=id %}"><i class="fas fa-plus ml-2"></i></a>
+                </td>
+            </tr>
+             <tr class="subtotal">
+                <td>Subtotal:</td>
+                <td></td>
+                <td>${{game.total_price}}</td>
+            </tr>
+            
+            <tr class="insert_line"></tr>
+            
             {%endfor%}
+            
             <tr class="total_price">
-                <th scope="row">Order Total: </th>
-                <td></td>
-                <td></td>
+                <td>Grand Total: </td>
                 <td></td>
                 <td colspan="12">${{grand_total_price}}</td>
             </tr>
@@ -68,16 +76,25 @@
             </tr>
         </tbody>
     </table>
+    </div>
     
-    <!--Medium and Large screens-->
-    <table class="d-none d-md-block table cart">
+    <!--{% if variable|length %}-->
+                <!--variable is not empty-->
+                <!--{% else %}-->
+                <!--variable is empty-->
+                <!--{% endif %}-->
+                
+    <!-- Medium and Large screen sizes-->
+    <div class="row d-none d-md-block">
+    <table class="table cart">
         <thead>
             <tr>
                 <th scope="col">Image</th>
                 <th scope="col">Game</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">Price</th>
-                <th scope="col">Total Item Price</th>
+                <th scope="col">Subtotal</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -100,7 +117,7 @@
             </tr>
             {%endfor%}
             <tr class="total_price">
-                <th scope="row">Order Total: </th>
+                <th scope="row">Grand Total: </th>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -120,6 +137,7 @@
             </tr>
         </tbody>
     </table>
+    </div>
 
 </section>
 

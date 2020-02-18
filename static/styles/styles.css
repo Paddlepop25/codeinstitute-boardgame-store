@@ -161,6 +161,10 @@ a {
     margin: 0 auto;
 }
 
+.card-title {
+    font-weight: bolder !important;
+}
+
 .card a {
     /*border: none;*/
     width: 13rem;
@@ -213,6 +217,24 @@ a {
 .cart .proceed_checkout {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
     height: 2.4rem;
+}
+
+/*small screens view;*/
+.small_cart img {
+    width: 5rem;
+}
+
+.small_cart tr td:first-child {
+    padding-left: 2rem;
+}
+
+.small_cart .insert_line {
+    height: 2rem;
+}
+
+.small_cart td {
+    border-top: none;
+    border-bottom: none;
 }
 
 /*Standardised form look for all pages with forms*/

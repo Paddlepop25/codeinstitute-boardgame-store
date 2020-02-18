@@ -51,7 +51,6 @@ def show_games(request):
         # 'search_form':search_form
     })
 
-# @login_required
 @user_passes_test(lambda u: u.is_superuser)
 def create_game(request):
     if request.method == 'POST':
@@ -67,10 +66,8 @@ def create_game(request):
         'form':create_game_form
     })    
 
-# @login_required
 @user_passes_test(lambda u: u.is_superuser)
 def update_game(request, game_id):
-    # all_games = Game.objects.all()
     game_being_updated = get_object_or_404(Game, pk=game_id)
     game_being_deleted = get_object_or_404(Game, pk=game_id)
     
@@ -90,7 +87,6 @@ def update_game(request, game_id):
         'game':game_being_deleted
     })    
 
-# @login_required    
 @user_passes_test(lambda u: u.is_superuser)
 def confirm_delete_game(request, game_id):
     game_being_deleted = get_object_or_404(Game, pk=game_id)
@@ -98,7 +94,6 @@ def confirm_delete_game(request, game_id):
         'game':game_being_deleted
     })    
 
-# @login_required
 @user_passes_test(lambda u: u.is_superuser)
 def actually_delete_game(request, game_id):
     game_being_deleted = get_object_or_404(Game, pk=game_id)
@@ -108,7 +103,6 @@ def actually_delete_game(request, game_id):
 
 def game_info(request, game_id):
     game = get_object_or_404(Game, pk=game_id)
-    # print(all_games)
     return render(request, 'catalogue/game_info.template.html', {
         'game':game
     })    
