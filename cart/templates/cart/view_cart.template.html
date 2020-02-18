@@ -1,35 +1,24 @@
-{% extends 'base.html' %} {% block title %} Shopping Cart {% endblock %} {%block content %}
-<!--<h1>Your Cart</h1>-->
-<!--<ul>-->
-<!--    {%for id,game in shopping_cart.items %}-->
-<!--        <li>-->
-<!--            {{game.name}}<br/>-->
-<!--            ${{game.price}}-->
+{% extends 'base.html' %} 
 
-<!--            {%if game.image_url %}-->
-<!--            <img src="{{game.image_url}}" /> -->
-<!--            {% endif%}-->
+{% load static %}
 
-<!--            <a href="{% url 'remove_from_cart' game_id=id %}">Remove</a>-->
-<!--        </li>-->
-<!--    {%endfor%}-->
-<!--</ul>-->
+{% block title %} Shopping Cart {% endblock %} 
 
-
+{%block content %}
 <section class="shopping_cart">
     <!--Small screen sizes-->
     <h1>Game Cart</h1>
     
     {%for game in shopping_cart.items %}
     
-    {% if game.total_price < 2.0 %}
-    <h1>There's nothing here</h1>
-    
-    {% endif %}
+    {% empty %}
+    <div class="row empty_cart">
+    <h3>Your Cart is empty :(</h3>
+    <img src="{% static 'images/sad_cat.jpg'%}"></img>
+    </div>
     {% endfor %}
-                
 
-     <div class="row d-md-none">
+    <div class="row d-md-none">
     <table class="table cart small_cart">
         <tbody>
             {%for id,game in shopping_cart.items %}
@@ -54,8 +43,8 @@
                 <td></td>
                 <!--<td><input type="number" value="{{game.quantity}}" placeholder="1" min="1" max="99"/></td>-->
                 <td>
-                <a href="{% url 'minus_from_cart' game_id=id %}"><i class="fas fa-minus mr-2"></i></a> {{game.quantity}}
-                <a href="{% url 'add_to_cart' game_id=id %}"><i class="fas fa-plus ml-2"></i></a>
+                <a href="{% url 'minus_from_cart' game_id=id %}"><i class="fas fa-minus mr-2 plus"></i></a> {{game.quantity}}
+                <a href="{% url 'add_to_cart' game_id=id %}"><i class="fas fa-plus ml-2 minus"></i></a>
                 </td>
             </tr>
              <tr class="subtotal">
@@ -66,13 +55,15 @@
             
             <tr class="insert_line"></tr>
             
-            {%endfor%}
+            <!--endfor-->
             
+    {%endfor%}
             <tr class="total_price">
                 <td>Grand Total: </td>
                 <td></td>
                 <td colspan="12">${{grand_total_price}}</td>
             </tr>
+    <!--endfor-->
 
             <tr>
                 <td colspan="12">
@@ -93,6 +84,7 @@
     <div class="row d-none d-md-block">
     <table class="table cart">
         <thead>
+            
             <tr>
                 <th scope="col">Image</th>
                 <th scope="col">Game</th>
@@ -112,14 +104,10 @@
                     <a href="{% url 'add_to_cart' game_id=id %}"><i class="fas fa-plus ml-2 minus"></i></a>
                 </td>
                 <td>${{game.price}}</td>
-                <!--{% if variable|length %}-->
-                <!--variable is not empty-->
-                <!--{% else %}-->
-                <!--variable is empty-->
-                <!--{% endif %}-->
                 <td>${{game.total_price}}</td>
                 <td><a href="{% url 'remove_from_cart' game_id=id %}"><i class="fas fa-trash dustbin"></i></a></td>
             </tr>
+            
             {%endfor%}
             <tr class="total_price">
                 <th scope="row">Grand Total: </th>
@@ -128,6 +116,7 @@
                 <td></td>
                 <td colspan="12">${{grand_total_price}}</td>
             </tr>
+            
 
             <tr>
                 <td colspan="12">

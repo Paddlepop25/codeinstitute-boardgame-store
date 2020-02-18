@@ -241,6 +241,18 @@ a {
     margin-bottom: 1rem;
 }
 
+/*Empty cart*/
+
+.empty_cart {
+    /*background: red;*/
+    margin: 0;
+}
+
+.empty_cart img {
+    width: 80%;
+    margin: auto;
+}
+
 /*small screens view;*/
 .small_cart img {
     width: 5rem;
