@@ -80,7 +80,7 @@ def update_game(request, game_id):
         update_game_form = GameForm(request.POST, instance=game_being_updated)
         if update_game_form.is_valid():
             update_game_form.save()
-
+            messages.success(request, "Game has been updated successfully")
             # always make sure to return the redirect
             return redirect(reverse(show_games))
     else:
