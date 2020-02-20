@@ -206,3 +206,13 @@ I ensured that:
 #### 23. 404 Error page
 I ensured that:
 - Any broken links are directed to this page where a text that says 'Sorry! Something went wrong :(' is displayed along with a picture of a sad kitty cat
+
+## Bugs 
+
+1. 
+    
+## Further Testing
+- In the future, I would like to implement unit testing while building a website of this kind
+- I would like to incorporate other fields like booleans and tuples in the forms for testing
+- I would like to implement a mail delivery service to further test if emails are delievered when a user request for password change, and also if the auto reply email is generated when a form is submitted from the contact page
+- A special acknowledgement and thanks to family and friends for their time to test this website on their device and their invaluable feedback.
