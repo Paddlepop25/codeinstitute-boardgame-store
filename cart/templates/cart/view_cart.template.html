@@ -41,7 +41,6 @@
             <tr>
                 <td>Quantity:</td>
                 <td></td>
-                <!--<td><input type="number" value="{{game.quantity}}" placeholder="1" min="1" max="99"/></td>-->
                 <td>
                 <a href="{% url 'minus_from_cart' game_id=id %}"><i class="fas fa-minus mr-2 plus"></i></a> {{game.quantity}}
                 <a href="{% url 'add_to_cart' game_id=id %}"><i class="fas fa-plus ml-2 minus"></i></a>
@@ -138,6 +137,14 @@
     </div>
 
 </section>
-
+<form method='GET' action='{% url 'charge' %}'>
+    <div class='form-group'>
+        <label class='label'>
+            Amount:
+        </label>
+        <input type='text' name='amount' class='form-control'/>
+    </div>
+    <input type='submit' value='Donate' class='btn btn-primary'/>
+</form>
 
 {%endblock %}
