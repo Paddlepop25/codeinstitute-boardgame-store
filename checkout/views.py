@@ -51,7 +51,9 @@ def charge(request):
                             description='Payment',
                             card=stripeToken
                         )
-                        
+                 
+                    print(type(amount))
+                
                     if customer.paid:
                         order = order_form.save(commit=False)
                         order.date = timezone.now()
