@@ -77,7 +77,6 @@ def register(request):
                 return redirect(reverse('home'))
             else:    
                 messages.error(request, "Sorry, we're unable to register your account. Please try again.")
-                # print(messages.error)
                 return redirect(reverse('home'))
         
         else:

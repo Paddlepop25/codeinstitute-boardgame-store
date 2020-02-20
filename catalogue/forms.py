@@ -3,6 +3,9 @@ from .models import Game
 from pyuploadcare.dj.forms import ImageField, FileWidget
 
 class GameForm(forms.ModelForm):
+    
+    price = forms.DecimalField(min_value=1, max_digits=5, decimal_places=2)
+    
     class Meta:
         image = ImageField(widget=FileWidget(attrs={'data-clearable':True}))
         model=Game
