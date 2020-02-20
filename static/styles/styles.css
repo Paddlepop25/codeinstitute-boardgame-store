@@ -273,9 +273,9 @@ h3 {
 
 #checkout_mobile {
     margin-bottom: 10px;
-    z-index: 99;
-    cursor: pointer;
-    background: red;
+    /*z-index: 99;*/
+    /*cursor: pointer;*/
+    /*background: red;*/
 }
 
 #checkout_tablet {
