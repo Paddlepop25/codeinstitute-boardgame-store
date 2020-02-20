@@ -273,7 +273,8 @@ h3 {
 
 #checkout_mobile {
     margin-bottom: 10px;
-    z-index: 99;
+    /*z-index: 99;*/
+    cursor: pointer;
 }
 
 /*small screens view;*/
