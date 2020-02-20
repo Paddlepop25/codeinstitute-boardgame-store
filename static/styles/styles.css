@@ -267,6 +267,10 @@ h3 {
     margin: auto;
 }
 
+.cart .tablet_td {
+    border: none;
+}
+
 /*small screens view;*/
 
 .small_cart img {
