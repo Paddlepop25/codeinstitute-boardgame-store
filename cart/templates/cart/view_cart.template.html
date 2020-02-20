@@ -73,9 +73,10 @@
                 <td colspan="12">
                     <form method='GET' action="{% url 'charge' %}">
                         <input type='number' name='amount' class='form-control' value="{{grand_total_price}}" style="display:none;" />
-                        <button type="submit" id="checkout_mobile" class='btn-warning float-right ml-2'><i class="fas fa-money-bill-alt"></i> CHECKOUT</button>
-                        <input type="submit" value="CHECKOUT"/>
-                        <input class=" btn btn-warning" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+                        <!--<button type="submit" id="checkout_mobile" class='btn-warning float-right ml-2'><i class="fas fa-money-bill-alt"></i> CHECKOUT</button>-->
+                        <input name="send" type="submit" value="CHECKOUT"/>
+                        <!--<input class="btn btn-warning" id="submit_payment_btn" name="send" type="submit" value="Submit Payment">-->
+                        <!--value='Save' name='send' type='submit'-->
                         <!--<input id="checkout_mobile" class='btn btn-warning float-right ml-2' href="" type="submit" placeholder="CHECKOUT" />-->
                         <a class='btn btn-success float-right shopping' href="{% url 'show_games' %}"><i class="fas fa-puzzle-piece"></i> BACK TO SHOP</a>
                     </form>
