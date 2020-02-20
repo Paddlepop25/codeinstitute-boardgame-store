@@ -271,6 +271,10 @@ h3 {
     border: none;
 }
 
+#checkout_mobile {
+    margin-bottom: 10px;
+}
+
 /*small screens view;*/
 
 .small_cart img {

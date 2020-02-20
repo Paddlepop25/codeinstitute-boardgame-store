@@ -73,7 +73,8 @@
                 <td colspan="12">
                     <form method='GET' action="{% url 'charge' %}">
                         <input type='number' name='amount' class='form-control' value="{{grand_total_price}}" style="display:none;" />
-                        <button id="checkout_mobile" class='btn-warning float-right ml-2' href="{% url 'charge' %}"><i class="fas fa-money-bill-alt"></i> CHECKOUT</button>
+                        <!--<button id="checkout_mobile" class='btn-warning float-right ml-2' href=""><i class="fas fa-money-bill-alt"></i> CHECKOUT</button>-->
+                        <input id="checkout_mobile" class='btn btn-warning float-right ml-2' href="{% url 'charge' %}" type="submit" placeholder="CHECKOUT">
                         <a class='btn btn-success float-right shopping' href="{% url 'show_games' %}"><i class="fas fa-puzzle-piece"></i> BACK TO SHOP</a>
                     </form>
                 </td>
