@@ -17,7 +17,7 @@ def view_cart(request):
         grand_total_price += game['total_price']
         # print(type(grand_total_price))
         
-    if grand_total_price <= 300:
+    if grand_total_price <= 200:
         grand_total_price = grand_total_price + 8.00
         delivery = 8.00
     else: 

@@ -5,38 +5,20 @@ from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required, user_passes_test
 
-# Create your views here.
 def show_games(request):
-    # search_form = GameSearchForm(request.GET)
     all_games = Game.objects.all()
-    # all_category = all_games.filter(category_id=1)
-    # print(all_category)
     party_games = all_games.filter(category_id=1).order_by('name')
     card_games = all_games.filter(category_id=2).order_by('name')
     board_games = all_games.filter(category_id=3).order_by('name')
     filtering = True
     results = True
-    # if search_form.data.get('search_terms'):
-    #     # like SELECT * FROM courses WHERE title LIKE '%react%'
-    #     all_games = all_games.filter(name__contains=search_form.data['search_terms'])
-
-    # if request.GET.get('min_cost'):
-    #     all_games = all_games.filter(price__gte=request.GET.get('min_cost'))
-
-
-    # if request.GET.get('max_cost'):
-    #     all_games = all_games.filter(price__lte=request.GET.get('max_cost'))
-        
-        
-    # if request.GET.get('search_terms'):
     search_terms = request.GET.get('search_terms')
+    
     if search_terms == None:
           filtering = False
       
     else:
-        # all_games = all_games.filter(name__icontains=search_terms)
         all_games = all_games.filter(Q(name__icontains=search_terms) | Q(category__name__icontains=search_terms) | Q(description__icontains=search_terms))
-        # all_category = all_category.filter(name__icontains=search_terms)
      
     if all_games.exists():
         pass
@@ -47,14 +29,12 @@ def show_games(request):
         
     return render(request, 'catalogue/games.template.html', {
         'all_games':all_games,
-        # 'all_category':all_category,
         'search_terms':search_terms,
         'party_games':party_games,
         'card_games':card_games,
         'board_games':board_games,
         'filtering':filtering,
         'results':results
-        # 'search_form':search_form
     })
 
 @user_passes_test(lambda u: u.is_superuser)
@@ -83,7 +63,6 @@ def update_game(request, game_id):
         if update_game_form.is_valid():
             update_game_form.save()
             messages.success(request, "Game has been updated successfully")
-            # always make sure to return the redirect
             return redirect(reverse(show_games))
     else:
         update_game_form = GameForm(instance=game_being_updated)
