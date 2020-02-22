@@ -2,14 +2,15 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import Game, Category
 from .forms import GameForm, GameSearchForm
 from django.contrib import messages
+from django.db.models import Q
 from django.contrib.auth.decorators import login_required, user_passes_test
 
 # Create your views here.
 def show_games(request):
     # search_form = GameSearchForm(request.GET)
     all_games = Game.objects.all()
-    all_category = all_games.filter(category_id=1)
-    # print(all_games)
+    # all_category = all_games.filter(category_id=1)
+    # print(all_category)
     party_games = all_games.filter(category_id=1).order_by('name')
     card_games = all_games.filter(category_id=2).order_by('name')
     board_games = all_games.filter(category_id=3).order_by('name')
@@ -33,8 +34,9 @@ def show_games(request):
           filtering = False
       
     else:
-        all_games = all_games.filter(name__icontains=search_terms)
-        all_category = all_category.filter(name__icontains=search_terms)
+        # all_games = all_games.filter(name__icontains=search_terms)
+        all_games = all_games.filter(Q(name__icontains=search_terms) | Q(category__name__icontains=search_terms) | Q(description__icontains=search_terms))
+        # all_category = all_category.filter(name__icontains=search_terms)
      
     if all_games.exists():
         pass
@@ -45,7 +47,7 @@ def show_games(request):
         
     return render(request, 'catalogue/games.template.html', {
         'all_games':all_games,
-        'all_category':all_category,
+        # 'all_category':all_category,
         'search_terms':search_terms,
         'party_games':party_games,
         'card_games':card_games,

@@ -11,12 +11,22 @@ from catalogue.models import Game
 def view_cart(request):
     # retrieve the cart
     cart = request.session.get('shopping_cart', {})
-    grand_total_price = 0.00
+    delivery = 8.00
+    grand_total_price = 0.00 + delivery
     for game_id,game in cart.items():
         grand_total_price += game['total_price']
         # print(type(grand_total_price))
+        
+    if grand_total_price >= 100:
+        grand_total_price = grand_total_price - delivery
+        delivery = 0.00
+    else: 
+        grand_total_price = grand_total_price + delivery
+        delivery = 8.00
+    
     return render(request, 'cart/view_cart.template.html', {
         'shopping_cart':cart,
+        'delivery':delivery,
         'grand_total_price':round(grand_total_price, 2)
     })
     

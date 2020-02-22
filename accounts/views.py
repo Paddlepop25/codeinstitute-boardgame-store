@@ -14,7 +14,8 @@ def logout_confirm(request):
 def logout(request):
     auth.logout(request)
     # flash message
-    messages.success(request, "You have successfully logged out.") 
+    messages.success(request, "You have successfully logged out.")
+    
     return redirect(reverse('home'))
 
 def login(request):

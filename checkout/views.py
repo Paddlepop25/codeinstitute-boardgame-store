@@ -58,6 +58,7 @@ def charge(request):
                         order = order_form.save(commit=False)
                         order.date = timezone.now()
                         order.save()
+                        request.session['shopping_cart'] = {}
                         return render(request, 'checkout/checkout_success.template.html')
                     
                     else:
@@ -74,12 +75,12 @@ def charge(request):
                 'publishable' : settings.STRIPE_PUBLISHABLE_KEY
             })
 
-            return render(request, 'checkout/charge.html', {
-            'order_form' : OrderForm,
-            'payment_form' : PaymentForm,
-            'amount': amount,
-            'publishable' : settings.STRIPE_PUBLISHABLE_KEY
-            })
+            # return render(request, 'checkout/charge.html', {
+            # 'order_form' : OrderForm,
+            # 'payment_form' : PaymentForm,
+            # 'amount': amount,
+            # 'publishable' : settings.STRIPE_PUBLISHABLE_KEY
+            # })
     
 # simple method
 # def checkout(request):

@@ -55,10 +55,15 @@
             <tr class="insert_line"></tr>
             
             <!--endfor-->
-            
+
     {%endfor%}
-    
+
     {% if grand_total_price %}
+            <tr class="delivery">
+                <td>Delivery: </td>
+                <td></td>
+                <td colspan="12">${{game.delivery}}</td>
+            </tr>
             <tr class="total_price">
                 <td>Grand Total: </td>
                 <td></td>
