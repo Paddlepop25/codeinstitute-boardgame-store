@@ -6,7 +6,7 @@
 <!--</form>-->
 
 <section class="search_results">
-    {% if search_terms == "" %} {% else %}
+    {% if search_terms == "" or search_terms == None %} {% else %}
     <h2>Search Results for "{{search_terms}}"</h2>
 
     {% endif %} {% if filtering is False %}
