@@ -239,8 +239,11 @@ h3 {
     color: red;
 }
 
-.cart .free_delivery {
+.free_delivery td {
     border: none;
+}
+
+.free_delivery td small {
     position: relative;
     top: -1.8rem;
 }
