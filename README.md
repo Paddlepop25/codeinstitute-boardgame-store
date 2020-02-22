@@ -74,6 +74,33 @@ The deployed website can be found in
 
 - The user could also delete the game by clicking on the 'DELETE GAME' button. I purposely positioned this button deep inside the 'edit game' form to discourage accidental deletion of game 
 
-- If a user is logged in, a 'MY ACCOUNT' link is available on the navbar for the user to check his/her username and email address. There is also
+- If a user is logged in, a 'MY ACCOUNT' link is available on the navbar for the user to check his/her username and email address. There is also options for the user to reset or change his/her password
+
+- If a user is not logged in, he/she could register an account. Thereafter, there is the option to log in or out of the website
+
+- The company make provisions for customers who'd like to view the 'Terms & Conditions' and other policies. These are provided via links in the footer
 
 - If there are any errors along the way, the user would be brought to an error 404 page where a sad cat picture would hopefully shock the users into inputing or clicking on the right things 
+
+### Design Ideas
+
+The website was designed with an orange theme color as it is refreshing and close to warm colours signifying fun and excitment. A clean white background to is prominent to ensure all the texts, cards, images and other elements to 'pop up' to the user.
+
+- #### Fonts
+
+    - The font **'Poppin'** was chosen as the primary font as it's rounded edges creates a warm and comforting feeling to the user
+    - The font **'Montserrat'** was chosen as the font for all titles  ```<h4>Titles</h4>``` to give a distint but subtle feel that it's different to make the texts look more interesting to the user
+
+- #### Colours
+
+    - **Main Heading and Footer -** An orange theme colour was chosen for the navigation bar and footer for all pages to set a refreshing and subtle warm connection to the idea of fun, bright and merry because playing games result in such emotions. At the very top of the page, a dark background with orange fonts were chosen for a contrasting look, resulting in the ease of reading
+    
+    - **Cards -** A white background was chosen for each card containing the games and any borders in the original design of the card was removed to give a smooth flow feeling from the image to the information underneath. Black was chosen for the fonts to contrast against the background for easy reading
+
+    - **SEARCH, ADD TO CART, VIEW CART, SUBMIT and CHECKOUT Buttons -** These buttons are in the theme orange color indicating a call-to-action for the users for these important features
+    
+    - **MORE INFO, RESET PASSWORD, CHANGE PASSWORD and other Buttons -** These buttons are in a green color to give contrast to the surrounding buttons around them
+
+    - **EDIT, CANCEL & DELETE Buttons -** These buttons are in bright red color because it indicates danger of deleting, or committing changes to the game
+    
+    - **Forms -** A ligtened orange background was chosen for the 'Add a Game', 'Contact Us', 'Edit Game' and account-related forms to give it a pop-up look on the page with the white background
