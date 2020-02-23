@@ -5,6 +5,9 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+h3 {
+    font-family: 'Rubik', sans-serif;
+}
 
 /* Top row of base.html */
 
@@ -63,7 +66,11 @@ a {
 }
 
 .navbar-light .navfont a {
-    color: black !important
+    color: black !important;
+}
+
+.navbar-light .add_game {
+    margin-left: 10px;
 }
 
 .navbar-light .navfont a:hover {
@@ -107,12 +114,20 @@ h3 {
 
 /* Game cards*/
 
+.best_sellers .card {
+    margin-bottom: 3rem;
+}
+
 .best_sellers .more_info {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .best_sellers .add_to_cart {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.best_sellers .add_to_cart:hover {
+    color: white;
 }
 
 .search_results .card {
@@ -154,6 +169,10 @@ h3 {
 
 .card_games .add_to_cart {
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card_games .add_to_cart:hover {
+    color: white;
 }
 
 .party_games .more_info {
@@ -227,8 +246,16 @@ h3 {
     color: orange;
 }
 
+.cart .plus:hover {
+    color: goldenrod;
+}
+
 .cart .minus {
     color: orange;
+}
+
+.cart .minus:hover {
+    color: goldenrod;
 }
 
 .cart i {
@@ -237,6 +264,10 @@ h3 {
 
 .cart .dustbin {
     color: red;
+}
+
+.cart .dustbin:hover {
+    color: crimson;
 }
 
 .free_delivery td {
@@ -255,7 +286,6 @@ h3 {
 }
 
 .cart button {
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
     height: 2.4rem;
     width: 100%;
     margin-bottom: 1rem;
@@ -425,7 +455,7 @@ button {
 }
 
 .login_form_look .forgot_password {
-    color: black;
+    color: white;
 }
 
 /* Reset password page*/
@@ -589,14 +619,9 @@ button {
     width: 100%;
 }
 
-
-/*Footer*/
-
-/*.footer {*/
-
-/*    margin-top: 5rem;*/
-
-/*}*/
+.contact_form_look button:hover {
+    color: white;
+}
 
 .footer .row {
     background: #FFAA25;
@@ -735,10 +760,6 @@ button {
         width: 210%;
     }
     
-    /*.checkout_form a {*/
-    /*    width: 100%;*/
-    /*    margin: 10px auto;*/
-    /*}*/
     
     #submit_payment_btn {
         width: 100%;

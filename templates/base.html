@@ -25,7 +25,7 @@
   <div class="container-fluid top-row">
     <div class="row bg-dark">
       <div class="free-shipping">
-        <p>Free Delivery on All Orders Over $200!</p>
+        <p>Free Delivery on All Orders Over $300!</p>
       </div>
     </div>
 
@@ -50,7 +50,7 @@
         <ul class="navbar-nav mr-auto navfont">
           <li class="nav-item">
             {% if user.is_authenticated and user.is_superuser %}
-            <a class="nav-link" href="{% url 'create_game' %}"><i class="fas fa-heart"></i> Add a Game</a>
+            <a class="nav-link add_game" href="{% url 'create_game' %}"><i class="fas fa-heart"></i> Add a Game</a>
             {% endif %}
           </li>
           <li class="nav-item">

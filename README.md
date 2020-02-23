@@ -93,8 +93,8 @@ The website was designed with an orange theme color as it is refreshing and clos
 
 - #### Fonts
 
-    - The font **'Poppin'** was chosen as the primary font as it's rounded edges creates a warm and comforting feeling to the user
-    - The font **'Montserrat'** was chosen as the font for all titles  ```<h4>Titles</h4>``` to give a distint but subtle feel that it's different to make the texts look more interesting to the user
+    - The font **'Roboto'** was chosen as the primary font as it's rounded edges creates a warm and comforting feeling to the user
+    - The font **'Rubik'** was chosen as the font for all titles  ```<h4>Titles</h4>``` to give a distint but subtle feel that it's different to make the texts look more interesting to the user
 
 - #### Colours
 
