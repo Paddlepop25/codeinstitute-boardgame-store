@@ -29,7 +29,6 @@ h1,h2,h3,h4,h5,h6 {
 .top-row .search_games input {
     width: 15rem;
     margin-bottom: 15px;
-    /*margin: 0 auto;*/
 }
 
 .top-row .search_games button {
@@ -90,8 +89,7 @@ h1,h2,h3,h4,h5,h6 {
     border-radius: 15px;
 }
 
-.welcome_message h1,
-h3 {
+.welcome_message h1,h3 {
     text-align: center;
 }
 
@@ -192,7 +190,6 @@ h3 {
 }
 
 .card {
-    /*border: none;*/
     width: 16rem;
     height: 30rem;
     margin: 0 auto;
@@ -203,7 +200,6 @@ h3 {
 }
 
 .card a {
-    /*border: none;*/
     width: 13rem;
     margin: 8px auto;
 }
@@ -312,9 +308,6 @@ h3 {
 
 #checkout_mobile {
     margin-bottom: 10px;
-    /*z-index: 99;*/
-    /*cursor: pointer;*/
-    /*background: red;*/
 }
 
 #checkout_tablet {
@@ -352,10 +345,6 @@ h3 {
     height: 80rem;
 }
 
-.create_game_form_look .form-check {
-    /*padding-left: 0;*/
-}
-
 .create_game_form_look a {
     width: 100%;
     margin-top: 1rem;
@@ -383,8 +372,7 @@ h3 {
     margin-top: 2rem;
 }
 
-.confirm_delete_look a,
-input {
+.confirm_delete_look a,input {
     width: 100%;
 }
 
@@ -457,8 +445,7 @@ input {
     height: 40rem;
 }
 
-.login_form_look a,
-button {
+.login_form_look a,button {
     width: 100%;
 }
 
@@ -517,9 +504,9 @@ button {
 }
 
 .checkout_form a {
-        width: 100%;
-        margin: 10px auto;
-    }
+    width: 100%;
+    margin: 10px auto;
+}
 
 /*Checkout success page*/
 
@@ -583,7 +570,6 @@ button {
 
 .google-maps {
     position: relative;
-    /* This is the aspect ratio*/
     padding-bottom: 75%;
     height: 0;
     overflow: hidden;
@@ -759,16 +745,16 @@ button {
     .show .cross {
         margin-left: 40rem;
     }
-    
+
     .checkout_form {
         width: 70%;
     }
-    
+
     .checkout_form input {
         width: 210%;
     }
-    
-    
+
+
     #submit_payment_btn {
         width: 100%;
         margin-top: 1rem;

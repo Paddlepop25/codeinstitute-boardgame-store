@@ -384,8 +384,6 @@ git remote add origin https://github.com/Paddlepop25/codeinstitute-boardgame-sto
 11. In your app in Heroku in the settings tab, click on the 'Reveal Config Vars' button. Copy the following variables from the `.bashrc` in Cloud9 over
 ![Heroku's reveal config page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/heroku.png)
 
-
-
 12. Be in the root directory and run the command `echo web: python app.py > Procfile` which will create a Procfile. Add this line inside the Procfile `web: gunicorn <PROJECT_FOLDER>.wsgi:application` and replace the <PROJECT_FOLDER> with your project's name
 
 13. Inside the `settings.py` add the URL of the heroku app into the ALLOWED_HOST section
@@ -455,6 +453,13 @@ git push heroku master
 `python manage.py createsuperuser`
 
 28. At the very top of the page in Heroku, click "Open App". You will now be able to view the project in Heroku
+
+## Lessons learnt
+1. Some CSS didn't work and I had to overwrite those exisiting classes with `!important` next to the CSS property
+2. When my friends and family were navigating this website, they pointed out some inconsistencies and I realise details matter. Some of the things I changed were referring links to this website and other pages on this website on the contact pages, terms & conditions page, etc
+3. I made use of one library provided by Django; the [dango-countries](https://pypi.org/project/django-countries/) one and was excited to install it step by step by following the documentation. It was very rewarding to see it working in the checkout form 
+4. I almost had a HEART ATTACK when my website suddenly stopped working on AWS and Heroku and I thought I had created an infinite loop somewhere. Thankfully, my website came back on after 15 minutes and I concluded this could be an AWS server issue. This is the error message:
+![Heart Attack error message](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/heartattackerror.jpeg)
 
 ## Credits
 
