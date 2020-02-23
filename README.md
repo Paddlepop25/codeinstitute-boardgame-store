@@ -216,14 +216,14 @@ Year: 2025
 
 4. #### Logout Page 
 
-![Responsive displays of Logout Page]()
-raw.githubusercontent
+![Responsive displays of Logout Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/logout.png)
+
 - A user would be brought here on click of the 'LOGOUT button' where he/she is asked confirm logout. On successful logout, the user is brought to the homepage. Of course the user could cancel logging out too and be brought to the 'shop' page
 
 5. #### My Account/ User's profile Page 
 
-![Responsive displays of My Account/ User's profile Page]()
-raw.githubusercontent
+![Responsive displays of My Account/ User's profile Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/profile.png)
+
 - The user could see his/her email and username here. There is the option to reset or change password also
 
 6. #### Password Change/ Password Reset Pages 
@@ -245,3 +245,230 @@ raw.githubusercontent
 - If the user has inputted an invalid entry on the URL, he/she would be brought to this page which shows that there is an error with a picture of a sad looking kitty cat
 
 - When the user scrolls down, there is a 'home' button which allows them to be brought back to the main page with a click of the button
+
+### Future Features to Implement
+
+2. #### Pagination
+
+    - Pagination on the shop pages would be helpful with organizing the collection as it grows. It also looks neater and helps with loading time
+
+3. #### Video
+
+    - I'd like to include a video on the history of boardgames for better users' experience in gaining more knowledge from this website
+
+4. #### Labels
+
+    - Based on the database records on the games where they are out of stock or discounted, I'd like to display these information on the game cards like having a small tag at the top left hand side
+
+4. #### Premium membership
+
+    - Based on the database records on the users' membership, I'd like to give extra discounts to premium members or have a birthday special gift. These could be reflected in the shopping cart page
+
+## Database
+
+### Postgres SQL
+
+- A [PostgresSQL](https://www.postgresql.org/) database was used to store game images and information deployed to Heroku from the Cloud9 environment
+
+## Technologies Used
+Here are a list of programming languages, frameworks, technologies and tools used for this website:
+
+|Technologies                 |Remarks                                                                   |
+|-----------------------------|--------------------------------------------------------------------------|
+|[HTML5](https://www.w3schools.com/)                          |Testing                                  |
+|[CSS3](https://www.w3schools.com/)                           |Testing                                  |
+|[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)                      |Testing|
+|[jQuery website](https://code.jquery.com/)                       |Used to simplify DOM manipulation                                |
+|[Bootstrap](https://getbootstrap.com/)                    |Testing                            |
+|[Fontawesome website](https://fontawesome.com/)                 |Testing                          |
+|[Google Colaboratory notebook](https://colab.research.google.com/)                 |used for writing the markdown for this README.md file                  |
+|[Django](https://docs.djangoproject.com/en/3.0/)                        |Testing           |
+|[Python](https://www.python.org/)              |as the main programming language used to build this project                                                        |
+[Jinja](https://palletsprojects.com/p/jinja/)                          |a Python web application framework to display the html pages with entries from the PostgresSQL database                                  |
+[Cloud9](https://c9.io)                      |an IDE used to develop the website.                                  |
+[Git](https://git-scm.com/)                          |used for version control to regularly commit codes to Github                                  |
+[GitHub](https://github.com/)                      |used as a remote backup of code used in this project                                  |
+[Heroku](https://www.heroku.com)                          |used as a platform for this project to be deployed to                                  |
+[PostgresSQL](https://stripe.com/ie)              |To allow the storage of database in sqlite before it can be used in Heroku as a database.                                                      |
+[UploadCare](https://uploadcare.com/)              |A tool that enables images uploading                                  |
+[Stripe Payments](https://www.postgresql.org/)              |Testing                                                     |
+[Sqlite3](https://www.sqlite.org/index.html)              |SQLite3 was used to store database and retrieve data via the backend.                                                      |
+
+## Testing
+
+A full testing process can be found in a separate [tests.md](https://github.com/Paddlepop25/codeinstitute-boardgame-store/blob/master/tests.md) file.
+
+## Deployment
+The project was built using [Cloud9](https://c9.io).
+
+- Please have the following installed on your machine before working on it in your IDE:
+    - [PIP](https://pip.pypa.io/en/stable/installing/)
+    - [Python 3](https://www.python.org/downloads/)
+    - [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
+
+### Cloning from Github
+
+1. Go to [The BoardGameStore repository](https://github.com/Paddlepop25/codeinstitute-boardgame-store) and click the green 'Clone or download' button and then click 'Download ZIP'
+
+2. Extract the contents to a location of your choice. Otherwise, you can clone the project into your IDE with running the following command in the terminal
+```
+git clone https://github.com/*username*/*repository*
+```
+
+3. In your local IDE ensure you have an opened terminal, cd to the correct location to where you have your ZIP file
+
+4. Run this in your terminal:
+````
+pip3 install -r requirements.txt
+````
+
+5. To open the website, run this in your terminal:
+````
+python3 manage.py runserver 8080
+````
+
+6. A green window will pop up. Click on the link inside it to view the project
+
+### Deploying to Heroku
+* I followed the instructions my coding teacher, Paul gave in his google document
+
+- The following steps are to deploy to Heroku in the terminal:
+
+1. Go to [Heroku](https://dashboard.heroku.com/) and register for an account
+
+2. Install Heroku in your system with this command
+ `sudo snap install heroku --classic`
+
+3. Install these one by one following using pip3:
+````
+sudo apt install libpq-dev python3-dev
+sudo pip3 install gunicorn 
+sudo pip3 install psycopg2
+sudo pip3 install Pillow
+sudo pip3 install whitenoise 
+sudo pip3 install dj_database_url
+````
+
+4. In the `settings.py` file, add Whitenoise to the middleware:
+````
+MIDDLEWARE = [ 
+..... 
+'whitenoise.middleware.WhiteNoiseMiddleware'
+]
+````
+
+7. Create a repository in Github
+
+6. Create a hidden file named `.gitignore` and add `.c9` in the file. Also add the following django files to be ignored taken from [here](https://gitignore.io/api/django)
+
+8. In your terminal, type these commands to add the repository origin from Github:
+````
+git init 
+git add . 
+git commit -m "First commit" 
+git remote add origin https://github.com/Paddlepop25/codeinstitute-boardgame-store
+````
+
+9. Login to Heroku from your terminal by using this command `heroku login -i`
+
+6. Create a new app with a unique name with this command `heroku create <app_name>` replacing the <app_name> with a name of your choice
+
+7. To check if the correct github repository and heroku app are connected to this project, use this command 
+`git remote -v`
+
+8. In your app in Heroku in the settings tab, click on the 'Reveal Config Vars' button. Copy the following variables from the `.bashrc` in Cloud9 over here.
+
+14. Be in the root directory and run the command `echo web: python app.py > Procfile` which will create a Procfile. Add this line inside the Procfile `web: gunicorn <PROJECT_FOLDER>.wsgi:application` and replace the <PROJECT_FOLDER> with your project's name
+
+15. Inside the `settings.py` add the URL of the heroku app into the ALLOWED_HOST section
+
+11. All sensitive data and links should be placed into the `env.py` with those information linked to the `settings.py` file, for example
+````
+os.environ.setdefault("STRIPE_PUBLISHABLE", "") os.environ.setdefault("STRIPE_SECRET", "") os.environ.setdefault("DATABASE_URL", "") os.environ.setdefault("SECRET_KEY", "") os.environ.setdefault("AWS_SECRET_KEY_ID", "") os.environ.setdefault("AWS_SECRET_ACCESS_KEY", "")
+````
+
+5. Use this command to create a `requirements.txt` file which lists all the required packages needed for this project:
+````
+pip3 freeze --local > requirements.txt
+````
+
+4. At the project directory level, create a `Static` folder, which should  be on the same level as the `manage.py` file. Place some files inside here like images or text files
+
+3. Add the following in the settings.py file for static files and uploads:
+````
+STATIC_URL = '/static/' STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), ) STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+````
+
+15. Commit all files to Heroku with these commands
+````
+git add . 
+git commit -m "Deploying to Heroku" 
+git push heroku master
+````
+
+8. To use the PostgresSQL database, type this to your terminal 
+````heroku addons:create heroku-postgresql
+````
+
+20. To check the URL to the database created, run this command
+`heroku config` and copy this URL to be used later
+
+21. In the `.bashrc` file, add the following
+`export DATABASE_URL="database_url"` and restart the bash terminal
+
+22. In the `settings.py` add `import dj_database_url` after all the other import statements
+
+23. In the `settings.py` file, comment out the `DATABASES` section and add the URL copied from Heroku here
+````
+DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+````
+
+24. Save and restart the terminal
+
+12. Make migrations with this command
+````
+python3 manage.py migrate
+````
+
+15. Commit all files to Heroku with these commands
+````
+git add . 
+git commit -m "Updated settings.py" 
+git push heroku master
+````
+
+13. Make a superuser with this command
+`python manage.py createsuperuser`
+
+15. At the very top of the page in Heroku, click "Open App". You will now be able to view the project in Heroku
+
+## Credits
+
+### Contents
+
+- All game card images and information is take from [Team Board GAME](https://www.teamboardgame.com/)
+
+### Media
+- #### Images
+    - The main Monopoly image for the website was found in taken from [here](https://www.celebitchy.com/wp-content/uploads/2018/11/activity-board-game-close-up-1314435.jpg)
+    - The Favicon was created [here](https://favicon.io/favicon-converter/)
+    - Pictures of games were downloaded from [TeamBoardGame](https://www.teamboardgame.com/)
+    - Image of [sad cat](http://www.catboxzen.com/wp-content/uploads/2014/10/sad-cat.jpg), [winking cat](https://static.boredpanda.com/blog/wp-content/uploads/2016/04/smiling-animals-8-570e0c1b0703c__605.jpg), [happy dog](http://elelur.com/data_images/articles/happy-dogs-do-you-know-what-makes-them-really-so.jpg) were taken from the respective webpages
+
+### Codes
+
+- Ideas on how to design an error page was from this
+[blog](https://neilpatel.com/blog/how-to-create-a-spectacular-404-error-page-with-12-examples/)
+
+### Acknowledgements
+
+A huge thank you to:
+
+- Mr Paul, our teacher at [Trent Global College](trentglobal.edu.sg/diplomainsoftwaredevelopment/)
+- Our very helpful teaching assistant John
+- My classmates who were helpful in giving tips when I'm stuck
+- My friends and family whom were the user testers of this website. They gave valuable feedback on how to improve the project
+
+## Disclaimer
+
+All content on this website are used for educational purposes only.
