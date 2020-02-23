@@ -1,6 +1,6 @@
 # The BoardGameStore - Testing #
 
-The deployed project 'InstaRamen' is on [Heroku](https://linda-instaramen.herokuapp.com/)
+The deployed project 'The BoardGameStore' is on [Heroku](https://linda-boardgamestore.herokuapp.com/)
 
 [**Main README.md file**](https://github.com/Paddlepop25/codeinstitute-boardgame-store/blob/master/README.md)
 
@@ -115,6 +115,7 @@ I ensured that:
 - The least number of quantity is one and for each click on the '+' or '-' button, the quantity is incremented or decremented by one
 - Upon clicking on the dustin icon (medium screens and above) or the 'x' icon (mobile screens), the game is removed from the cart
 - The 'Subtotal' math is correct; it reflects the quantity of game multiply by the item price
+- The 'delivery' charges are /$8 for orders $300 and below. It turns /$0 for orders above /$300
 - The 'Grand Total' reflects the adding of all 'Subtotal' price together
 - The 'Proceed to checkout' button brings the user to the 'Checkout' page
 - The 'Continue shopping' button brings the user to the 'Shop for Game' page
@@ -125,7 +126,21 @@ I ensured that:
 - The 'Credit card number' must be '4242424242424242' to be validated, else a flash error message would be displayed on top of the page
 - The 'Security code (CVV)' must be three digits to be validated, else a flash error message would be displayed on top of the page
 - The 'Month/Year' must be after this current month, year, else a flash error message would be displayed on top of the page
-- Upon clicking on the 'Submit Payment' button, the user is brought to the 'Checkout Success' page
+- Use this information for a success payment:
+````
+Credit card number: 4242424242424242
+Security code (CVV): 456
+Month: 4
+Year: 2022
+````
+- I tested some other credit card numbers from the 'Testing for specific responses and errors' from [Stripe](https://stripe.com/docs/testing) to see other kinds of errors being generated. An example would be using these information which would result in a `Your card was declined!` flash message
+````
+Credit card number: 4000000000009995
+Security code (CVV): 123
+Month: 1
+Year: 2025
+````
+- Upon clicking on the 'SUBMIT PAYMENT' button, the user is brought to the 'Checkout Success' page
 - Upon clicking on the 'BACK TO CART' button, the user is brought to the 'Cart' page
 - Upon clicking on the 'BACK TO SHOP' button, the user is brought to the 'Shop' page
 
@@ -139,7 +154,7 @@ I ensured that:
 I ensured that:
 - Google map API is called and displayed on the game
 - The 'Contact Us' form validation works for all fields. I tried empty fields each turn to verify
-- Upon clicking on the 'Submit' button, a pseudo email is sent to the user. This is verified from getting an email in the 'sent email' folder in the same directory as this django project
+- Upon clicking on the 'SUBMIT' button, a pseudo email is sent to the user. This is verified from getting an email in the 'sent email' folder in the same directory as this django project
 
 #### 12. Register page
 I ensured that:
@@ -209,8 +224,19 @@ I ensured that:
 
 ## Bugs 
 
-1. 
-    
+1. I tried adding `\n` or `<br>` to break a long sentence into 2 lines for the flash messages but it didn't work
+2. Any email address entered in the 'reset password' page is a success and I tried to validate the form to only the logged in user's email but to no avail
+3. The `checkout` button didn't work when I tested this website out on my iphone no matter if I used a `<button>` or `<a>` tag. I read from [here](https://stackoverflow.com/questions/28987034/button-not-working-on-mobile-devices-but-works-on-pc-bootstrap) that the issue could be solved with adding either one of the following in CSS:
+````
+cursor: pointer;
+z-index: 99;
+````
+I also tried this `onkeypress="return event.keyCode!=13;"` on the html which didn't work.
+After a few days of trying, I finally settled on this code which did the trick
+````
+<input id="checkout_mobile" type="submit" class='btn btn-warning float-right ml-2 mb-2' value="CHECKOUT" />
+````
+
 ## Further Testing
 - In the future, I would like to implement unit testing while building a website of this kind
 - I would like to incorporate other fields like booleans and tuples in the forms for testing

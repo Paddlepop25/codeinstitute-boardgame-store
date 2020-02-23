@@ -28,6 +28,9 @@ Password: rotiprata123!
 The deployed website can be found in
 [**Heroku**](https://linda-boardgamestore.herokuapp.com/)
 
+The repository can be found in
+[**Github**](https://github.com/Paddlepop25/codeinstitute-boardgame-store)
+
 ### User Stories
 
 - #### As a user, I'd like to see:
@@ -378,7 +381,7 @@ git remote add origin https://github.com/Paddlepop25/codeinstitute-boardgame-sto
 
 9. Create a new app with a unique name with this command `heroku create <app_name>` replacing the <app_name> with a name of your choice
 
-10. To check if the correct github repository and heroku app are connected to this project, use this command 
+10. To check if the correct github repository and heroku app are connected to this project, use this command: 
 `git remote -v`
 
 11. In your app in Heroku in the settings tab, click on the 'Reveal Config Vars' button. Copy the following variables from the `.bashrc` in Cloud9 over
