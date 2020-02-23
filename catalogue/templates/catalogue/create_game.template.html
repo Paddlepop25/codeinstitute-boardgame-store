@@ -2,18 +2,17 @@
 
 {% block title %} Add a Game {% endblock %} 
 
-{% load crispy_forms_tags %}
+{% load crispy_forms_tags %} 
 
 {%block content %}
 <div class="create_game_form_look">
-<h1>Add a Game</h1>
-{{ form.media }}
-<form method='POST' enctype="multipart/form-data">
-    {% csrf_token %} 
-    {{ form|crispy}}
-    <input type='submit' value='ADD A GAME' class="btn btn-success"/>
-    <a href="{% url 'home' %}" class="btn btn-danger">CANCEL</a> 
-    
-</form>
+    <h1>Add a Game</h1>
+    {{ form.media }}
+    <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %} {{ form|crispy}}
+        <input type='submit' value='ADD A GAME' class="btn btn-success" />
+        <a href="{% url 'home' %}" class="btn btn-danger">CANCEL</a>
+
+    </form>
 </div>
 {%endblock%}

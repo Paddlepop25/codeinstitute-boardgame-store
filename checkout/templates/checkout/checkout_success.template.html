@@ -2,18 +2,18 @@
 
 {% block title %} Checkout Success {% endblock %} 
 
-{% load static %}
+{% load static %} 
 
 {%block content %}
 
 <div class="checkout_success">
-<h2>Thank you for your purchase!</h2>
-<div class="happy_cat">
+    <h2>Thank you for your purchase!</h2>
+    <div class="happy_cat">
 
-<img src="{% static 'images/happy_cat.jpeg'%}" alt="Happy winking kitty cat"></img>
-<a href="{% url 'home' %}" class="btn btn-success"><i class="fas fa-home"></i> BACK TO HOME</a>
+        <img src="{% static 'images/happy_cat.jpeg'%}" alt="Happy winking kitty cat" />
+        <a href="{% url 'home' %}" class="btn btn-success"><i class="fas fa-home"></i> BACK TO HOME</a>
 
-</div>
+    </div>
 </div>
 
 {% endblock %}

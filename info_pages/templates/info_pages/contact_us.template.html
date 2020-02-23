@@ -1,4 +1,10 @@
-{% extends 'base.html' %} {% block title %} Contact Us {% endblock %} {% load crispy_forms_tags %} {% block content %}
+{% extends 'base.html' %} 
+
+{% block title %} Contact Us {% endblock %} 
+
+{% load crispy_forms_tags %} 
+
+{% block content %}
 
 <section id="contact">
   <h1>Locate Us</h1>
@@ -7,7 +13,7 @@
   <div class="row">
     <div class="col">
       <div class="google-maps">
-        <iframe width="600" height="450" id="gmap_canvas" src="https://maps.google.com/maps?q=tampines%20one&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        <iframe width="600" height="450" id="gmap_canvas" src="https://maps.google.com/maps?q=tampines%20one&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
       </div>
     </div>
   </div>
@@ -18,7 +24,7 @@
       <p>The BoardGameStore is made up of a team of board gaming enthusiasts, who strive to bring the best of board games into Singapore at the most affordable prices.</p>
       <p>Customers may wish to walk in to purchase game off our shelves. Current payment mode is GrabPay and cash only.</p>
       <br />
-      
+
       <h4>Our operation hours:</h4>
       <ul>
         <li>Tuesdays to Saturdays: 12 – 9pm</li>
@@ -26,7 +32,7 @@
         <li>Closed on Public Holidays & Mondays</li>
       </ul>
       <br />
-      
+
       <h4>Reaching us</h4>
       <ul class="reaching_us">
         <li><i class="fas fa-map-marker-alt"></i> 10 Tampines Central 1 #05-35 Tampines 1 Singapore 529536</li>
@@ -37,17 +43,16 @@
         <li>** Parking is available.</li>
       </ul>
     </div>
-    
+
     <div class="col-sm-12 col-lg-6 contact_us">
       <div class="contact_form_look">
         <h2>Contact Us</h2>
-        <h5>Finding a game? 
-        <br />Missing a game piece?
-        <i class="fas fa-puzzle-piece"></i>
+        <h5>Finding a game?
+          <br />Missing a game piece?
+          <i class="fas fa-puzzle-piece"></i>
         </h5>
-        <form role="form" action="" method="POST">
-          {% csrf_token %} 
-          {{ form|crispy }}
+        <form method="POST">
+          {% csrf_token %} {{ form|crispy }}
           <button type="submit" class="btn btn-warning"><i class="far fa-envelope"></i> SUBMIT</button>
         </form>
       </div>

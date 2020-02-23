@@ -1,20 +1,18 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
-{%block title%} Register | New User {%endblock%}
+{%block title%} Register | New User {%endblock%} 
 
-{% load crispy_forms_tags %}
+{% load crispy_forms_tags %} 
 
 {%block content%}
 
 <div class="register_form_look">
-<h1>Register an Account</h1>
-<p>Already have an account? Please <a href="{% url 'login' %}">login.</a></p>
+    <h1>Register an Account</h1>
+    <p>Already have an account? Please <a href="{% url 'login' %}">login.</a></p>
 
-<form method='POST'>
-    {% csrf_token %}
-    {{ form|crispy }}
-    <button class="btn btn-success mb-3" type='submit'>REGISTER &raquo;</button>
-</form>
+    <form method='POST'>
+        {% csrf_token %} {{ form|crispy }}
+        <button class="btn btn-success mb-3" type='submit'>REGISTER &raquo;</button>
+    </form>
 </div>
 {%endblock%}
-    

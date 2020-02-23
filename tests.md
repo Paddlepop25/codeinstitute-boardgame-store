@@ -16,7 +16,7 @@ The repository can be found in
 
 Validation services were used to ensure that the respective codes were valid used to develop the website.
 
-- [W3C Markup Validation Service](https://validator.w3.org/) was used to test HTML code to ensure it was valid code. Errors were shown where there were Jinja codes and this was expected as the latter are not html codes. Aside from these there were no other errors.
+- [W3C Markup Validation Service](https://validator.w3.org/) was used to test HTML code to ensure it was valid code. Errors were shown where there were Jinja codes `{% %}` and this was expected as the latter are not html codes. Aside from these there were no other errors.
 
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to test CSS code to ensure it was valid code. No errors were found.
 

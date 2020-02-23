@@ -3,7 +3,8 @@
 {% load crispy_forms_tags %} 
 
 {% load static %} 
-{% block title %} Checkout Form {% endblock %} 
+
+{% block title %} Checkout Form {% endblock %}
 
 {% block footer_js %}
 <!--load stripe library-->
@@ -15,32 +16,34 @@
     //]]>
 </script>
 <script type="text/javascript" src="{% static 'checkout/stripe.js' %}"></script>
-{% endblock %} {% block content %}
+{% endblock %} 
+
+{% block content %}
 
 <div class="checkout_form">
-<form role="form" method="POST" id="payment-form">
-    <legend>Payment Details</legend>
-    <div class='alert alert-danger' id='credit-card-errors' style='display:none'>
-        <p id='stripe-error-message'></p>
-    </div>
+    <form role="form" method="POST" id="payment-form">
+        <legend>Payment Details</legend>
+        <div class='alert alert-danger' id='credit-card-errors' style='display:none'>
+            <p id='stripe-error-message'></p>
+        </div>
 
-    <div class="form-group col-md-6">
-        {{ order_form | crispy }}
-    </div>
+        <div class="form-group col-md-6">
+            {{ order_form | crispy }}
+        </div>
 
-    <div class="form-group col-md-6">
-        {{ payment_form | crispy }}
-    </div>
+        <div class="form-group col-md-6">
+            {{ payment_form | crispy }}
+        </div>
 
-    {% csrf_token %}
+        {% csrf_token %}
 
-    <input type='hidden' value='{{amount}}' name='amount' />
+        <input type='hidden' value='{{amount}}' name='amount' />
 
-    <div class="form-group col-md-12">
-        <input class=" btn btn-warning" id="submit_payment_btn" name="commit" type="submit" value="SUBMIT PAYMENT">
-        <a href="{% url 'view_cart' %}" class="btn btn-success add_to_cart"><i class="fas fa-shopping-cart"></i> BACK TO CART</a>
-        <a href="{% url 'show_games' %}" class="btn btn-info"><i class="fas fa-puzzle-piece"></i> BACK TO SHOP</a>
-    </div>
-</form>
+        <div class="form-group col-md-12">
+            <input class=" btn btn-warning" id="submit_payment_btn" name="commit" type="submit" value="SUBMIT PAYMENT">
+            <a href="{% url 'view_cart' %}" class="btn btn-success add_to_cart"><i class="fas fa-shopping-cart"></i> BACK TO CART</a>
+            <a href="{% url 'show_games' %}" class="btn btn-info"><i class="fas fa-puzzle-piece"></i> BACK TO SHOP</a>
+        </div>
+    </form>
 </div>
 {% endblock %}

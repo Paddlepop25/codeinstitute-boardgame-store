@@ -1,4 +1,8 @@
-{% extends 'base.html' %} {% block title %} Game Information {% endblock %} {% block content %}
+{% extends 'base.html' %} 
+
+{% block title %} Game Information {% endblock %} 
+
+{% block content %}
 <h1>Game Information</h1>
 
 <section class="game_info">
@@ -15,7 +19,7 @@
                     <br />
                     <br />
                     <p class="card-text">Category: {{game.category}}</p>
-                    
+
                     <p class="card-text">Game description: <br />{{game.description|linebreaks}}</p>
                     <p>Inside this box:</p>
                     <ul>
@@ -23,12 +27,12 @@
                         <li>{{game.inside_box|linebreaks}}</li>
                     </ul>
                     <div class="game_info_links">
-                    {% if user.is_authenticated and user.is_superuser %}
-                    <a href="{% url 'update_game' game_id=game.id %}" class="btn btn-outline-danger more_info"><i class="fas fa-pencil-alt"></i> EDIT GAME</a>
-                    {% endif %} 
-                    <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-success add_to_cart"><i class="fas fa-location-arrow"></i></i> ADD TO CART</a>
-                    <a href="{% url 'view_cart' %}" class="btn btn-warning add_to_cart"><i class="fas fa-shopping-cart"></i> VIEW CART</a>
-                    <a href="{% url 'show_games' %}" class="btn btn-info"><i class="fas fa-puzzle-piece"></i> BACK TO SHOP</a>
+                        {% if user.is_authenticated and user.is_superuser %}
+                        <a href="{% url 'update_game' game_id=game.id %}" class="btn btn-outline-danger more_info"><i class="fas fa-pencil-alt"></i> EDIT GAME</a> 
+                        {% endif %}
+                        <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-success add_to_cart"><i class="fas fa-location-arrow"></i> ADD TO CART</a>
+                        <a href="{% url 'view_cart' %}" class="btn btn-warning add_to_cart"><i class="fas fa-shopping-cart"></i> VIEW CART</a>
+                        <a href="{% url 'show_games' %}" class="btn btn-info"><i class="fas fa-puzzle-piece"></i> BACK TO SHOP</a>
                     </div>
                 </div>
             </div>
