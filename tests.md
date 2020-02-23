@@ -153,7 +153,7 @@ Year: 2025
 #### 10. Stripe Account
 I ensured that:
 - The payment is reflected in my stripe account and the value is correct
-![Stripe account](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/tests_md/stripe_info.png)
+![Stripe account](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/tests_md/stripeinfo.png)
 
 #### 11. Checkout Success page
 I ensured that:
