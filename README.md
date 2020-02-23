@@ -5,11 +5,11 @@ A FullStack Final Project - Code Institute
 By Linda Hsu
 <br>
 <br>
-![Responsive displays of The BoardGameStore]()
+![Responsive displays of The BoardGameStore](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/boardgamestoremontage.jpg)
 
 <br>
 
-[The BoardGameStore](https://linda-boardgamestore.herokuapp.com/) is a website created for users who are looking to view and purcharse boardgames. A new user could register for a new account, login, change or reset a password, view his/her profile and logout. The user could also search for boardgames by name or category. A logged in superuser has extra game CRUD rights which allow him/her to add a game, edit the game's record and even delete it from the database.
+[The BoardGameStore](https://linda-boardgamestore.herokuapp.com/) is a website created for users who are looking to view and purchase boardgames. A new user could register for a new account, login, change or reset a password, view his/her profile and logout. The user could also search for boardgames by name, description or a category. A logged in superuser has extra game CRUD rights which allow him/her to add a game, edit the game's record and even delete it from the database.
 
 Please register as a new user or use the following accounts to navigate the website:
 
@@ -33,6 +33,7 @@ The deployed website can be found in
 - #### As a user, I'd like to see:
     - A professional, modern and clean looking website to attract me to continue clicking on the other features 
     - Easy to understand and clear selections which would point me to the correct pages
+    - Search results if I input a game's name, a description or a category
     - Buttons which are straightforward in their purpose that allow me to view more information or do an action.
     - Options to have full control on adding, viewing, editing and deleting any game in the collection (as a superuser only)
     - The ability to register an account, login, logout, change password, reset password and view my profile details
@@ -48,21 +49,23 @@ The deployed website can be found in
 
 - On larger screens, there are options on top of the navigation page for easy navigation on this website. On smaller screens, a hamburger on the center of the navigation bar provides a menu of options when it is clicked on 
 
-- A search function is provided on the top center of the page that enable users to search for games and category
+- A search function is provided on the top center of the page that enable users to search for games by name, description or category
 
-- If the user gives an input that is not found, a sad faced kitty cat's face will be shown on the search result page. The user could input a new search to search for other games on the same page 
+- If the user gives an input that is not found, a sad looking kitty cat will be shown on the page. The user could input a new search
 
 - An introductory message is given on the main page to explain the functions and purpose of the website 
 
-- Four 'best sellers' games are featured in the homepage below the introductory message and a 'MORE INFO' button suggests a call-for-action from the users if they'd like to view more information. Also, a user could add this to the cart with a click on the 'ADD TO CART' button
+- Flash messages are displayed on top of the home page (below the navbar) for certain successful or not successful actions such as adding to cart, removing from cart, logged in, etc
 
-- In the 'Cart' page, a display of games is available to the user to add more quantity to it and view the grand total price. The user could remove the game too by clicking on the 'dustbin' icon or the 'X' icone depending what screen size the user is viewing the website on
+- Four 'best sellers' games are featured in the homepage below the introductory message and a 'MORE INFO' button suggests a call-for-action from the users if they'd like to view more information. Also, a user could add the game to the cart with a click on the 'ADD TO CART' button
 
-- If the user clicks on the 'Proceed to Checkout' button, a form is displayed asking for the user to fill in the particulars for shipment. On the click of the 'Submit Payment' button, payment is made and this is verified with a picture of a smilling puppy
+- In the 'Cart' page, a display of games is available and the user could adjust the quantity of the game and view the grand total price. Delivery charges are automatically waived for orders above \$300. The user could remove the game too by clicking on the 'dustbin' icon or the 'X' icone depending what screen size the user is viewing the website on
 
-- The user could view the entire game catalogue with a visit to the 'Shop' page. The games are sorted in alphabetical order for easy eye-search. The games are also sorted by categories for easy reference 
+- If the user clicks on the 'PROCEED TO CHECKOUT' button, a form is displayed asking for the user to fill in the particulars for delivery. On the click of the 'SUBMIT PAYMENT' button, payment is made and this is verified with a picture of a smilling puppy when payment is successful
 
-- For superusers, a form is provided in the 'Add a Game' page where the user could fill up and add the game to the catalogue. The asterisks (*) imply that the fields are required to be filled before form submission 
+- The user could view the entire game catalogue with a visit to the 'Shop' page. The games are sorted in alphabetical order in each category for easy reference
+
+- For superusers, a form is provided in the 'Add a Game' page where the user could fill up and add a game to the catalogue. The asterisks (*) imply that the fields are required to be filled before form submission 
 
 - After the user fills in all fields and selects a picture to upload, upon clicking on the "ADD A GAME" button,  he/she is brought to the "shop" page where the latest game is added to the selected category. This way they could verify that their form submission is successful 
 
@@ -78,13 +81,15 @@ The deployed website can be found in
 
 - If a user is not logged in, he/she could register an account. Thereafter, there is the option to log in or out of the website
 
-- The company make provisions for customers who'd like to view the 'Terms & Conditions' and other policies. These are provided via links in the footer
+- The company make provision for customers who'd like to view the 'Terms & Conditions' and other policies. These are provided via links in the footer
+
+- Customers could view information on where The BoardGameStore is by clicking on the 'Contact Us' link available in the navbar as well as the footer. On the page there is a google map, store location information as well as a form where the user could contact the store by submitting it
 
 - If there are any errors along the way, the user would be brought to an error 404 page where a sad cat picture would hopefully shock the users into inputing or clicking on the right things 
 
 ### Design Ideas
 
-The website was designed with an orange theme color as it is refreshing and close to warm colours signifying fun and excitment. A clean white background to is prominent to ensure all the texts, cards, images and other elements to 'pop up' to the user.
+The website was designed with an orange theme color as it is refreshing and close to warm colours signifying fun and excitment. A clean white background is to ensure all the texts, cards, images and other elements are prominent and that they 'pop up' to the user.
 
 - #### Fonts
 
@@ -103,7 +108,7 @@ The website was designed with an orange theme color as it is refreshing and clos
 
     - **EDIT, CANCEL & DELETE Buttons -** These buttons are in bright red color because it indicates danger of deleting, or committing changes to the game
     
-    - **Forms -** A ligtened orange background was chosen for the 'Add a Game', 'Contact Us', 'Edit Game' and account-related forms to give it a pop-up look on the page with the white background
+    - **Forms -** A lightened orange background was chosen for the 'Add a Game', 'Contact Us', 'Edit Game' and account-related forms to give it a pop-up look on the page with the contrasting white background
     
 ### Wireframes
 
@@ -119,8 +124,7 @@ Initial planning was done on how to setup the database and the website. I used M
 
 1. #### Home Page (The BoardGameStore)
 
-![Responsive displays of The BoardGameStore Main Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/homepage1.png)
-
+![Responsive display of The BoardGameStore Main Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/homepage1.png)
 
 - When the user first arrives at the page, he/she is welcomed with a large  picture of the familiar Monopoly, signifying that this website is about boardgames
 
@@ -128,30 +132,29 @@ Initial planning was done on how to setup the database and the website. I used M
 
 - An orange navigational bar with an icon of a chess knight piece with links to the other pages are provided. For the mobile devices, the links are presented when the user clicks on the 'hamburger' icon of 3 horizontal lines
 
--  If the user scrolls down the main page, there is a few paragraphs of text describing the purpose and functions of the website. Further down, there are 4 best selling games displayed in the form of cards with pictures with information that they are prize winning games. There is a 'MORE INFO' button should the user would like to view more information and a 'ADD A CART' button in the theme orange color indicating a call to action for the user to add the game to the shopping cart
+-  If the user scrolls down the main page, there is a few paragraphs of text describing the purpose and functions of the website. Further down, there are 4 best selling games displayed in the form of cards with pictures with information that they are award-winning games. There is a 'MORE INFO' button should the user would like to view more information and a 'ADD A CART' button in the theme orange color indicating a call to action for the user to add the game to the shopping cart
 
 - At the bottom of the page, there is a footer in the orange color with the chess knight icon which points the user to the top of the page. There are some links to important information pertaining to having legal implications that the user may be in interested in. Also a link to information where the user could contact the company. In the social media section, there are links to my personal social media sites, Github repository and LinkedIn sites for anyone who wishes to contact me. There is also a disclaimer that this website is meant for educational purposes only
 
-2. #### Add a Game page
+2. #### Add a Game 
 
-![Responsive displays of Add a Game Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/addgame.png)
+![Responsive display of Add a Game Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/addgame.png)
     
-- A form is available for the user to input all fields, which are all required, and an image upload feature as a whole package for this game to be saved
+- Available from a link on the navigation bar. This feature is available for superusers when logged in. A form is available for the user to input all fields, which are all required, and an image upload feature as a whole package for this game to be saved
 
 - The user could change his/her mind and click on the 'CANCEL' button which would bring him/her back to the home page
 
+3. #### Edit Game 
 
-2. #### Edit Game page
-
-![Responsive displays of Edit Game Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/editgame.png )
+![Responsive display of Edit Game Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/editgame.png )
    
-- The form on this page is pre-filled with the exisiting information about the game from the database. Here the user could change any of the fields, including clearing and changing the image. The new information is saved with a click on the 'UPDATE GAME' button
+- Also available only for logged in superusers in the 'Game Information' page, the form on this page is pre-filled with the exisiting information about the game from the database. Here the user could change any of the fields, including clearing and changing the image. The new information is saved with a click on the 'UPDATE GAME' button
 
 - There is a bright red 'DELETE GAME' button for the user to delete the game. If the user clicks on it, he/she is asked to confirm deletion of the game
 
-2. #### Shop Page
+4. #### Shop
 
-![Responsive displays of Shop Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/shop.png)
+![Responsive display of Shop Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/shop.png)
     
 - All the games from the store are displayed here, with each being in one of 3 categories. The games are sorted by alphabetical order for users to easily search for games at a glance
 
@@ -159,104 +162,104 @@ Initial planning was done on how to setup the database and the website. I used M
 
 - A click on the 'ADD TO CART' button would add this game to the shopping cart
 
-- On this page too, displays the results of any search the user makes from the top row on every page. A suggested search would be `Star Wars` which would return 3 results. If there aren't any results, a picture of a sad kitty cat is shown
+- On this page too, displays the results of any search the user makes from the top row on every page. A user could search for a game by it's name, a description or a category. A suggested search would be `Star Wars` which would return at least 3 results. If there aren't any results, a picture of a sad kitty cat is shown
 
-2. #### Game Information Page
+5. #### Game Information
 
-![Responsive displays of Game Information Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/gameinfo.png)
+![Responsive display of Game Information Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/gameinfo.png)
   
 - This page lists all the information about the game, specifically the game description and what is inside the box. There are buttons below it for the user to navigate easily to other parts of the website
 
-2. #### Cart Page
+6. #### Cart
 
-![Responsive displays of Cart Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/cart.png)
+![Responsive display of Cart Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/cart.png)
   
-- All the games the user added to cart would be displayed here. The user could adjust the quantity accordingly. The unit price, subtotal and grand total price are displayed for the user to know how much he/she is spending. The game could be deleted with a click on the 'dustbin' or 'X' icon (depending which screen sizes the site is viewed on)
+- All the games the user added to cart would be displayed here. The user could adjust the quantity accordingly. The unit price, subtotal and grand total price are displayed for the user to know how much he/she is spending. There is a delivery fee of \$8 for orders \$300 and below the fee is waived for orders above it. The game could be deleted with a click on the 'dustbin' or 'X' icon (depending which screen sizes the site is viewed on)
 
 - Below the table of the games, buttons are provided for the user to make payment or to continue shopping
 
-2. #### Checkout Page
+7. #### Checkout
 
-![Responsive displays of Checkout Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/checkout.png)
+![Responsive display of Checkout Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/checkout.png)
   
-- A form is provided for the user to provide shipping details. There is also the payment part which would display error messages if the credit card details is wrong. Suggested information to input:
+- A form is provided for the user to provide delivery details. There is also the payment part which would display error messages if the credit card details is wrong. Suggested information to input:
 ````
 Credit card number: 4242424242424242
-Security code (CVV): 123
-Month: 1
-Year: 2025
+Security code (CVV): 456
+Month: 4
+Year: 2022
 ````
-- The user could submit payment with a click on the 'Submit Payment' button and a picture of a winking cat would be displayed  
+- The user could submit payment with a click on the 'SUBMIT PAYMENT' button and a picture of a winking cat would be displayed when payment is successful. Otherwise, flash messages would appear on top of the page to let the user know what is the reason payment was not successful 
 
-2. #### Stripe Payment
+8. #### Stripe Payment
 
-![Responsive displays of Stripe Payment Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/stripe%20payment%20success.png )
+![Responsive display of Stripe Payment Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/stripe%20payment%20success.png )
    
 - The users would be making payment with Stripe's payment features
 
-2. #### Contact Us Page
+9. #### Contact Us Page
 
-![Responsive displays of Contact Us Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/contactus.png)
+![Responsive display of Contact Us Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/contactus.png)
    
 - The store's location is displayed with a pin on the google map with information underneath on addresses, store operating hours, etc
-- A form is available for the user to contact the company. The user is brought to the home page after clicking on the 'Submit' button
+- A form is available for the user to contact the company. The user is brought to the home page after clicking on the 'SUBMIT' button
 
-3. #### Registration Page
+10. #### Registering a new account
 
-![Responsive displays of Registration Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/register.png)
+![Responsive display of Registration Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/register.png)
    
-- A form is provided for the user to register an account with the store. This is needed for the user to make payment for games selected for the shopping cart. After clicking on the 'register' button, the user is logged in and brought to the home page
+- A form is provided for the user to register an account with the store. This is needed for the user to make payment for games selected in the shopping cart. After clicking on the 'REGISTER' button, the user is logged in and brought to the home page
 
-3. #### Login Page
+11. #### Login
 
-![Responsive displays of Login Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/login.png)
+![Responsive display of Login Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/login.png)
     
-- A form is provided for the user to login to their account. A username and password is needed and upon clicking the 'Login' button, the user is logged in and brought to the home page
-- The 'FORGET PASSWORD' password when clicked will allow the user to input his/her email for instructions on getting a new paswsword
+- A form is provided for the user to login to their account. A username and password is needed and upon clicking the 'LOGIN' button, the user is logged in and brought to the home page
+- The 'FORGET PASSWORD' button when clicked will allow the user to input his/her email for instructions on getting a new password
 
-4. #### Logout Page 
+12. #### Logout 
 
-![Responsive displays of Logout Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/logout.png)
+![Responsive display of Logout Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/logout.png)
 
-- A user would be brought here on click of the 'LOGOUT button' where he/she is asked confirm logout. On successful logout, the user is brought to the homepage. Of course the user could cancel logging out too and be brought to the 'shop' page
+- A user would be brought here on click of the 'LOGOUT' button where he/she is asked confirm logout. On successful logout, the user is brought to the homepage. Of course the user could cancel logging out too and be brought to the 'shop' page
 
-5. #### My Account/ User's profile Page 
+13. #### My Account/ User's profile 
 
-![Responsive displays of My Account/ User's profile Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/profile.png)
+![Responsive display of My Account/ User's profile Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/profile.png)
 
-- The user could see his/her email and username here. There is the option to reset or change password also
+- The user could see his/her email and username on this page. There is the option to reset or change password also
 
-6. #### Password Change/ Password Reset Pages 
+14. #### Password Change/ Password Reset 
 
-![Responsive displays of Password Change/ Password Reset Pages](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/reset:changepassword.png)
+![Responsive display of Password Change/ Password Reset Pages](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/reset:changepassword.png)
   
 - The user is able to change or reset the password from these pages.
 
-7. #### Terms & Conditions/ Privacy Policy/ Shipping & Returns Pages
+15. #### Terms & Conditions/ Privacy Policy/ Shipping & Returns Pages
 
-![Responsive displays of Terms & Conditions/ Privacy Policy/ Shipping & Returns Pages](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/termsconditions.png)
+![Responsive display of Terms & Conditions/ Privacy Policy/ Shipping & Returns Pages](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/termsconditions.png)
     
 - The user could view the company's various policies from these pages
 
-8. #### Error 404 Page
+16. #### Error 404 Page
 
-![Responsive displays of The BoardGameStore Error 404 Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/error404.png)
+![Responsive display of The BoardGameStore Error 404 Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/error404.png)
    
 - If the user has inputted an invalid entry on the URL, he/she would be brought to this page which shows that there is an error with a picture of a sad looking kitty cat
 
-- When the user scrolls down, there is a 'home' button which allows them to be brought back to the main page with a click of the button
+- When the user scrolls down, there is a 'HOME' button which allows them to be brought back to the main page with a click of the button
 
 ### Future Features to Implement
 
-2. #### Pagination
+1. #### Pagination
 
     - Pagination on the shop pages would be helpful with organizing the collection as it grows. It also looks neater and helps with loading time
 
-3. #### Video
+2. #### Video
 
     - I'd like to include a video on the history of boardgames for better users' experience in gaining more knowledge from this website
 
-4. #### Labels
+3. #### Labels
 
     - Based on the database records on the games where they are out of stock or discounted, I'd like to display these information on the game cards like having a small tag at the top left hand side
 
@@ -268,31 +271,33 @@ Year: 2025
 
 ### Postgres SQL
 
-- A [PostgresSQL](https://www.postgresql.org/) database was used to store game images and information deployed to Heroku from the Cloud9 environment
+- A [PostgresSQL](https://www.postgresql.org/) database was used to store game images and information deployed to Heroku from the AWS Cloud9 environment
 
 ## Technologies Used
 Here are a list of programming languages, frameworks, technologies and tools used for this website:
 
 |Technologies                 |Remarks                                                                   |
 |-----------------------------|--------------------------------------------------------------------------|
-|[HTML5](https://www.w3schools.com/)                          |Testing                                  |
-|[CSS3](https://www.w3schools.com/)                           |Testing                                  |
-|[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)                      |Testing|
+|[HTML5](https://www.w3schools.com/)                          |Following the HTML5 convention for the html pages                                  |
+|[CSS3](https://www.w3schools.com/)                           |Following the CSS3 convention for the css files                                  |
+|[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)                      |Following the ES6 convention for the js files|
 |[jQuery website](https://code.jquery.com/)                       |Used to simplify DOM manipulation                                |
-|[Bootstrap](https://getbootstrap.com/)                    |Testing                            |
-|[Fontawesome website](https://fontawesome.com/)                 |Testing                          |
-|[Google Colaboratory notebook](https://colab.research.google.com/)                 |used for writing the markdown for this README.md file                  |
-|[Django](https://docs.djangoproject.com/en/3.0/)                        |Testing           |
+|[Bootstrap](https://getbootstrap.com/)                    |Used the bootstrap components and grid system to style this website                           |
+|[Fontawesome website](https://fontawesome.com/)                 |Picked icons from here to style this website                         |
+|[Favicon website](https://www.favicon-generator.org/)                 |Used to create the favicon for this website                          |
+|[Google Colaboratory notebook](https://colab.research.google.com/)                 |used for writing the markdowns for README.md and test.md files                  |
+|[Django](https://docs.djangoproject.com/en/3.0/)                        |Used this high level Python framework to build this website           |
 |[Python](https://www.python.org/)              |as the main programming language used to build this project                                                        |
 [Jinja](https://palletsprojects.com/p/jinja/)                          |a Python web application framework to display the html pages with entries from the PostgresSQL database                                  |
 [Cloud9](https://c9.io)                      |an IDE used to develop the website.                                  |
 [Git](https://git-scm.com/)                          |used for version control to regularly commit codes to Github                                  |
 [GitHub](https://github.com/)                      |used as a remote backup of code used in this project                                  |
 [Heroku](https://www.heroku.com)                          |used as a platform for this project to be deployed to                                  |
-[PostgresSQL](https://stripe.com/ie)              |To allow the storage of database in sqlite before it can be used in Heroku as a database.                                                      |
+[PostgresSQL](https://www.postgresql.org/)              |To allow the storage of database in sqlite before it can be used in Heroku as a database.                                                      |
 [UploadCare](https://uploadcare.com/)              |A tool that enables images uploading                                  |
-[Stripe Payments](https://www.postgresql.org/)              |Testing                                                     |
+[Stripe Payments](https://stripe.com/gb)              |Online payment system to allow users to make payment to                                                     |
 [Sqlite3](https://www.sqlite.org/index.html)              |SQLite3 was used to store database and retrieve data via the backend.                                                      |
+[Adobe Photoshop](https://www.adobe.com/products/photoshop.html)              |Used to create The BoardGameStore montage for this README.md file                                                |
 
 ## Testing
 
@@ -357,11 +362,11 @@ MIDDLEWARE = [
 ]
 ````
 
-7. Create a repository in Github
+5. Create a repository in Github
 
 6. Create a hidden file named `.gitignore` and add `.c9` in the file. Also add the following django files to be ignored taken from [here](https://gitignore.io/api/django)
 
-8. In your terminal, type these commands to add the repository origin from Github:
+7. In your terminal, type these commands to add the repository origin from Github:
 ````
 git init 
 git add . 
@@ -369,45 +374,54 @@ git commit -m "First commit"
 git remote add origin https://github.com/Paddlepop25/codeinstitute-boardgame-store
 ````
 
-9. Login to Heroku from your terminal by using this command `heroku login -i`
+8. Login to Heroku from your terminal by using this command `heroku login -i`
 
-6. Create a new app with a unique name with this command `heroku create <app_name>` replacing the <app_name> with a name of your choice
+9. Create a new app with a unique name with this command `heroku create <app_name>` replacing the <app_name> with a name of your choice
 
-7. To check if the correct github repository and heroku app are connected to this project, use this command 
+10. To check if the correct github repository and heroku app are connected to this project, use this command 
 `git remote -v`
 
-8. In your app in Heroku in the settings tab, click on the 'Reveal Config Vars' button. Copy the following variables from the `.bashrc` in Cloud9 over here.
+11. In your app in Heroku in the settings tab, click on the 'Reveal Config Vars' button. Copy the following variables from the `.bashrc` in Cloud9 over
+![Heroku's reveal config page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/heroku.png)
 
-14. Be in the root directory and run the command `echo web: python app.py > Procfile` which will create a Procfile. Add this line inside the Procfile `web: gunicorn <PROJECT_FOLDER>.wsgi:application` and replace the <PROJECT_FOLDER> with your project's name
 
-15. Inside the `settings.py` add the URL of the heroku app into the ALLOWED_HOST section
 
-11. All sensitive data and links should be placed into the `env.py` with those information linked to the `settings.py` file, for example
+12. Be in the root directory and run the command `echo web: python app.py > Procfile` which will create a Procfile. Add this line inside the Procfile `web: gunicorn <PROJECT_FOLDER>.wsgi:application` and replace the <PROJECT_FOLDER> with your project's name
+
+13. Inside the `settings.py` add the URL of the heroku app into the ALLOWED_HOST section
+
+14. All sensitive data and links should be placed into the `env.py` with those information linked to the `settings.py` file, for example
 ````
-os.environ.setdefault("STRIPE_PUBLISHABLE", "") os.environ.setdefault("STRIPE_SECRET", "") os.environ.setdefault("DATABASE_URL", "") os.environ.setdefault("SECRET_KEY", "") os.environ.setdefault("AWS_SECRET_KEY_ID", "") os.environ.setdefault("AWS_SECRET_ACCESS_KEY", "")
+os.environ.setdefault("STRIPE_PUBLISHABLE", "") 
+os.environ.setdefault("STRIPE_SECRET", "") 
+os.environ.setdefault("DATABASE_URL", "") 
+os.environ.setdefault("SECRET_KEY", "") 
+os.environ.setdefault("AWS_SECRET_KEY_ID", "") 
+os.environ.setdefault("AWS_SECRET_ACCESS_KEY", "")
 ````
 
-5. Use this command to create a `requirements.txt` file which lists all the required packages needed for this project:
+15. Use this command to create a `requirements.txt` file which lists all the required packages needed for this project:
 ````
 pip3 freeze --local > requirements.txt
 ````
 
-4. At the project directory level, create a `Static` folder, which should  be on the same level as the `manage.py` file. Place some files inside here like images or text files
+16. At the project directory level, create a `Static` folder, which should  be on the same level as the `manage.py` file. Place some files inside here like images or text files
 
-3. Add the following in the settings.py file for static files and uploads:
+17. Add the following in the settings.py file for static files and uploads:
 ````
-STATIC_URL = '/static/' STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), ) STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/' STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 ````
 
-15. Commit all files to Heroku with these commands
+18. Commit all files to Heroku with these commands
 ````
 git add . 
 git commit -m "Deploying to Heroku" 
 git push heroku master
 ````
 
-8. To use the PostgresSQL database, type this to your terminal 
-````heroku addons:create heroku-postgresql
+19. To use the PostgresSQL database, type this to your terminal 
+````
+heroku addons:create heroku-postgresql
 ````
 
 20. To check the URL to the database created, run this command
@@ -425,35 +439,35 @@ DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
 24. Save and restart the terminal
 
-12. Make migrations with this command
+25. Make migrations with this command
 ````
 python3 manage.py migrate
 ````
 
-15. Commit all files to Heroku with these commands
+26. Commit all files to Heroku with these commands
 ````
 git add . 
 git commit -m "Updated settings.py" 
 git push heroku master
 ````
 
-13. Make a superuser with this command
+27. Make a superuser with this command
 `python manage.py createsuperuser`
 
-15. At the very top of the page in Heroku, click "Open App". You will now be able to view the project in Heroku
+28. At the very top of the page in Heroku, click "Open App". You will now be able to view the project in Heroku
 
 ## Credits
 
-### Contents
+### Content
 
-- All game card images and information is take from [Team Board GAME](https://www.teamboardgame.com/)
+- All game card images and information are take from [TEAMBOARDGAME](https://www.teamboardgame.com/)
 
 ### Media
 - #### Images
     - The main Monopoly image for the website was found in taken from [here](https://www.celebitchy.com/wp-content/uploads/2018/11/activity-board-game-close-up-1314435.jpg)
+    - The chess knight piece for brand logo taken from [here](http://www.pngmart.com/files/3/Chess-Transparent-Background.png)
     - The Favicon was created [here](https://favicon.io/favicon-converter/)
-    - Pictures of games were downloaded from [TeamBoardGame](https://www.teamboardgame.com/)
-    - Image of [sad cat](http://www.catboxzen.com/wp-content/uploads/2014/10/sad-cat.jpg), [winking cat](https://static.boredpanda.com/blog/wp-content/uploads/2016/04/smiling-animals-8-570e0c1b0703c__605.jpg), [happy dog](http://elelur.com/data_images/articles/happy-dogs-do-you-know-what-makes-them-really-so.jpg) were taken from the respective webpages
+    - Images of [sad cat](http://www.catboxzen.com/wp-content/uploads/2014/10/sad-cat.jpg), [winking cat](https://static.boredpanda.com/blog/wp-content/uploads/2016/04/smiling-animals-8-570e0c1b0703c__605.jpg), [happy dog](http://elelur.com/data_images/articles/happy-dogs-do-you-know-what-makes-them-really-so.jpg) were taken from the respective webpages
 
 ### Codes
 
@@ -467,7 +481,7 @@ A huge thank you to:
 - Mr Paul, our teacher at [Trent Global College](trentglobal.edu.sg/diplomainsoftwaredevelopment/)
 - Our very helpful teaching assistant John
 - My classmates who were helpful in giving tips when I'm stuck
-- My friends and family whom were the user testers of this website. They gave valuable feedback on how to improve the project
+- My friends and family whom were the user testers of this website. They gave invaluable feedback on how to improve the project
 
 ## Disclaimer
 
