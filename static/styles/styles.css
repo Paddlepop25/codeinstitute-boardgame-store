@@ -5,14 +5,14 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-h3 {
+h1,h2,h3,h4,h5,h6 {
     font-family: 'Rubik', sans-serif;
 }
 
 /* Top row of base.html */
 
 .top-row p,
-a {
+.top-row a {
     color: orange;
 }
 
@@ -239,7 +239,7 @@ h3 {
 }
 
 .cart img {
-    width: 4rem;
+    width: 5rem;
 }
 
 .cart .plus {
@@ -324,7 +324,7 @@ h3 {
 /*small screens view;*/
 
 .small_cart img {
-    width: 5rem;
+    width: 6rem;
 }
 
 .small_cart tr td:first-child {
@@ -416,6 +416,14 @@ input {
     margin-bottom: 1rem;
 }
 
+.accounts_form_look span {
+    font-size: 1.5rem;
+}
+
+.accounts_form_look .username {
+    margin-left: 3px;
+    font-size: 1.8rem;
+}
 
 /*Register page*/
 
