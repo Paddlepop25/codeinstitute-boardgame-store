@@ -1,8 +1,14 @@
 # The BoardGameStore - Testing #
 
-The deployed project 'The BoardGameStore' is on [Heroku](https://linda-boardgamestore.herokuapp.com/)
+The deployed project 'The BoardGameStore' is on [**Heroku**](https://linda-boardgamestore.herokuapp.com/)
+
+The repository can be found in
+[**Github**](https://github.com/Paddlepop25/codeinstitute-boardgame-store)
+
 
 [**Main README.md file**](https://github.com/Paddlepop25/codeinstitute-boardgame-store/blob/master/README.md)
+
+![Responsive displays of The BoardGameStore](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/boardgamestoremontage.jpg)
 
 ## Automated Testing
 
@@ -149,20 +155,21 @@ I ensured that:
 - The payment is reflected in my stripe account and the value is correct
 ![Stripe account](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/tests_md/stripe_info.png)
 
-#### 10. Checkout Success page
+#### 11. Checkout Success page
 I ensured that:
 - A text is displayed thanking the customer for the purchase
 - A picture of a winking kitty cat is displayed to put a smile on the user's face
 - Upon clicking on the 'BACK TO HOME' button, the user is brought to the home page
 
-#### 11. Contact Us page
+#### 12. Contact Us page
 I ensured that:
 - Google map API is called and displayed on the game
 - The 'Contact Us' form validation works for all fields. I tried empty fields each turn to verify
 - Upon clicking on the 'SUBMIT' button, a pseudo email is sent to the user. This is verified from getting an email in the 'sent email' folder in the same directory as this django project
 
-#### 12. Register page
+#### 13. Register page
 ![Password Validation](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/tests_md/register_account.png)
+
 I ensured that:
 - All input fields cannot be empty
 - The email address must be a valid email address
@@ -170,7 +177,7 @@ I ensured that:
 - Any errors and validation failure will result in error messages shown
 - Upon successful registration and on the click of the 'Register' button, the user is brought to the home page where a flash message would indicate that registration was successful
 
-#### 13. Login page
+#### 14. Login page
 I ensured that:
 - The 'register' link would bring the user to the 'Register Account' page
 - Both 'username' and 'password' fields cannot be empty, else error messages would be shown
@@ -179,28 +186,28 @@ I ensured that:
 - If both input fields are correct and upon clicking on the 'Login' button, the user is brought to the home page with a flash message indicating success in sigining in as the user
 - Upon clicking on the 'Forgot Password' button, the user is brought to the 'Password Reset' page
 
-#### 14. Logout page
+#### 15. Logout page
 I ensured that:
 - Upon clicking on the 'LOGOUT' link, the user is brought to a 'Logout' page where the user is given two options
 - Upon clicking on the 'LOGOUT' button, the user is brought to the 'Home page' where a flash message is shown indicating the user has successfully logged out
 - Upon clicking on the 'CANCEL' button, the user is brought to the 'Shop for Games' page
 
-#### 15. My Account/ User's profile page
+#### 16. My Account/ User's profile page
 I ensured that:
 - The username of the logged in user is displayed after 'Hello'
 - The 'Reset password' button brings the user to the 'Password Reset' page
 - The 'Change password' button brings the user to the 'Change Password' page
 
-#### 16. Password Reset page
+#### 17. Password Reset page
 I ensured that:
 - The 'email input' field needed an email for the submit button to work
 - Upon clicking on the 'Send me instructions!' button, the user is brought to the 'Password Changed Success page'
 
-#### 17. Password Reset Successful page
+#### 18. Password Reset Successful page
 I ensured that:
 - Upon success submit of form from the 'Password Reset page,' the user is directed to this page where it is stated instructions are emailed to the user
 
-#### 18. Password Change page
+#### 19. Password Change page
 ![Password Validation](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/tests_md/change_password.png)
 I ensured that:
 - None of the 3 input fields could be empty, if not error messages would be shown
@@ -208,24 +215,24 @@ I ensured that:
 - The two 'New password' and 'New password confirmation' fields must match
 - Upon click on the 'Change my password button,' the user is brought to the 'Password Changed' page
 
-#### 19. Password Changed Successful page
+#### 20. Password Changed Successful page
 I ensured that:
 - The message 'Your password is changed!' is displayed prominently with a picture of a cute puppy
 - The 'HOME PAGE' button brings the user back to the home page
 
-#### 20. Terms & Conditions page
+#### 21. Terms & Conditions page
 I ensured that:
 - The user is brought to the 'Terms & Conditions' page where information is displayed
 
-#### 21. Privacy Policy page
+#### 22. Privacy Policy page
 I ensured that:
 - The user is brought to the 'Privacy Policy' page where information is displayed
 
-#### 22. Shipping and Returns page
+#### 23. Shipping and Returns page
 I ensured that:
 - The user is brought to the 'Shipping and Returns' page where information is displayed
 
-#### 23. 404 Error page
+#### 24. 404 Error page
 I ensured that:
 - Any broken links are directed to this page where a text that says 'Sorry! Something went wrong :(' is displayed along with a picture of a sad kitty cat
 
