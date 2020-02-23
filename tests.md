@@ -144,6 +144,11 @@ Year: 2025
 - Upon clicking on the 'BACK TO CART' button, the user is brought to the 'Cart' page
 - Upon clicking on the 'BACK TO SHOP' button, the user is brought to the 'Shop' page
 
+#### 10. Stripe Account
+I ensured that:
+- The payment is reflected in my stripe account and the value is correct
+![Stripe account](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/tests_md/stripe_info.png)
+
 #### 10. Checkout Success page
 I ensured that:
 - A text is displayed thanking the customer for the purchase
@@ -157,6 +162,7 @@ I ensured that:
 - Upon clicking on the 'SUBMIT' button, a pseudo email is sent to the user. This is verified from getting an email in the 'sent email' folder in the same directory as this django project
 
 #### 12. Register page
+![Password Validation](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/tests_md/register_account.png)
 I ensured that:
 - All input fields cannot be empty
 - The email address must be a valid email address
@@ -195,6 +201,7 @@ I ensured that:
 - Upon success submit of form from the 'Password Reset page,' the user is directed to this page where it is stated instructions are emailed to the user
 
 #### 18. Password Change page
+![Password Validation](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/tests_md/change_password.png)
 I ensured that:
 - None of the 3 input fields could be empty, if not error messages would be shown
 - The 'Old password' must be the exact same one as the user's login password
