@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from .forms import LoginForm, RegistrationForm
 from .models import MyUser
 
-# Create your views here.
 def index(request):
     return render(request, 'accounts/index.template.html')
 
@@ -35,12 +34,11 @@ def login(request):
         if user:
             # log the user in
             auth.login(user=user, request=request)
-            messages.success(request, 'Successfully signed in as ' + username) # flash message
+            # flash message
+            messages.success(request, 'Successfully signed in as ' + username) 
             # return redirect(reverse('user_index'))
             return redirect( reverse('home'))
         else:
-            # if user is None, show flash message
-            # login_form.add_error(None, "Invalid user name or password. Make sure they are case-sensitive.")
             # flash message, line break doesn't work
             messages.error(request, 'Invalid username or password. \nMake sure they are case-sensitive.') 
             return render(request, 'accounts/login.template.html', {

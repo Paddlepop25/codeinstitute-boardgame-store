@@ -13,16 +13,11 @@ def contact_us(request):
         form = form_class(data=request.POST)
 
         if form.is_valid():
-            contact_name = request.POST.get(
-                'contact_name'
-            , '')
-            contact_email = request.POST.get(
-                'contact_email'
-            , '')
+            contact_name = request.POST.get('contact_name', '')
+            contact_email = request.POST.get('contact_email', '')
             form_content = request.POST.get('content', '')
 
-            # Email the profile with the
-            # contact information
+            # Email the profile with the contact information
             template = get_template('info_pages/contact_template.txt')
             context = {
                 'contact_name': contact_name,

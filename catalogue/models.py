@@ -1,7 +1,6 @@
 from django.db import models
 from pyuploadcare.dj.models import ImageField
 
-# Create your models here.
 class Game(models.Model):
     name = models.CharField(blank=False, max_length=21)
     description = models.TextField(blank=False)
@@ -11,7 +10,6 @@ class Game(models.Model):
     image = ImageField(null=True, blank=True)
     
     def __str__(self):
-        # return "{} x {} ({})".format(self.name, self.stock_left, self.category)
         return "{} ({})".format(self.name, self.category)
         
 class Category(models.Model):

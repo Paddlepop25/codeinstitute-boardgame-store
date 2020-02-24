@@ -37,6 +37,7 @@ def show_games(request):
         'results':results
     })
 
+# function works only for superusers
 @user_passes_test(lambda u: u.is_superuser)
 def create_game(request):
     if request.method == 'POST':
@@ -52,13 +53,14 @@ def create_game(request):
         'form':create_game_form
     })    
 
+# function works only for superusers
 @user_passes_test(lambda u: u.is_superuser)
 def update_game(request, game_id):
     game_being_updated = get_object_or_404(Game, pk=game_id)
     game_being_deleted = get_object_or_404(Game, pk=game_id)
     
     if request.method == "POST":
-        # for update
+        # for updating form
         update_game_form = GameForm(request.POST, instance=game_being_updated)
         if update_game_form.is_valid():
             update_game_form.save()

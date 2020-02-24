@@ -8,17 +8,12 @@ from django.utils import timezone
 from django.conf import settings
 import stripe
 
-# from catalogue.models import Game
-
-# Create your views here.
-
+# function available for logged in users only
 @login_required        
 def checkout(request):
     return render(request, 'checkout/checkout.template.html') 
 
-def donate(request):
-    return render(request, 'checkout/donate.template.html')
-
+# function available for logged in users only
 @login_required    
 def charge(request):
         amount = request.GET['amount']
@@ -26,8 +21,8 @@ def charge(request):
         if request.method == 'GET':
             order_form = OrderForm()
             payment_form = PaymentForm()
+            
             #show form
-            # return render(request, 'checkout/checkout.template.html', {
             return render(request, 'checkout/charge.html', {
                 'publishable' : settings.STRIPE_PUBLISHABLE_KEY,
                 'order_form' : OrderForm,
@@ -52,7 +47,7 @@ def charge(request):
                             card=stripeToken
                         )
                  
-                    print(type(amount))
+                    # print(type(amount))
                 
                     if customer.paid:
                         order = order_form.save(commit=False)
@@ -74,13 +69,6 @@ def charge(request):
                 'amount': amount,
                 'publishable' : settings.STRIPE_PUBLISHABLE_KEY
             })
-
-            # return render(request, 'checkout/charge.html', {
-            # 'order_form' : OrderForm,
-            # 'payment_form' : PaymentForm,
-            # 'amount': amount,
-            # 'publishable' : settings.STRIPE_PUBLISHABLE_KEY
-            # })
     
 # simple method
 # def checkout(request):

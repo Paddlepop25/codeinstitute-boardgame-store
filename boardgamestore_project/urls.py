@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-# when user go to user/profile url, it sill call the register function, and we'll call this route register
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),

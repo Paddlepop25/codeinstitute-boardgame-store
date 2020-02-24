@@ -1,21 +1,15 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
-# from django.contrib.auth.decorators import login_required
-
 from catalogue.models import Game
 
-# @login_required        
-# def checkout_form(request):
-#     return render(request, 'cart/checkout_form.template.html')   
-    
 def view_cart(request):
-    # retrieve the cart
+    # retrieve the cart, the second argument {} will be the default value if 
+    # if the key does not exist in the session
     cart = request.session.get('shopping_cart', {})
     delivery = 0.00
     grand_total_price = 0.00
     for game_id,game in cart.items():
         grand_total_price += game['total_price']
-        # print(type(grand_total_price))
         
     if grand_total_price <= 300:
         grand_total_price = grand_total_price + 8.00
@@ -23,6 +17,7 @@ def view_cart(request):
     else: 
         grand_total_price = grand_total_price
         delivery = 0.00
+        
     return render(request, 'cart/view_cart.template.html', {
         'shopping_cart':cart,
         'delivery':delivery,
@@ -30,9 +25,6 @@ def view_cart(request):
     })
     
 def add_to_cart(request, game_id):
-    # attempt to get existing cart from the session using the key "shopping_cart"
-    # the second argument will be the default value if 
-    # if the key does not exist in the session
     cart = request.session.get('shopping_cart', {})
     
     # we check if the game_id is not in the cart. If so, we will add it
@@ -53,13 +45,7 @@ def add_to_cart(request, game_id):
         messages.success(request, "Game has been added to your cart")
         return redirect('/catalogue/')
         
-    # elif game_id in cart:    
-        # if press again
-        # messages.success(request, "The game is already in your shopping cart")
-        # return redirect('/cart/')
-        
     else:
-        
         cart[game_id]['quantity']+=1
         cart[game_id]['total_price'] = round(int(cart[game_id]['quantity']) * float(cart[game_id]['price']),2)
         request.session['shopping_cart'] = cart
@@ -77,7 +63,6 @@ def total_price(request, game_id):
     'total_price':round(int(cart[game_id]['quantity']) * float(cart[game_id]['price']),2)
     }
     request.session['shopping_cart'] = cart
-    # print(cart[game_id]['quantity'])        
     return render(request, 'cart/view_cart.template.html', {
             'total_price':total_price
         })        
@@ -91,7 +76,6 @@ def minus_from_cart(request, game_id):
             cart[game_id]['total_price'] = round(int(cart[game_id]['quantity']) * float(cart[game_id]['price']),2)
         # save the cart back to sessions
             request.session['shopping_cart'] = cart
-            # messages.success(request, "Item has been removed from your cart.")
         return redirect('/cart/')
     
 def remove_from_cart(request, game_id):
