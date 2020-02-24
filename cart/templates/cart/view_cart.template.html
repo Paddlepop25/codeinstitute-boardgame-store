@@ -48,7 +48,7 @@
                 <tr class="subtotal">
                     <td>Subtotal:</td>
                     <td></td>
-                    <td>${{game.total_price}}</td>
+                    <td>${{game.total_price|floatformat:2}}</td>
 
                 </tr>
 
@@ -59,7 +59,7 @@
                 <tr class="delivery" id="delivery_mobile">
                     <td>Delivery: </td>
                     <td></td>
-                    <td colspan="12">${{delivery}}</td>
+                    <td colspan="12">${{delivery|floatformat:2}}</td>
                 </tr>
                 <tr class="free_delivery" id="free_delivery_mobile">
                     <td colspan="12"><small>*Free delivery for orders over $300!</small></td>
@@ -67,7 +67,7 @@
                 <tr class="total_price" id="total_price_mobile">
                     <td>Grand Total: </td>
                     <td></td>
-                    <td colspan="12">${{grand_total_price}}</td>
+                    <td colspan="12">SGD ${{grand_total_price|floatformat:2}}</td>
                 </tr>
 
                 {% endif %}
@@ -114,7 +114,7 @@
                         <a href="{% url 'add_to_cart' game_id=id %}"><i class="fas fa-plus ml-2 minus"></i></a>
                     </td>
                     <td>${{game.price}}</td>
-                    <td>${{game.total_price}}</td>
+                    <td>${{game.total_price|floatformat:2}}</td>
                     <td><a href="{% url 'remove_from_cart' game_id=id %}"><i class="fas fa-trash dustbin"></i></a></td>
                 </tr>
 
@@ -124,7 +124,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td colspan="12">${{delivery}}</td>
+                    <td colspan="12">${{delivery|floatformat:2}}</td>
                 </tr>
                 <tr class="free_delivery" id="free_delivery_tablet">
                     <td colspan="12"><small>*Free delivery for orders over $300!</small></td>
@@ -134,7 +134,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td colspan="12">${{grand_total_price}}</td>
+                    <td colspan="12">SGD ${{grand_total_price|floatformat:2}}</td>
                 </tr>
 
                 {% endif %}
