@@ -385,6 +385,7 @@ git remote add origin https://github.com/Paddlepop25/codeinstitute-boardgame-sto
 `git remote -v`
 
 11. In your app in Heroku in the settings tab, click on the 'Reveal Config Vars' button. Copy the following variables from the `.bashrc` in Cloud9 over
+
 ![Heroku's reveal config page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/heroku.png)
 
 12. Be in the root directory and run the command `echo web: python app.py > Procfile` which will create a Procfile. Add this line inside the Procfile `web: gunicorn <PROJECT_FOLDER>.wsgi:application` and replace the <PROJECT_FOLDER> with your project's name
@@ -494,3 +495,8 @@ A huge thank you to:
 ## Disclaimer
 
 All content on this website are used for educational purposes only.
+
+<br>
+<br>
+<br>
+<br>

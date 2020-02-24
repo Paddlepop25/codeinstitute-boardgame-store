@@ -212,6 +212,7 @@ I ensured that:
 
 #### 19. Password Change page
 ![Password Validation](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/tests_md/change_password.png)
+
 I ensured that:
 - None of the 3 input fields could be empty, if not error messages would be shown
 - The 'Old password' must be the exact same one as the user's login password
@@ -259,3 +260,7 @@ After a few days of trying, I finally settled on this code which did the trick
 - I would like to incorporate other fields like booleans and tuples in the forms for testing
 - I would like to implement a mail delivery service to further test if emails are delievered when a user request for password change, and also if the auto reply email is generated when a form is submitted from the contact page
 - A special acknowledgement and thanks to family and friends for their time to test this website on their device and their invaluable feedback.
+
+<br>
+<br>
+<br>
