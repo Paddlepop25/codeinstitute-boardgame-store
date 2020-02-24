@@ -36,7 +36,6 @@ def login(request):
             auth.login(user=user, request=request)
             # flash message
             messages.success(request, 'Successfully signed in as ' + username) 
-            # return redirect(reverse('user_index'))
             return redirect( reverse('home'))
         else:
             # flash message, line break doesn't work
