@@ -162,10 +162,12 @@ I ensured that:
 - Upon clicking on the 'BACK TO HOME' button, the user is brought to the home page
 
 #### 12. Contact Us page
+![Contact Us email received](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/tests_md/email_contact_us.png)
+
 I ensured that:
 - Google map API is called and displayed on the game
 - The 'Contact Us' form validation works for all fields. I tried empty fields each turn to verify
-- Upon clicking on the 'SUBMIT' button, a pseudo email is sent to the user. This is verified from getting an email in the 'sent email' folder in the same directory as this django project
+- Upon clicking on the 'SUBMIT' button, a pseudo email is sent to the user. This is verified from getting an email in the 'sent_emails' folder in the same directory as this django project
 
 #### 13. Register page
 ![Password Validation](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/tests_md/register_account.png)
@@ -199,9 +201,10 @@ I ensured that:
 - The 'Change password' button brings the user to the 'Change Password' page
 
 #### 17. Password Reset page
+![Password Reset email received](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/tests_md/email_forgot_password.png)
 I ensured that:
 - The 'email input' field needed an email for the submit button to work
-- Upon clicking on the 'Send me instructions!' button, the user is brought to the 'Password Changed Success page'
+- Upon clicking on the 'SEND ME INSTRUCTIONS!' button, a pseudo email is sent to the user. This is verified from getting an email in the 'sent_emails' folder in the same directory as this django project. The user is brought to the 'Password Changed Success page' thereafter
 
 #### 18. Password Reset Successful page
 I ensured that:
