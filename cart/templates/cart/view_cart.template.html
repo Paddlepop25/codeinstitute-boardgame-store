@@ -77,10 +77,7 @@
                         <form method='GET' action="{% url 'charge' %}">
                             <div class="form-group">
                                 <input type='text' name='amount' class='form-control' value="{{grand_total_price}}" style="display:none;" />
-                                <!--<button name="send" type="submit" id="checkout_mobile" onkeypress="return event.keyCode!=13;" class='btn-warning float-right ml-2'><i class="fas fa-money-bill-alt"></i> CHECKOUT</button>-->
                                 <input id="checkout_mobile" type="submit" class='btn btn-warning float-right ml-2 mb-2' value="CHECKOUT" />
-                                <!--<input class="btn btn-warning" id="submit_payment_btn" name="send" type="submit" value="Submit Payment">-->
-                                <!--<input id="checkout_mobile" class='btn btn-warning float-right ml-2' href="" type="submit" placeholder="CHECKOUT" />-->
                             </div>
                             <a class='btn btn-success float-right shopping' href="{% url 'show_games' %}"><i class="fas fa-puzzle-piece"></i> BACK TO SHOP</a>
 
