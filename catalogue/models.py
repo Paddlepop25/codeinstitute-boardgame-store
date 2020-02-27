@@ -8,6 +8,7 @@ class Game(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2, blank=False)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
     image = ImageField(null=True, blank=False)
+    homepage_display = models.BooleanField(default=False)
     
     def __str__(self):
         return "{} ({})".format(self.name, self.category)

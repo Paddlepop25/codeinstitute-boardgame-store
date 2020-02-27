@@ -20,64 +20,24 @@
 
 </section>
 
+
 <section class="best_sellers">
-  <h3>Our Best Sellers</h3>
+    <h3>Our Best Sellers</h3>
   <div class="row">
-    <div class="col col-lg-3">
+    {% for game in homepage_display %}
+  <div class="col col-lg-3">
       <div class="card">
-        <img src="{% static 'images/dixit_best.jpg' %}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box">
+        <img src="{{game.image}}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box">
         <div class="card-body">
-          <h5 class="card-title">{{dixit.name}}</h5>
-          <p class="card-text">2011 Guldbrikken Best Family Game</p>
-          <p class="card-text">2010 Games Magazine Best New Party Game Winner</p>
-          <a href="{% url 'game_info' game_id=dixit.id %}" class="btn btn-outline-success more_info"><i class="fas fa-info"></i> MORE INFO</a>
-          <a href="{% url 'add_to_cart' game_id=dixit.id %}" class="btn btn-warning add_to_cart"><i class="fas fa-location-arrow"></i> ADD TO CART</a>
-          <p class="card-text"><small class="text-muted">Last updated 2 mins ago</small></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col col-lg-3">
-      <div class="card">
-        <img src="{% static 'images/catan.jpg' %}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box">
-        <div class="card-body">
-          <h5 class="card-title">{{catan.name}}</h5>
-          <p class="card-text">2011 Ludo Award Best Board Game Editor's Choice Winner</p>
-          <p class="card-text">2005 Gra Roku Game of the Year</p>
-          <a href="{% url 'game_info' game_id=catan.id %}" class="btn btn-outline-success more_info"><i class="fas fa-info"></i> MORE INFO</a>
-          <a href="{% url 'add_to_cart' game_id=catan.id %}" class="btn btn-warning add_to_cart"><i class="fas fa-location-arrow"></i> ADD TO CART</a>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col col-lg-3">
-      <div class="card">
-        <img src="{% static 'images/betrayal_best.jpg' %}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box">
-        <div class="card-body">
-          <h5 class="card-title">{{betrayal.name}}</h5>
-          <p class="card-text">2010 Games Magazine Best New Party Game Winner</p>
-          <p class="card-text">2004 Origins Gamers’ Choice Award</p>
-          <a href="{% url 'game_info' game_id=betrayal.id %}" class="btn btn-outline-success more_info"><i class="fas fa-info"></i> MORE INFO</a>
-          <a href="{% url 'add_to_cart' game_id=betrayal.id %}" class="btn btn-warning add_to_cart"><i class="fas fa-location-arrow"></i> ADD TO CART</a>
-          <p class="card-text"><small class="text-muted">Last updated 7 mins ago</small></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col col-lg-3">
-      <div class="card">
-        <img src="{% static 'images/resistance_best.jpg' %}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box">
-        <div class="card-body">
-          <h5 class="card-title">{{resistance.name}}</h5>
-          <p class="card-text">2011 Japan Boardgame Prize Voters’ Selection Nominee</p>
-          <p class="card-text">2010 Golden Geek Best Print & Play Board Game Nominee</p>
-          <a href="{% url 'game_info' game_id=resistance.id %}" class="btn btn-outline-success more_info"><i class="fas fa-info"></i> MORE INFO</a>
-          <a href="{% url 'add_to_cart' game_id=resistance.id %}" class="btn btn-warning add_to_cart"><i class="fas fa-location-arrow"></i> ADD TO CART</a>
+          <h5 class="card-title">{{game.name}}</h5>
+          <!--<p class="card-text">Award Winning Boardgame</p>-->
+          <a href="{% url 'game_info' game_id=game.id %}" class="btn btn-outline-success more_info"><i class="fas fa-info"></i> MORE INFO</a>
+          <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-warning add_to_cart"><i class="fas fa-location-arrow"></i> ADD TO CART</a>
           <p class="card-text"><small class="text-muted">Last updated 11 mins ago</small></p>
         </div>
       </div>
     </div>
+    {% endfor %}
   </div>
 </section>
 
