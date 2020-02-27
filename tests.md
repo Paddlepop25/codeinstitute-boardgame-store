@@ -84,7 +84,10 @@ I ensured that:
 - UploadCare works for the image upload option
 - The 'ADD A GAME' button will create a new game and save it to the database. Also, this new game is displayed under the correct category in the `games.template.html` page
 - The 'CANCEL' button will bring the user back to the home page
-- This 'ADD A GAME' link is not visible to non-logged in user and logged-in user without CRUD rights. Only a logged-in superuser have this link appear in their navbar
+- This 'ADD A GAME' link is not visible to non-logged in user and logged-in user without CRUD rights. Only a logged-in superuser have this link appear in their navbar with this additional line of code 
+`@user_passes_test(lambda u: u.is_superuser)`
+
+![Game CRUD rights for superusers](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/tests_md/lambda.png)
 
 #### 4. Edit Game page
 I ensured that:
@@ -240,6 +243,10 @@ I ensured that:
 I ensured that:
 - Any broken links are directed to this page where a text that says 'Sorry! Something went wrong :(' is displayed along with a picture of a sad kitty cat
 
+#### 25. 500 Error page
+I ensured that:
+- Any server errors are directed to this page where a text that says 'Sorry! Something went wrong :(' is displayed along with a picture of a sad kitty cat
+
 ## Bugs 
 
 1. I tried adding `\n` or `<br>` to break a long sentence into 2 lines for the flash messages but it didn't work
@@ -254,6 +261,7 @@ After a few days of trying, I finally settled on this code which did the trick
 ````
 <input id="checkout_mobile" type="submit" class='btn btn-warning float-right ml-2 mb-2' value="CHECKOUT" />
 ````
+4. I found that if I changed the name of any of the 4 games in the 'Best Sellers' section in the home page, a `500 server error` would occur. This is because Django could not find the specified best seller game which was specifically queried. To solve this, I could give them an additional field like a unique number or 'personal favourite' and query that instead. In this way, even if the names were altered, they wouldn't generate a 500 server error
 
 ## Further Testing
 - In the future, I would like to implement unit testing while building a website of this kind
