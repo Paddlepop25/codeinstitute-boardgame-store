@@ -70,7 +70,7 @@ The repository can be found in
 
 - For superusers, a form is provided in the 'Add a Game' page where the user could fill up and add a game to the catalogue. The asterisks (*) imply that the fields are required to be filled before form submission 
 
-- After the user fills in all fields and selects a picture to upload, upon clicking on the "ADD A GAME" button,  he/she is brought to the "shop" page where the latest game is added to the selected category. This way they could verify that their form submission is successful 
+- After the user fills in all fields and selects a picture to upload, upon clicking on the "ADD A GAME" button,  he/she is brought to the "shop" page where the latest game is added to the selected category. This way they could verify that their form submission is successful. Do note that each image must be exceed 1MB to be able to be uploaded successfully
 
 - To see the full information of the recently added game, the user could click on the "MORE INFO" button 
 
@@ -89,6 +89,8 @@ The repository can be found in
 - The company make provision for customers who'd like to view the 'Terms & Conditions' and other policies. These are provided via links in the footer
 
 - Customers could view information on where The BoardGameStore is by clicking on the 'Contact Us' link available in the navbar as well as the footer. On the page there is a google map, store location information as well as a form where the user could contact the store by submitting it
+
+- A 'scroll to top' button is provided at the bottom right screen when the user scrolls down at least 2000px of the page. This ensures it will only show on long pages such as the shop or on mobile screens
 
 - If there are any errors in finding a page, the user would be brought to an error 404 page where a sad cat picture would hopefully shock the users into inputing or clicking on the right things 
 
@@ -147,7 +149,7 @@ Initial planning was done on how to setup the database and the website. I used M
 
 ![Responsive display of Add a Game Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/addgame.png)
     
-- Available from a link on the navigation bar. This feature is available for superusers when logged in. A form is available for the user to input all fields, which are all required, and an image upload feature as a whole package for this game to be saved
+- Available from a link on the navigation bar. This feature is available for superusers when logged in. A form is available for the user to input all fields, which are all required, and an image upload feature as a whole package for this game to be saved. Do take note that each image must not exceed 1MB to be able to be uploaded successfully
 
 - The user could change his/her mind and click on the 'CANCEL' button which would bring him/her back to the home page
 
@@ -281,6 +283,10 @@ Year: 2022
 4. #### Premium membership
 
     - Based on the database records on the users' membership, I'd like to give extra discounts to premium members or have a birthday special gift. These could be reflected in the shopping cart page
+
+5. #### Reusable form
+
+    - Request users to sign in with particulars that could be used in the checkout form, such as shipping addresses and telephone number. This way, the checkout form could be pre-populated with the users' information without them having to type in all over again each time they checkout
 
 ## Database
 
@@ -501,7 +507,7 @@ git push heroku master
 A huge thank you to:
 
 - Mr Paul, our teacher at [Trent Global College](trentglobal.edu.sg/diplomainsoftwaredevelopment/)
-- Our very helpful teaching assistant John
+- Our very smartm patient and helpful teaching assistant John
 - My classmates who were helpful in giving tips when I'm stuck
 - My friends and family whom were the user testers of this website. They gave invaluable feedback on how to improve the project
 

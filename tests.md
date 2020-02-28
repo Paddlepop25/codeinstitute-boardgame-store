@@ -81,7 +81,7 @@ I ensured that:
 I ensured that:
 - Each field was left intentionally blank to check for form validation
 - The name field was limited to 21 characters and this was checked with inputting more than 21 characters
-- UploadCare works for the image upload option
+- UploadCare works for the image upload option. Each image must be exceed 1MB to be able to be uploaded successfully
 - The 'ADD A GAME' button will create a new game and save it to the database. Also, this new game is displayed under the correct category in the `games.template.html` page
 - The 'CANCEL' button will bring the user back to the home page
 - This 'ADD A GAME' link is not visible to non-logged in user and logged-in user without CRUD rights. Only a logged-in superuser have this link appear in their navbar with this additional line of code 
@@ -264,7 +264,7 @@ After a few days of trying, I finally settled on this code which did the trick
 <input id="checkout_mobile" type="submit" class='btn btn-warning float-right ml-2 mb-2' value="CHECKOUT" />
 ````
 4. I found that if I changed the name of any of the 8 games in the 'Best Sellers' section in the home page, a `500 server error` would occur. This is because Django could not find the specified best seller game which was specifically queried. To solve this, I gave them an additional `homepage_display` Boolean field in the Game model and queried that instead. In this way, even if the names were altered, they wouldn't generate a 500 server error
-
+5. I couldn't get a smooth scroll behavior even thought I tried different codes. It was strange because `scroll-behavior: smooth;` for `html` in the css worked when I used Visual Studio Code but the AWS Cloud9 environment showed a warning message 'Unknown property scroll-behavior'
 
 ## Further Testing
 - In the future, I would like to implement unit testing while building a website of this kind
