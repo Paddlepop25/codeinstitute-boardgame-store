@@ -85,10 +85,8 @@ h1,h2,h3,h4,h5,h6 {
   right: 30px;
   z-index: 99;
   width: 3rem;
-  background: orange;
-  color: white;
-  border: 1px solid #ed7d33;
-  /*color: #ed7d33;*/
+  border: 3px solid #ed7d33;
+  color: #ed7d33;
   cursor: pointer;
   outline: none;
 }
@@ -371,6 +369,16 @@ h1,h2,h3,h4,h5,h6 {
 .create_game_form_look a {
     width: 100%;
     margin-top: 1rem;
+}
+
+.create_game_form_look .image_text {
+    color: red;
+    position: relative;
+    top: -56px;
+}
+
+.create_game_form_look #div_id_homepage_display {
+    top: 18px;
 }
 
 .update_game_form_look {

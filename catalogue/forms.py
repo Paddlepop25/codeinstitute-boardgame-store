@@ -10,7 +10,7 @@ class GameForm(forms.ModelForm):
     class Meta:
         image = ImageField(widget=FileWidget(attrs={'data-clearable':True}))
         model=Game
-        fields=('name', 'description', 'inside_box', 'price', 'category', 'image', 'homepage_display')
+        fields=('name', 'category', 'description', 'inside_box', 'price', 'image', 'homepage_display')
         
 class GameSearchForm(forms.Form):
     search_terms = forms.CharField(required=False)

@@ -10,6 +10,7 @@
     {{ form.media }}
     <form method='POST' enctype="multipart/form-data">
         {% csrf_token %} {{ form|crispy}}
+        <p class="image_text">*File size must not exceed 1MB</p>
         <input type='submit' value='ADD A GAME' class="btn btn-success" />
         <a href="{% url 'home' %}" class="btn btn-danger">CANCEL</a>
 
