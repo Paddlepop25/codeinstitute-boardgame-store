@@ -198,7 +198,9 @@ I ensured that:
 - Upon clicking on the 'CANCEL' button, the user is brought to the 'Shop for Games' page
 
 #### 16. My Account/ User's profile page
+![User authentication](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/tests_md/user_authenticated.png)
 I ensured that:
+- This page is only visible when the user is logged in with the `{% if user.is_authenticated %}{% endif %}` block of code
 - The username of the logged in user is displayed after 'Hello'
 - The 'Reset password' button brings the user to the 'Password Reset' page
 - The 'Change password' button brings the user to the 'Change Password' page
@@ -261,11 +263,12 @@ After a few days of trying, I finally settled on this code which did the trick
 ````
 <input id="checkout_mobile" type="submit" class='btn btn-warning float-right ml-2 mb-2' value="CHECKOUT" />
 ````
-4. I found that if I changed the name of any of the 4 games in the 'Best Sellers' section in the home page, a `500 server error` would occur. This is because Django could not find the specified best seller game which was specifically queried. To solve this, I could give them an additional field like a unique number or 'personal favourite' and query that instead. In this way, even if the names were altered, they wouldn't generate a 500 server error
+4. I found that if I changed the name of any of the 8 games in the 'Best Sellers' section in the home page, a `500 server error` would occur. This is because Django could not find the specified best seller game which was specifically queried. To solve this, I gave them an additional `homepage_display` Boolean field in the Game model and queried that instead. In this way, even if the names were altered, they wouldn't generate a 500 server error
+
 
 ## Further Testing
 - In the future, I would like to implement unit testing while building a website of this kind
-- I would like to incorporate other fields like booleans and tuples in the forms for testing
+- I would like to incorporate other fields like tuples and lists in the forms for testing
 - I would like to implement a mail delivery service to further test if emails are delievered when a user request for password change, and also if the auto reply email is generated when a form is submitted from the contact page
 - A special acknowledgement and thanks to family and friends for their time to test this website on their device and their invaluable feedback.
 
