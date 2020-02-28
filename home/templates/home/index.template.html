@@ -20,7 +20,7 @@
 
 </section>
 
-
+<br>
 <section class="best_sellers">
     <h3>Our Best Sellers</h3>
   <div class="row">
@@ -30,10 +30,11 @@
         <img src="{{game.image}}" class="card-img-top" alt="Fun boardgame {{game.name}} cardboard box">
         <div class="card-body">
           <h5 class="card-title">{{game.name}}</h5>
-          <!--<p class="card-text">Award Winning Boardgame</p>-->
+          <span class="card-text price_strikethrough">${{game.price|add:"18"}}</span>
+          <span class="card-text">SGD ${{game.price}}</span>
           <a href="{% url 'game_info' game_id=game.id %}" class="btn btn-outline-success more_info"><i class="fas fa-info"></i> MORE INFO</a>
           <a href="{% url 'add_to_cart' game_id=game.id %}" class="btn btn-warning add_to_cart"><i class="fas fa-location-arrow"></i> ADD TO CART</a>
-          <p class="card-text"><small class="text-muted">Last updated 11 mins ago</small></p>
+          <p class="card-text"><small class="text-muted">An award winning boardgame</small></p>
         </div>
       </div>
     </div>

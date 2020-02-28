@@ -103,17 +103,8 @@ h1,h2,h3,h4,h5,h6 {
     margin-top: 1rem;
 }
 
-/*Search results*/
-
-.search_results {
-    margin-top: 3rem;
-    margin-bottom: 7rem;
-}
-
-/* Game cards*/
-
 .best_sellers .card {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .best_sellers .more_info {
@@ -127,6 +118,15 @@ h1,h2,h3,h4,h5,h6 {
 .best_sellers .add_to_cart:hover {
     color: white;
 }
+
+/*Search results*/
+
+.search_results {
+    margin-top: 3rem;
+    margin-bottom: 7rem;
+}
+
+/* Game cards*/
 
 .search_results .card {
     border: none;
@@ -700,7 +700,7 @@ h1,h2,h3,h4,h5,h6 {
 
 @media (min-width: 320px) {
     .best_sellers .card {
-        height: 26rem;
+        height: 27rem;
     }
 }
 

@@ -60,7 +60,7 @@ The repository can be found in
 
 - Flash messages are displayed on top of the home page (below the navbar) for certain successful or not successful actions such as adding to cart, removing from cart, logged in, etc
 
-- Four 'best sellers' games are featured in the homepage below the introductory message and a 'MORE INFO' button suggests a call-for-action from the users if they'd like to view more information. Also, a user could add the game to the cart with a click on the 'ADD TO CART' button
+- Eight 'best sellers' games are featured in the homepage below the introductory message and a 'MORE INFO' button suggests a call-for-action from the users if they'd like to view more information. Also, a user could add the game to the cart with a click on the 'ADD TO CART' button
 
 - In the 'Cart' page, a display of games is available and the user could adjust the quantity of the game and view the grand total price. Delivery charges are automatically waived for orders above \$300. The user could remove the game too by clicking on the 'dustbin' icon or the 'X' icone depending what screen size the user is viewing the website on
 
@@ -82,13 +82,17 @@ The repository can be found in
 
 - If a user is logged in, a 'MY ACCOUNT' link is available on the navbar for the user to check his/her username and email address. There is also options for the user to reset or change his/her password
 
-- If a user is not logged in, he/she could register an account. Thereafter, there is the option to log in or out of the website
+- If a user is logged in, a 'LOGOUT' link is available on the navbar next to the 'MY ACCOUNT' link for the user to log out
+
+- If a user is not logged in, he/she could register an account with the 'REGISTER' link on the navbar. Thereafter, there is the option to login with clicking on the 'LOGIN' link
 
 - The company make provision for customers who'd like to view the 'Terms & Conditions' and other policies. These are provided via links in the footer
 
 - Customers could view information on where The BoardGameStore is by clicking on the 'Contact Us' link available in the navbar as well as the footer. On the page there is a google map, store location information as well as a form where the user could contact the store by submitting it
 
-- If there are any errors along the way, the user would be brought to an error 404 page where a sad cat picture would hopefully shock the users into inputing or clicking on the right things 
+- If there are any errors in finding a page, the user would be brought to an error 404 page where a sad cat picture would hopefully shock the users into inputing or clicking on the right things 
+
+- If there are any internal server errors along the way, the user would be brought to an error 500 page where the same sad cat image would be displayed. There is a button for the user to click to go back to the homepage underneath the sad kitty cat
 
 ### Design Ideas
 
@@ -135,7 +139,7 @@ Initial planning was done on how to setup the database and the website. I used M
 
 - An orange navigational bar with an icon of a chess knight piece with links to the other pages are provided. For the mobile devices, the links are presented when the user clicks on the 'hamburger' icon of 3 horizontal lines
 
--  If the user scrolls down the main page, there is a few paragraphs of text describing the purpose and functions of the website. Further down, there are 4 best selling games displayed in the form of cards with pictures with information that they are award-winning games. There is a 'MORE INFO' button should the user would like to view more information and a 'ADD A CART' button in the theme orange color indicating a call to action for the user to add the game to the shopping cart
+-  If the user scrolls down the main page, there is a few paragraphs of text describing the purpose and functions of the website. Further down, there are 8 best selling games displayed in the form of cards with pictures with information that they are award-winning games. There is a 'MORE INFO' button should the user would like to view more information and a 'ADD A CART' button in the theme orange color indicating a call to action for the user to add the game to the shopping cart
 
 - At the bottom of the page, there is a footer in the orange color with the chess knight icon which points the user to the top of the page. There are some links to important information pertaining to having legal implications that the user may be in interested in. Also a link to information where the user could contact the company. In the social media section, there are links to my personal social media sites, Github repository and LinkedIn sites for anyone who wishes to contact me. There is also a disclaimer that this website is meant for educational purposes only
 
@@ -249,6 +253,14 @@ Year: 2022
 ![Responsive display of The BoardGameStore Error 404 Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/error404.png)
    
 - If the user has inputted an invalid entry on the URL, he/she would be brought to this page which shows that there is an error with a picture of a sad looking kitty cat
+
+- When the user scrolls down, there is a 'HOME' button which allows them to be brought back to the main page with a click of the button
+
+17. #### Error 500 Page
+
+![Responsive display of The BoardGameStore Error 500 Page](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/error404.png)
+   
+- If there are some internal server errors, the user would be brought to this page which shows that there is an error with a picture of a sad looking kitty cat
 
 - When the user scrolls down, there is a 'HOME' button which allows them to be brought back to the main page with a click of the button
 
@@ -464,6 +476,7 @@ git push heroku master
 3. I made use of one library provided by Django; the [dango-countries](https://pypi.org/project/django-countries/) one and was excited to install it step by step by following the documentation. It was very rewarding to see it working in the checkout form 
 4. I almost had a HEART ATTACK when my website suddenly stopped working on AWS and Heroku and I thought I had created an infinite loop somewhere. Thankfully, my website came back on after 15 minutes and I concluded this could be an AWS server issue. This is the error message:
 ![Heart Attack error message](https://raw.githubusercontent.com/Paddlepop25/codeinstitute-boardgame-store/master/static/images/readmes/heartattackerror.jpeg)
+4. Initially I displayed the 8 'best selling' games by filtering their specific names. I found that a `500 error` would be generated by changing on their names with the update game form. To overcome this, I instead introduced a boolean field 'homepage_display' in the Game model and made them `True` for these 8. There isn't any problem if someone changed the game names now or made more games `True` for this boolean field as I limited the display to specifically 8
 
 ## Credits
 
