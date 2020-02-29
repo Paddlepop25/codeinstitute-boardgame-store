@@ -9,10 +9,15 @@
 {% block content %}
 
 <section class="search_results">
-    {% if search_terms == "" or search_terms == None %} {% else %}
+    
+    <!--if search is initial None or empty string, display all-->
+    {% if search_terms == "" or search_terms == None %} 
+    {% else %}
     <h3>Search Results for "{{search_terms}}"</h3>
 
-    {% endif %} {% if filtering is False %}
+    {% endif %} 
+    
+    {% if filtering is False %}
 
     <section class="card_games">
         <h2>Card Games</h2>
@@ -79,7 +84,9 @@
         </div>
     </section>
 
-    {% else %} {% if results is False %}
+    {% else %} 
+    
+    {% if results is False %}
     <div class="no_results">
         <h4>Sorry, please try another word.</h4>
         <img src="{% static 'images/sad_cat.jpg'%}" alt="Sad looking pitiful kitty cat" />

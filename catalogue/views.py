@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import Game, Category
 from .forms import GameForm, GameSearchForm
 from django.contrib import messages
+# Django Q is for search from defined key(s)
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required, user_passes_test
 
@@ -17,6 +18,7 @@ def show_games(request):
     if search_terms == None:
           filtering = False
       
+    # icontains works for upper and lowercased letters  
     else:
         all_games = all_games.filter(Q(name__icontains=search_terms) | Q(category__name__icontains=search_terms) | Q(description__icontains=search_terms))
      
@@ -74,13 +76,15 @@ def update_game(request, game_id):
         'game':game_being_deleted
     })    
 
+# function works only for superusers
 @user_passes_test(lambda u: u.is_superuser)
 def confirm_delete_game(request, game_id):
     game_being_deleted = get_object_or_404(Game, pk=game_id)
     return render(request, 'catalogue/confirm_delete_game.template.html', {
         'game':game_being_deleted
     })    
-
+    
+# function works only for superusers
 @user_passes_test(lambda u: u.is_superuser)
 def actually_delete_game(request, game_id):
     game_being_deleted = get_object_or_404(Game, pk=game_id)
@@ -88,6 +92,7 @@ def actually_delete_game(request, game_id):
     messages.success(request, "Game has been deleted successfully")
     return redirect(reverse('show_games'))     
 
+# for individual game info 
 def game_info(request, game_id):
     game = get_object_or_404(Game, pk=game_id)
     return render(request, 'catalogue/game_info.template.html', {

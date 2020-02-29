@@ -3,7 +3,6 @@ body {
     box-sizing: border-box;
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
-    /*scroll-behavior: smooth;*/
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -653,6 +652,8 @@ h1,h2,h3,h4,h5,h6 {
     color: white;
 }
 
+/*footer*/
+
 .footer .row {
     background: #FFAA25;
 }
@@ -705,7 +706,7 @@ h1,h2,h3,h4,h5,h6 {
     padding-right: 5px;
 }
 
-/* 404 Error page*/
+/* 404 Error and 500 Error pages*/
 
 .error_page {
     text-align: center;
@@ -729,6 +730,7 @@ h1,h2,h3,h4,h5,h6 {
     width: 60%;
 }
 
+/*Media queries*/
 @media (min-width: 320px) {
     .best_sellers .card {
         height: 27rem;
@@ -753,7 +755,6 @@ h1,h2,h3,h4,h5,h6 {
     }
 }
 
-
 @media (min-width: 425px) {
     .more_info {
         margin-top: -4rem;
@@ -762,7 +763,6 @@ h1,h2,h3,h4,h5,h6 {
     .show .cross {
         margin-left: 22rem;
     }
-
 }
 
 @media (min-width: 576px) {

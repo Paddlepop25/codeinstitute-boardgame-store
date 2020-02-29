@@ -11,6 +11,7 @@ def view_cart(request):
     for game_id,game in cart.items():
         grand_total_price += game['total_price']
         
+    # $8 delivery charge applies for orders below $300    
     if grand_total_price <= 300:
         grand_total_price = grand_total_price + 8.00
         delivery = 8.00

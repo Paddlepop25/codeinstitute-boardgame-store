@@ -48,7 +48,8 @@ def login(request):
         return render(request, 'accounts/login.template.html', {
             'login_form':login_form
         }) 
-    
+
+# only for logged in users    
 @login_required        
 def profile(request):
     User = MyUser

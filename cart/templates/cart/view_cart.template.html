@@ -9,6 +9,7 @@
     <!--Small screen sizes-->
     <h1>Game Cart</h1>
 
+    <!--empty cart view-->
     {%for game in shopping_cart.items %} 
     {% empty %}
     <div class="row empty_cart">
@@ -51,11 +52,7 @@
                     <td>${{game.total_price|floatformat:2}}</td>
 
                 </tr>
-
-                <!--<tr class="insert_line"></tr>-->
-
-                {%endfor%} 
-                {% if grand_total_price %}
+                {%endfor%} {% if grand_total_price %}
                 <tr class="delivery" id="delivery_mobile">
                     <td>Delivery: </td>
                     <td></td>

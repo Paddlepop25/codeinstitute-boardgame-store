@@ -29,7 +29,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["linda-boardgamestore.herokuapp.com", '*']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -160,6 +159,7 @@ AUTHENTICATION_BACKENDS = (
 
 LOGIN_URL = 'login'
 
+# for flash messages
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
 # for sending email to users for password reset

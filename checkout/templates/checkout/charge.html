@@ -27,6 +27,7 @@
             <p id='stripe-error-message'></p>
         </div>
 
+        <!--Combining these 2 forms as one view-->
         <div class="form-group col-md-6">
             {{ order_form | crispy }}
         </div>
@@ -40,9 +41,9 @@
         <input type='hidden' value='{{amount}}' name='amount' />
 
         <div class="form-group col-md-12">
-            <input class=" btn btn-warning" id="submit_payment_btn" name="commit" type="submit" value="SUBMIT PAYMENT">
-            <a href="{% url 'view_cart' %}" class="btn btn-success add_to_cart"><i class="fas fa-shopping-cart"></i> BACK TO CART</a>
-            <a href="{% url 'show_games' %}" class="btn btn-info"><i class="fas fa-puzzle-piece"></i> BACK TO SHOP</a>
+            <input class=" btn btn-warning mt-4" id="submit_payment_btn" name="commit" type="submit" value="SUBMIT PAYMENT">
+            <a href="{% url 'view_cart' %}" class="btn btn-success add_to_cart mt-3"><i class="fas fa-shopping-cart"></i> BACK TO CART</a>
+            <a href="{% url 'show_games' %}" class="btn btn-info mt-2"><i class="fas fa-puzzle-piece"></i> BACK TO SHOP</a>
         </div>
     </form>
 </div>

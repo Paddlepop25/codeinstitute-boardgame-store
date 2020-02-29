@@ -41,13 +41,12 @@ def charge(request):
             if order_form.is_valid() and payment_form.is_valid():
                 try:
                     customer = stripe.Charge.create(
+                            # stripe only accepts cents hence *100 and integer
                             amount=int(float(request.POST['amount'])*100),
                             currency='sgd',
                             description='Payment',
                             card=stripeToken
                         )
-                 
-                    # print(type(amount))
                 
                     if customer.paid:
                         order = order_form.save(commit=False)
@@ -69,50 +68,3 @@ def charge(request):
                 'amount': amount,
                 'publishable' : settings.STRIPE_PUBLISHABLE_KEY
             })
-    
-# simple method
-# def checkout(request):
-#     stripe.api_key = settings.STRIPE_SECRET_KEY
-    
-#     # retrieve shopping cart
-#     cart = request.session.get('shopping_cart', {})
-    
-#     line_items = []
-    
-#     # generate the line_items
-#     for id,game in cart.items():
-#         # For each item in the cart, get its details from the database
-#         game_from_db = get_object_or_404(Game, pk=id)
-#         line_items.append({
-#             'name': game_from_db.name,
-#             'amount': int(game_from_db.price*100), #convert to cents, in integer
-#             'currency':'sgd',
-#             'quantity':game['quantity']
-#         })
-    
-#     #generate the session
-#     session = stripe.checkout.Session.create(
-#         payment_method_types=['card'],
-#         line_items=line_items,
-#         success_url=request.build_absolute_uri(reverse(checkout_success)),
-#         cancel_url=request.build_absolute_uri(reverse(checkout_cancelled)),
-#         payment_intent_data={
-#             'capture_method':'manual'
-#         }
-#     )
-    
-#     # render the template
-#     return render(request, 'checkout/checkout.template.html', {
-#         'session_id':session.id,
-#         'public_key': settings.STRIPE_PUBLISHABLE_KEY
-#     })
-    
-# def checkout_success(request):
-#     request.session['shopping_cart'] = {}
-#     return render(request, 'checkout/checkout_success.template.html')
-    
-# def checkout_cancelled(request):
-#     return HttpResponse("Checkout cancelled")
-    
-    
-    
