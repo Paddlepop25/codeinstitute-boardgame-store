@@ -71,6 +71,8 @@ I ensured that:
 
 - All pages has a page title shown on the browser tab. This was achieved by including a `{% block title %} XXX {% endblock %}` where 'XXX' is replaced by the page title
 
+- The 'scroll to top' button appears when the user scrolls down at least 2000px of the page. A good place to see this is the 'shop' page
+
 #### 2. Home Page (The BoardGameStore)
 I ensured that:
 - The business' brand and name is displayed in the center prominently
