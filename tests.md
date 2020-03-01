@@ -77,7 +77,7 @@ I ensured that:
 I ensured that:
 - The business' brand and name is displayed in the center prominently
 - The search function and welcome message is displayed in the center where the user's eyes naturally would focus on
-- Four best seller games chosen were displayed along with buttons directing users to read more information on the game or to add the games directly to the shopping cart
+- Eight best seller games chosen were displayed along with buttons directing users to read more information on the game or to add the games directly to the shopping cart
 
 #### 3. Add a Game page
 I ensured that:

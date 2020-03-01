@@ -68,9 +68,9 @@ The repository can be found in
 
 - The user could view the entire game catalogue with a visit to the 'Shop' page. The games are sorted in alphabetical order in each category for easy reference
 
-- For superusers, a form is provided in the 'Add a Game' page where the user could fill up and add a game to the catalogue. The asterisks (*) imply that the fields are required to be filled before form submission 
+- For superusers, a form is provided in the 'Add a Game' page where the user could fill up and add a game to the catalogue. The asterisks (*) imply that the fields are required to be filled before form submission. 
 
-- After the user fills in all fields and selects a picture to upload, upon clicking on the "ADD A GAME" button,  he/she is brought to the "shop" page where the latest game is added to the selected category. This way they could verify that their form submission is successful. Do note that each image must be exceed 1MB to be able to be uploaded successfully
+- After the user fills in all fields and selects a picture to upload, upon clicking on the "ADD A GAME" button,  he/she is brought to the "shop" page where the latest game is added to the selected category. This way they could verify that their form submission is successful. Do note that each image must be exceed 1MB to be able to be uploaded successfully.
 
 - To see the full information of the recently added game, the user could click on the "MORE INFO" button 
 
@@ -356,7 +356,7 @@ python3 manage.py runserver 8080
 6. A green window will pop up. Click on the link inside it to view the project
 
 ### Deploying to Heroku
-* I followed the instructions my coding teacher, Paul gave in his google document
+* I followed the instructions my coding teacher, Paul Chor gave in his google document
 
 - The following steps are to deploy to Heroku in the terminal:
 
@@ -506,8 +506,8 @@ git push heroku master
 
 A huge thank you to:
 
-- Mr Paul, our teacher at [Trent Global College](trentglobal.edu.sg/diplomainsoftwaredevelopment/)
-- Our very smartm patient and helpful teaching assistant John
+- Mr Paul Chor, our teacher at [Trent Global College](trentglobal.edu.sg/diplomainsoftwaredevelopment/)
+- Our very smart, patient and helpful teaching assistant John Yan
 - My classmates who were helpful in giving tips when I'm stuck
 - My friends and family whom were the user testers of this website. They gave invaluable feedback on how to improve the project
 

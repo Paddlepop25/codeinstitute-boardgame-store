@@ -8,7 +8,7 @@ class Game(models.Model):
     description = models.TextField(blank=False)
     inside_box = models.TextField(blank=False)
     price = models.DecimalField(max_digits=5, decimal_places=2, blank=False)
-    image = ImageField(null=True, blank=True)
+    image = ImageField(null=True, blank=False)
     homepage_display = models.BooleanField(default=False)
     
     # set this view in the admin panel, e.g. Warhammer (Board Games)
