@@ -9,13 +9,9 @@ from django.conf import settings
 import stripe
 
 # function available for logged in users only
-@login_required        
-def checkout(request):
-    return render(request, 'checkout/checkout.template.html') 
-
-# function available for logged in users only
 @login_required    
 def charge(request):
+        # amount is getting from name of input in charge.html
         amount = request.GET['amount']
         
         if request.method == 'GET':
