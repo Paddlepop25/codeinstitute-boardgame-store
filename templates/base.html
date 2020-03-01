@@ -65,19 +65,19 @@
 
           <!--non-logged in user can see-->
           {% if not user.is_authenticated %}
-          <li class="nav-item">
+          <li class="nav-item user_register">
             <a class="nav-link" href="{% url 'register' %}"><i class="fas fa-user-circle"></i> REGISTER</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item user_login">
             <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-user-circle"></i> LOGIN</a>
           </li>
           {% endif %}
           <!--logged in user can see-->
           {% if user.is_authenticated %}
-          <li class="nav-item">
+          <li class="nav-item user_profile">
             <a class="nav-link" href="{% url 'profile' %}"><i class="fas fa-user-circle"></i> MY ACCOUNT</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item user_logout">
             <a class="nav-link" href="{% url 'logout_confirm' %}"><i class="fas fa-user-circle"></i> LOGOUT</a>
           </li>
           {% endif %}

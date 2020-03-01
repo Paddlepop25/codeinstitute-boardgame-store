@@ -810,6 +810,17 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 @media (min-width: 992px) {
+    
+    .navbar-nav .user_login,.user_logout {
+        position: absolute;
+        right: 1rem;
+    }
+    
+    .navbar-nav .user_register,.user_profile {
+        position: absolute;
+        right: 7rem;
+    }
+
     .more_info {
         margin-top: -4rem;
     }
