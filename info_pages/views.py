@@ -36,14 +36,14 @@ def contact_us(request):
             email.send()
             messages.success(request, "Thank you for your query. We will contact you shortly.")
             return redirect('home')
-            
+
     return render(request, "info_pages/contact_us.template.html", {
         'form':form_class
     })
-    
+
 def terms_and_conditions(request):
     return render(request, "info_pages/terms_and_conditions.template.html")
-    
+
 def privacy_policy(request):
     return render(request, "info_pages/privacy_policy.template.html")
 

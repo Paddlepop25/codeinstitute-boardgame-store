@@ -1,6 +1,6 @@
 from django import forms
 
-# contact us form
+# contact_us form
 class ContactForm(forms.Form):
     contact_name = forms.CharField(required=True)
     contact_email = forms.EmailField(required=True)
