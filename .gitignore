@@ -87,3 +87,10 @@ venv
 .env
 db.sqlite3
 .c9
+
+### Coverage ###
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover

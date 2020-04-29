@@ -130,10 +130,22 @@ class User_Login_View_Test(TestCase):
 
 class ProfileViewTest(TestCase):
 
-    def test_redirects_to_login_when_notloggedin(self):
-        response = self.client.get(reverse('profile'))
-        self.assertEqual(response.status_code, 302)
-        self.assertEqual(response.url, "/user/login/?next=/user/profile/")
+    def setUp(self):
+        self.user = get_user_model().objects.create_user(username='test',
+                                                         password='12test12',
+                                                         email='test@example.com')
+        self.user.save()
+        self.client.login(username='test', password='12test12')
+
+    def tearDown(self):
+        self.user.delete()
+
+    def test_displays_profile_when_loggedin(self):
+            url = reverse('profile')
+            response = self.client.get(url)
+
+            self.assertEqual(response.status_code, 200)
+            self.assertTemplateUsed(response, "accounts/profile.template.html")
 
 class User_Registration_View_Test(TestCase):
 
